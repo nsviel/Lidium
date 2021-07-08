@@ -1,0 +1,80 @@
+\hypertarget{class_separation__local}{}\doxysection{Separation\+\_\+local Class Reference}
+\label{class_separation__local}\index{Separation\_local@{Separation\_local}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_separation__local_a9ab02dfa98540a18f181c6e1be7986a2}\label{class_separation__local_a9ab02dfa98540a18f181c6e1be7986a2}} 
+{\bfseries Separation\+\_\+local} (\mbox{\hyperlink{class_ref___operation}{Ref\+\_\+\+Operation}} $\ast$ope\+Class)
+\item 
+\mbox{\Hypertarget{class_separation__local_afb151b5d2788dd4c3db29f0dff7aac04}\label{class_separation__local_afb151b5d2788dd4c3db29f0dff7aac04}} 
+bool {\bfseries algo} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh)
+\item 
+\mbox{\Hypertarget{class_separation__local_a7ef0afddb6beb3881d61a937ea9216c8}\label{class_separation__local_a7ef0afddb6beb3881d61a937ea9216c8}} 
+bool {\bfseries algo\+\_\+checking} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh)
+\item 
+\mbox{\Hypertarget{class_separation__local_a700ef6e8a30801cada357ce925775457}\label{class_separation__local_a700ef6e8a30801cada357ce925775457}} 
+bool {\bfseries algo\+\_\+\+Parameter\+Space} ()
+\item 
+\mbox{\Hypertarget{class_separation__local_afb3d38ea1470ce701a1e868f0cfacfc7}\label{class_separation__local_afb3d38ea1470ce701a1e868f0cfacfc7}} 
+bool {\bfseries algo\+\_\+interpolation} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh)
+\item 
+\mbox{\Hypertarget{class_separation__local_a200420036917ee040652c16ea85d6f67}\label{class_separation__local_a200420036917ee040652c16ea85d6f67}} 
+bool {\bfseries algo\+\_\+correction} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh)
+\item 
+\mbox{\Hypertarget{class_separation__local_ac725655114f26b99b776fe8661c3518c}\label{class_separation__local_ac725655114f26b99b776fe8661c3518c}} 
+Matrix\+Xf {\bfseries k\+N\+N\+\_\+\+Kd\+Tree\+F\+L\+A\+NN} (vector$<$ vec2 $>$ P\+T\+\_\+\+PS, vector$<$ vec2 $>$ P\+T\+\_\+query, bool normalized)
+\item 
+\mbox{\Hypertarget{class_separation__local_a33338f0123f056a635850d4a6a39ec0d}\label{class_separation__local_a33338f0123f056a635850d4a6a39ec0d}} 
+Matrix\+Xf {\bfseries compute\+\_\+\+Surface\+Regression} (vector$<$ vec3 $>$ \&PS, Matrix\+Xf list\+\_\+k\+NN)
+\item 
+\mbox{\Hypertarget{class_separation__local_aed3a0a1002bd909bbe4a85cea65ed012}\label{class_separation__local_aed3a0a1002bd909bbe4a85cea65ed012}} 
+Matrix\+Xf {\bfseries compute\+\_\+\+Jacobian} (vector$<$ vec3 $>$ \&PS, Vector\+Xf list\+\_\+k\+NN)
+\item 
+\mbox{\Hypertarget{class_separation__local_a72a2663510ff0cab427bede811677def}\label{class_separation__local_a72a2663510ff0cab427bede811677def}} 
+float {\bfseries multivariate\+Poly} (Vector\+Xf P, float x, float y)
+\item 
+\mbox{\Hypertarget{class_separation__local_a463ecbc3285729464d0b3f50e608d661}\label{class_separation__local_a463ecbc3285729464d0b3f50e608d661}} 
+float {\bfseries compute\+\_\+nbP} ()
+\item 
+\mbox{\Hypertarget{class_separation__local_a94ed68946a0d018d70c76037720500e5}\label{class_separation__local_a94ed68946a0d018d70c76037720500e5}} 
+void {\bfseries plot\+\_\+\+Parameter\+Space} ()
+\item 
+\mbox{\Hypertarget{class_separation__local_a32765f5b43637f447fdc65976dc1aeab}\label{class_separation__local_a32765f5b43637f447fdc65976dc1aeab}} 
+void {\bfseries plot\+\_\+normalized\+RA} ()
+\item 
+\mbox{\Hypertarget{class_separation__local_a9c998d428ac033387316dfce2dcef7d8}\label{class_separation__local_a9c998d428ac033387316dfce2dcef7d8}} 
+void {\bfseries plot\+\_\+\+RA} ()
+\item 
+\mbox{\Hypertarget{class_separation__local_a039c8795ad4a680ae382de783e886b47}\label{class_separation__local_a039c8795ad4a680ae382de783e886b47}} 
+void {\bfseries plot\+\_\+\+Surface\+Regression} (Vector\+Xf P, vector$<$ vec3 $>$ \&PS, Vector\+Xf k\+NN, string t1)
+\item 
+\mbox{\Hypertarget{class_separation__local_a9f96242d2688c2bec44c405d5473b0c3}\label{class_separation__local_a9f96242d2688c2bec44c405d5473b0c3}} 
+vector$<$ float $>$ {\bfseries get\+\_\+\+Im} ()
+\item 
+\mbox{\Hypertarget{class_separation__local_a533c28d19fce590aac2595d5abe6a534}\label{class_separation__local_a533c28d19fce590aac2595d5abe6a534}} 
+vector$<$ float $>$ {\bfseries get\+\_\+\+Ic} ()
+\item 
+\mbox{\Hypertarget{class_separation__local_a97efa9a6c05c774b97f0709bcb827a76}\label{class_separation__local_a97efa9a6c05c774b97f0709bcb827a76}} 
+void {\bfseries set\+\_\+interp\+\_\+display} (bool value)
+\item 
+\mbox{\Hypertarget{class_separation__local_af4a4ec11852824c2e0b43bb5cb4d4e41}\label{class_separation__local_af4a4ec11852824c2e0b43bb5cb4d4e41}} 
+void {\bfseries set\+\_\+\+R\+\_\+order} (int value)
+\item 
+\mbox{\Hypertarget{class_separation__local_ae6ac61ca3235ec66f4bd2540aa9036a4}\label{class_separation__local_ae6ac61ca3235ec66f4bd2540aa9036a4}} 
+void {\bfseries set\+\_\+\+It\+\_\+order} (int value)
+\item 
+\mbox{\Hypertarget{class_separation__local_a5057e49317fb69ed9ca5b1f32eb15b37}\label{class_separation__local_a5057e49317fb69ed9ca5b1f32eb15b37}} 
+void {\bfseries set\+\_\+k\+\_\+k\+NN} (int value)
+\item 
+\mbox{\Hypertarget{class_separation__local_aa662087f6426de33a65e7e3eacb37d50}\label{class_separation__local_aa662087f6426de33a65e7e3eacb37d50}} 
+void {\bfseries set\+\_\+iterations} (int value)
+\item 
+\mbox{\Hypertarget{class_separation__local_ae6fd6024b78316a92af7637a7de4a0a8}\label{class_separation__local_ae6fd6024b78316a92af7637a7de4a0a8}} 
+void {\bfseries set\+\_\+lambda} (float value)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ns/\+Desktop/\+D\+U\+N\+E/src/\+Radiometry/\+Correction/Separation\+\_\+local.\+h\item 
+/home/ns/\+Desktop/\+D\+U\+N\+E/src/\+Radiometry/\+Correction/Separation\+\_\+local.\+cpp\end{DoxyCompactItemize}

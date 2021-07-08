@@ -1,0 +1,92 @@
+\hypertarget{class_transforms}{}\doxysection{Transforms Class Reference}
+\label{class_transforms}\index{Transforms@{Transforms}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_transforms_ace73c1f4a2ed65308933076119bf72e8}\label{class_transforms_ace73c1f4a2ed65308933076119bf72e8}} 
+void {\bfseries make\+\_\+translation} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh, vec3 trans)
+\item 
+\mbox{\Hypertarget{class_transforms_a346aab3b7895d6fa12ed24f5f1775b2d}\label{class_transforms_a346aab3b7895d6fa12ed24f5f1775b2d}} 
+void {\bfseries make\+\_\+rotation} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh, vec3 C\+OM, vec3 angles)
+\item 
+\mbox{\Hypertarget{class_transforms_ae5f2dfc4dce62c37d6e7bc2df46c1a79}\label{class_transforms_ae5f2dfc4dce62c37d6e7bc2df46c1a79}} 
+void {\bfseries make\+\_\+scaling} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh, float scaling)
+\item 
+\mbox{\Hypertarget{class_transforms_ae43ca535a7fc93ba92b3ec99de38b655}\label{class_transforms_ae43ca535a7fc93ba92b3ec99de38b655}} 
+void {\bfseries make\+\_\+\+Transformation} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh, vec3 C\+OM, mat4 transf\+Mat)
+\item 
+\mbox{\Hypertarget{class_transforms_a899f6ae6221b3acd3e65f2005c53688f}\label{class_transforms_a899f6ae6221b3acd3e65f2005c53688f}} 
+void {\bfseries make\+\_\+\+Transformation\+\_\+atomic} (vector$<$ vec3 $>$ \&X\+YZ, vec3 C\+OM, mat4 \mbox{\hyperlink{struct_transformation}{Transformation}})
+\item 
+\mbox{\Hypertarget{class_transforms_ab8e529d987ba8e572b3bf760f85160b7}\label{class_transforms_ab8e529d987ba8e572b3bf760f85160b7}} 
+void {\bfseries make\+\_\+\+Transformation\+\_\+point} (vec3 \&X\+YZ, vec3 C\+OM, mat4 \mbox{\hyperlink{struct_transformation}{Transformation}})
+\item 
+\mbox{\Hypertarget{class_transforms_ace8666e268eea06bc3ec048cedbd2fc9}\label{class_transforms_ace8666e268eea06bc3ec048cedbd2fc9}} 
+void {\bfseries make\+\_\+\+Transformation\+\_\+normal} (vector$<$ vec3 $>$ \&Nxyz, mat4 \mbox{\hyperlink{struct_transformation}{Transformation}})
+\item 
+\mbox{\Hypertarget{class_transforms_a309dcb1908b33b4227d10afff703dd34}\label{class_transforms_a309dcb1908b33b4227d10afff703dd34}} 
+void {\bfseries make\+\_\+centering} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh)
+\item 
+\mbox{\Hypertarget{class_transforms_aa98446ac83e17c69c262bdc1beec538d}\label{class_transforms_aa98446ac83e17c69c262bdc1beec538d}} 
+float {\bfseries make\+\_\+align\+AxisX} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh)
+\item 
+\mbox{\Hypertarget{class_transforms_a3d14bb05c460e2931dad17ccf43b25a3}\label{class_transforms_a3d14bb05c460e2931dad17ccf43b25a3}} 
+float {\bfseries make\+\_\+align\+Axis\+X\+\_\+\+AB} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh, vec3 A, vec3 B)
+\item 
+\mbox{\Hypertarget{class_transforms_a5aa20c5e3bb65923815c36aa75f4bba3}\label{class_transforms_a5aa20c5e3bb65923815c36aa75f4bba3}} 
+float {\bfseries make\+\_\+align\+Axis\+Y\+\_\+\+AB} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh, vec3 A, vec3 B)
+\item 
+\mbox{\Hypertarget{class_transforms_aabceec20aa2d47af0d4fba72b97fdd25}\label{class_transforms_aabceec20aa2d47af0d4fba72b97fdd25}} 
+void {\bfseries make\+\_\+elevation} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh, float Z)
+\item 
+\mbox{\Hypertarget{class_transforms_a55b9fb7af65bb0b3b62745772b3dd537}\label{class_transforms_a55b9fb7af65bb0b3b62745772b3dd537}} 
+void {\bfseries make\+\_\+positionning} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh, vec3 pos)
+\item 
+\mbox{\Hypertarget{class_transforms_a640a52fb9adca6c4a2a685b3cc55a80e}\label{class_transforms_a640a52fb9adca6c4a2a685b3cc55a80e}} 
+void {\bfseries make\+\_\+positionning\+\_\+\+XY} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh, vec3 pos)
+\item 
+\mbox{\Hypertarget{class_transforms_ac68a85110a204e0b8f2e6936cb9be9d3}\label{class_transforms_ac68a85110a204e0b8f2e6936cb9be9d3}} 
+void {\bfseries make\+\_\+positionning\+\_\+glyph} (vector$<$ vec3 $>$ \&X\+YZ, vec3 \&C\+OM, vec3 pos)
+\item 
+\mbox{\Hypertarget{class_transforms_a3a2f74ca233bdb8bad77f87b531e47db}\label{class_transforms_a3a2f74ca233bdb8bad77f87b531e47db}} 
+void {\bfseries fct\+\_\+adjust\+Pos\+To\+Scanner} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh, float Z\+\_\+scan)
+\item 
+\mbox{\Hypertarget{class_transforms_a2c9cdac446188a4283cfd11bd568ef8d}\label{class_transforms_a2c9cdac446188a4283cfd11bd568ef8d}} 
+float {\bfseries fct\+\_\+soil\+Determination} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh)
+\item 
+\mbox{\Hypertarget{class_transforms_a18e55352437b4f3a3039e4f52460a86f}\label{class_transforms_a18e55352437b4f3a3039e4f52460a86f}} 
+mat4 {\bfseries compute\+\_\+transform\+Matrix} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh, vec3 C\+OM, mat4 transformation)
+\item 
+\mbox{\Hypertarget{class_transforms_aaf010ebd71785cc066cf0edd1fee7a19}\label{class_transforms_aaf010ebd71785cc066cf0edd1fee7a19}} 
+mat4 {\bfseries compute\+\_\+transform\+Matrix} (float tx, float ty, float tz, float rx, float ry, float rz)
+\item 
+\mbox{\Hypertarget{class_transforms_ac083deb5cc5c1bd65ab42e06f8379aff}\label{class_transforms_ac083deb5cc5c1bd65ab42e06f8379aff}} 
+vec3 {\bfseries compute\+\_\+angles\+From\+Transformation\+Matrix} (const mat4 \&mat)
+\item 
+\mbox{\Hypertarget{class_transforms_ab26c6c03eec17a53c24ff1c95f8ca4c6}\label{class_transforms_ab26c6c03eec17a53c24ff1c95f8ca4c6}} 
+vec3 {\bfseries compute\+\_\+transl\+From\+Transformation\+Matrix} (const mat4 \&mat)
+\item 
+\mbox{\Hypertarget{class_transforms_a9facc86a71d5058228ee579d20c7e83a}\label{class_transforms_a9facc86a71d5058228ee579d20c7e83a}} 
+vec3 {\bfseries compute\+\_\+translations\+Error} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh)
+\item 
+\mbox{\Hypertarget{class_transforms_a06acb4f6fcdf0a38e6b6a00d43241b3f}\label{class_transforms_a06acb4f6fcdf0a38e6b6a00d43241b3f}} 
+vec3 {\bfseries compute\+\_\+angles\+Error} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh)
+\item 
+\mbox{\Hypertarget{class_transforms_abb4fbf48b2f5c6db32dc2bf7d36d0487}\label{class_transforms_abb4fbf48b2f5c6db32dc2bf7d36d0487}} 
+vector$<$ vec3 $>$ {\bfseries compute\+\_\+transform\+Mesh\+\_\+\+X\+YZ} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh, mat4 Mat)
+\item 
+\mbox{\Hypertarget{class_transforms_a7b5270bdf0986e4d9580cf974115d521}\label{class_transforms_a7b5270bdf0986e4d9580cf974115d521}} 
+void {\bfseries compute\+\_\+transform\+X\+YZ} (vector$<$ vec3 $>$ \&X\+YZ, vec3 \&C\+OM, mat4 Mat)
+\item 
+\mbox{\Hypertarget{class_transforms_a18fc3297d231770269ddd60e5bf49174}\label{class_transforms_a18fc3297d231770269ddd60e5bf49174}} 
+void {\bfseries undo} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh)
+\item 
+\mbox{\Hypertarget{class_transforms_a2c0b60b275763cff5bc2ca2eeec6107c}\label{class_transforms_a2c0b60b275763cff5bc2ca2eeec6107c}} 
+void {\bfseries set\+\_\+soil\+Nb\+Points} (int value)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ns/\+Desktop/\+D\+U\+N\+E/src/\+Operation/Transforms.\+h\item 
+/home/ns/\+Desktop/\+D\+U\+N\+E/src/\+Operation/Transforms.\+cpp\end{DoxyCompactItemize}

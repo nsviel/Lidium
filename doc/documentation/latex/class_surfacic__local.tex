@@ -1,0 +1,80 @@
+\hypertarget{class_surfacic__local}{}\doxysection{Surfacic\+\_\+local Class Reference}
+\label{class_surfacic__local}\index{Surfacic\_local@{Surfacic\_local}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_surfacic__local_a49da33f665d2a42c93aa7ad57c13abf2}\label{class_surfacic__local_a49da33f665d2a42c93aa7ad57c13abf2}} 
+{\bfseries Surfacic\+\_\+local} (\mbox{\hyperlink{class_ref___operation}{Ref\+\_\+\+Operation}} $\ast$ope\+Class)
+\item 
+\mbox{\Hypertarget{class_surfacic__local_ab5f339cd01ee039a1146ef414380460c}\label{class_surfacic__local_ab5f339cd01ee039a1146ef414380460c}} 
+bool {\bfseries algo} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh)
+\item 
+\mbox{\Hypertarget{class_surfacic__local_a932ae75a9c4a8697d4e76c547154e533}\label{class_surfacic__local_a932ae75a9c4a8697d4e76c547154e533}} 
+bool {\bfseries algo\+\_\+checking} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh)
+\item 
+\mbox{\Hypertarget{class_surfacic__local_ab238e14ea40afdb229c257fc9d15afeb}\label{class_surfacic__local_ab238e14ea40afdb229c257fc9d15afeb}} 
+bool {\bfseries algo\+\_\+\+Parameter\+Space} ()
+\item 
+\mbox{\Hypertarget{class_surfacic__local_abfc3554cbe91ee2f8670c4f62c453bcb}\label{class_surfacic__local_abfc3554cbe91ee2f8670c4f62c453bcb}} 
+bool {\bfseries algo\+\_\+interpolation} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh)
+\item 
+\mbox{\Hypertarget{class_surfacic__local_a797e6228f595f7e1df80868261bea907}\label{class_surfacic__local_a797e6228f595f7e1df80868261bea907}} 
+bool {\bfseries algo\+\_\+correction} (\mbox{\hyperlink{struct_mesh}{Mesh}} $\ast$mesh)
+\item 
+\mbox{\Hypertarget{class_surfacic__local_a9b3edad00ad4e72688919c2df2a7ab5b}\label{class_surfacic__local_a9b3edad00ad4e72688919c2df2a7ab5b}} 
+Matrix\+Xf {\bfseries k\+N\+N\+\_\+\+Kd\+Tree\+F\+L\+A\+NN} (vector$<$ vec2 $>$ P\+T\+\_\+\+PS, vector$<$ vec2 $>$ P\+T\+\_\+query, bool normalized)
+\item 
+\mbox{\Hypertarget{class_surfacic__local_aa6b08463d9217ad62a43d63c23e7113d}\label{class_surfacic__local_aa6b08463d9217ad62a43d63c23e7113d}} 
+Matrix\+Xf {\bfseries compute\+\_\+\+Surface\+Regression} (vector$<$ vec3 $>$ \&PS, Matrix\+Xf list\+\_\+k\+NN)
+\item 
+\mbox{\Hypertarget{class_surfacic__local_a2217ff1ade9841e0b4519df9c2ba0670}\label{class_surfacic__local_a2217ff1ade9841e0b4519df9c2ba0670}} 
+Matrix\+Xf {\bfseries compute\+\_\+\+Jacobian} (vector$<$ vec3 $>$ \&PS, Vector\+Xf list\+\_\+k\+NN)
+\item 
+\mbox{\Hypertarget{class_surfacic__local_ac1a8d194e6224811babfefe87e0c80b6}\label{class_surfacic__local_ac1a8d194e6224811babfefe87e0c80b6}} 
+float {\bfseries multivariate\+Poly} (Vector\+Xf P, float x, float y)
+\item 
+\mbox{\Hypertarget{class_surfacic__local_afe9bce4ce14c4486176010456898e615}\label{class_surfacic__local_afe9bce4ce14c4486176010456898e615}} 
+float {\bfseries compute\+\_\+nbP} ()
+\item 
+\mbox{\Hypertarget{class_surfacic__local_afdae4c0ffdd380b42787c6d53160b288}\label{class_surfacic__local_afdae4c0ffdd380b42787c6d53160b288}} 
+void {\bfseries plot\+\_\+\+Parameter\+Space} ()
+\item 
+\mbox{\Hypertarget{class_surfacic__local_aa503c2061e0115180bafd00652db6232}\label{class_surfacic__local_aa503c2061e0115180bafd00652db6232}} 
+void {\bfseries plot\+\_\+normalized\+RA} ()
+\item 
+\mbox{\Hypertarget{class_surfacic__local_a9328b7a9e16ce503077c044c84ad386b}\label{class_surfacic__local_a9328b7a9e16ce503077c044c84ad386b}} 
+void {\bfseries plot\+\_\+\+RA} ()
+\item 
+\mbox{\Hypertarget{class_surfacic__local_a5715ef477ce8432589cbec051e4def9d}\label{class_surfacic__local_a5715ef477ce8432589cbec051e4def9d}} 
+void {\bfseries plot\+\_\+\+Surface\+Regression} (Vector\+Xf P, vector$<$ vec3 $>$ \&PS, Vector\+Xf k\+NN, string t1)
+\item 
+\mbox{\Hypertarget{class_surfacic__local_ad1668ca598bcef4d476418253a9e0bca}\label{class_surfacic__local_ad1668ca598bcef4d476418253a9e0bca}} 
+vector$<$ float $>$ {\bfseries get\+\_\+\+Im} ()
+\item 
+\mbox{\Hypertarget{class_surfacic__local_a8557d7fb59a41bc957440e86198ed888}\label{class_surfacic__local_a8557d7fb59a41bc957440e86198ed888}} 
+vector$<$ float $>$ {\bfseries get\+\_\+\+Ic} ()
+\item 
+\mbox{\Hypertarget{class_surfacic__local_a088ec72c944c97f9809b815a47a4c80a}\label{class_surfacic__local_a088ec72c944c97f9809b815a47a4c80a}} 
+void {\bfseries set\+\_\+interp\+\_\+display} (bool value)
+\item 
+\mbox{\Hypertarget{class_surfacic__local_a491116b73b6f22abad011621ce22549f}\label{class_surfacic__local_a491116b73b6f22abad011621ce22549f}} 
+void {\bfseries set\+\_\+\+R\+\_\+order} (int value)
+\item 
+\mbox{\Hypertarget{class_surfacic__local_a86dde42346a263a0dca647d74d690592}\label{class_surfacic__local_a86dde42346a263a0dca647d74d690592}} 
+void {\bfseries set\+\_\+\+It\+\_\+order} (int value)
+\item 
+\mbox{\Hypertarget{class_surfacic__local_a951893ddbfdd3e20352b64214145153b}\label{class_surfacic__local_a951893ddbfdd3e20352b64214145153b}} 
+void {\bfseries set\+\_\+k\+\_\+k\+NN} (int value)
+\item 
+\mbox{\Hypertarget{class_surfacic__local_ac58e4d3cf67e1320ce6db066f891d315}\label{class_surfacic__local_ac58e4d3cf67e1320ce6db066f891d315}} 
+void {\bfseries set\+\_\+iterations} (int value)
+\item 
+\mbox{\Hypertarget{class_surfacic__local_aa9e8bd95e9d306a3ad377609d55bf352}\label{class_surfacic__local_aa9e8bd95e9d306a3ad377609d55bf352}} 
+void {\bfseries set\+\_\+lambda} (float value)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ns/\+Desktop/\+D\+U\+N\+E/src/\+Radiometry/\+Correction/Surfacic\+\_\+local.\+h\item 
+/home/ns/\+Desktop/\+D\+U\+N\+E/src/\+Radiometry/\+Correction/Surfacic\+\_\+local.\+cpp\end{DoxyCompactItemize}

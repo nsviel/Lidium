@@ -1,0 +1,3 @@
+/home/ns/Desktop/DUNE/build/CMakeFiles/rebuild_cache.dir
+/home/ns/Desktop/DUNE/build/CMakeFiles/edit_cache.dir
+/home/ns/Desktop/DUNE/build/CMakeFiles/executable.dir

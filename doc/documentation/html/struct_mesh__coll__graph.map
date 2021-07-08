@@ -1,0 +1,11 @@
+<map id="Mesh" name="Mesh">
+<area shape="rect" id="node1" title="Point cloud structure storing all associated data." alt="" coords="356,95,413,121"/>
+<area shape="rect" id="node2" href="$struct_intensity.html" title=" " alt="" coords="5,5,84,32"/>
+<area shape="rect" id="node3" href="$struct_p_c_l.html" title=" " alt="" coords="111,5,157,32"/>
+<area shape="rect" id="node4" href="$struct_keypoints.html" title=" " alt="" coords="181,5,268,32"/>
+<area shape="rect" id="node5" href="$struct_normal.html" title=" " alt="" coords="292,5,363,32"/>
+<area shape="rect" id="node6" href="$struct_additionnal.html" title=" " alt="" coords="387,5,483,32"/>
+<area shape="rect" id="node7" href="$struct_transformation.html" title=" " alt="" coords="507,5,627,32"/>
+<area shape="rect" id="node8" href="$struct_location.html" title=" " alt="" coords="651,5,729,32"/>
+<area shape="rect" id="node9" href="$struct_color.html" title=" " alt="" coords="753,5,809,32"/>
+</map>

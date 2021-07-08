@@ -1,0 +1,357 @@
+[
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/extern/imgui/imgui.cpp.o -c /home/ns/Desktop/DUNE/extern/imgui/imgui.cpp",
+  "file": "/home/ns/Desktop/DUNE/extern/imgui/imgui.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/extern/imgui/imgui_demo.cpp.o -c /home/ns/Desktop/DUNE/extern/imgui/imgui_demo.cpp",
+  "file": "/home/ns/Desktop/DUNE/extern/imgui/imgui_demo.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/extern/imgui/imgui_draw.cpp.o -c /home/ns/Desktop/DUNE/extern/imgui/imgui_draw.cpp",
+  "file": "/home/ns/Desktop/DUNE/extern/imgui/imgui_draw.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/extern/imgui/imgui_impl_glfw.cpp.o -c /home/ns/Desktop/DUNE/extern/imgui/imgui_impl_glfw.cpp",
+  "file": "/home/ns/Desktop/DUNE/extern/imgui/imgui_impl_glfw.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/extern/imgui/imgui_impl_opengl3.cpp.o -c /home/ns/Desktop/DUNE/extern/imgui/imgui_impl_opengl3.cpp",
+  "file": "/home/ns/Desktop/DUNE/extern/imgui/imgui_impl_opengl3.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/extern/imgui/imgui_widgets.cpp.o -c /home/ns/Desktop/DUNE/extern/imgui/imgui_widgets.cpp",
+  "file": "/home/ns/Desktop/DUNE/extern/imgui/imgui_widgets.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Engine/Configuration.cpp.o -c /home/ns/Desktop/DUNE/src/Engine/Configuration.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Engine/Configuration.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Engine/Dimension.cpp.o -c /home/ns/Desktop/DUNE/src/Engine/Dimension.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Engine/Dimension.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Engine/Engine.cpp.o -c /home/ns/Desktop/DUNE/src/Engine/Engine.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Engine/Engine.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Engine/Glyphs.cpp.o -c /home/ns/Desktop/DUNE/src/Engine/Glyphs.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Engine/Glyphs.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Engine/OpenGL/Camera.cpp.o -c /home/ns/Desktop/DUNE/src/Engine/OpenGL/Camera.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Engine/OpenGL/Camera.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Engine/OpenGL/CoreGLengine.cpp.o -c /home/ns/Desktop/DUNE/src/Engine/OpenGL/CoreGLengine.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Engine/OpenGL/CoreGLengine.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Engine/OpenGL/FrameBuffer.cpp.o -c /home/ns/Desktop/DUNE/src/Engine/OpenGL/FrameBuffer.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Engine/OpenGL/FrameBuffer.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Engine/OpenGL/Shader.cpp.o -c /home/ns/Desktop/DUNE/src/Engine/OpenGL/Shader.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Engine/OpenGL/Shader.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Engine/OpenGL/Textures.cpp.o -c /home/ns/Desktop/DUNE/src/Engine/OpenGL/Textures.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Engine/OpenGL/Textures.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Engine/Scene.cpp.o -c /home/ns/Desktop/DUNE/src/Engine/Scene.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Engine/Scene.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/GUI/GUI.cpp.o -c /home/ns/Desktop/DUNE/src/GUI/GUI.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/GUI/GUI.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/GUI/GUI_Consol.cpp.o -c /home/ns/Desktop/DUNE/src/GUI/GUI_Consol.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/GUI/GUI_Consol.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/GUI/GUI_Control.cpp.o -c /home/ns/Desktop/DUNE/src/GUI/GUI_Control.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/GUI/GUI_Control.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/GUI/GUI_LeftPanel.cpp.o -c /home/ns/Desktop/DUNE/src/GUI/GUI_LeftPanel.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/GUI/GUI_LeftPanel.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/GUI/GUI_Matching.cpp.o -c /home/ns/Desktop/DUNE/src/GUI/GUI_Matching.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/GUI/GUI_Matching.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/GUI/GUI_MenuBar.cpp.o -c /home/ns/Desktop/DUNE/src/GUI/GUI_MenuBar.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/GUI/GUI_MenuBar.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/GUI/GUI_Option.cpp.o -c /home/ns/Desktop/DUNE/src/GUI/GUI_Option.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/GUI/GUI_Option.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/GUI/GUI_Radiometry.cpp.o -c /home/ns/Desktop/DUNE/src/GUI/GUI_Radiometry.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/GUI/GUI_Radiometry.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/GUI/GUI_Registration.cpp.o -c /home/ns/Desktop/DUNE/src/GUI/GUI_Registration.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/GUI/GUI_Registration.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/GUI/GUI_windows.cpp.o -c /home/ns/Desktop/DUNE/src/GUI/GUI_windows.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/GUI/GUI_windows.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Load/Format/file_PCD.cpp.o -c /home/ns/Desktop/DUNE/src/Load/Format/file_PCD.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Load/Format/file_PCD.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Load/Format/file_PLY.cpp.o -c /home/ns/Desktop/DUNE/src/Load/Format/file_PLY.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Load/Format/file_PLY.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Load/Format/file_PTS.cpp.o -c /home/ns/Desktop/DUNE/src/Load/Format/file_PTS.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Load/Format/file_PTS.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Load/Format/file_PTX.cpp.o -c /home/ns/Desktop/DUNE/src/Load/Format/file_PTX.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Load/Format/file_PTX.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Load/Loader.cpp.o -c /home/ns/Desktop/DUNE/src/Load/Loader.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Load/Loader.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Load/dataExtraction.cpp.o -c /home/ns/Desktop/DUNE/src/Load/dataExtraction.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Load/dataExtraction.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Operation/Attribut.cpp.o -c /home/ns/Desktop/DUNE/src/Operation/Attribut.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Operation/Attribut.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Operation/Filter.cpp.o -c /home/ns/Desktop/DUNE/src/Operation/Filter.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Operation/Filter.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Operation/Functions/BundleByClass.cpp.o -c /home/ns/Desktop/DUNE/src/Operation/Functions/BundleByClass.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Operation/Functions/BundleByClass.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Operation/Functions/CoordTransform.cpp.o -c /home/ns/Desktop/DUNE/src/Operation/Functions/CoordTransform.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Operation/Functions/CoordTransform.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Operation/Functions/Extraction.cpp.o -c /home/ns/Desktop/DUNE/src/Operation/Functions/Extraction.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Operation/Functions/Extraction.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Operation/Functions/Heatmap.cpp.o -c /home/ns/Desktop/DUNE/src/Operation/Functions/Heatmap.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Operation/Functions/Heatmap.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Operation/Functions/NearestNeighbors.cpp.o -c /home/ns/Desktop/DUNE/src/Operation/Functions/NearestNeighbors.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Operation/Functions/NearestNeighbors.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Operation/Functions/RegionGrowing.cpp.o -c /home/ns/Desktop/DUNE/src/Operation/Functions/RegionGrowing.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Operation/Functions/RegionGrowing.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Operation/Functions/Segmentation.cpp.o -c /home/ns/Desktop/DUNE/src/Operation/Functions/Segmentation.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Operation/Functions/Segmentation.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Operation/Functions/Selection.cpp.o -c /home/ns/Desktop/DUNE/src/Operation/Functions/Selection.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Operation/Functions/Selection.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Operation/Operation.cpp.o -c /home/ns/Desktop/DUNE/src/Operation/Operation.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Operation/Operation.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Operation/Optimization/Fitting.cpp.o -c /home/ns/Desktop/DUNE/src/Operation/Optimization/Fitting.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Operation/Optimization/Fitting.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Operation/Optimization/Newton.cpp.o -c /home/ns/Desktop/DUNE/src/Operation/Optimization/Newton.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Operation/Optimization/Newton.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Operation/Optimization/SVD.cpp.o -c /home/ns/Desktop/DUNE/src/Operation/Optimization/SVD.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Operation/Optimization/SVD.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Operation/Optimization/SpeudoInverse.cpp.o -c /home/ns/Desktop/DUNE/src/Operation/Optimization/SpeudoInverse.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Operation/Optimization/SpeudoInverse.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Operation/Plotting.cpp.o -c /home/ns/Desktop/DUNE/src/Operation/Plotting.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Operation/Plotting.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Operation/Transforms.cpp.o -c /home/ns/Desktop/DUNE/src/Operation/Transforms.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Operation/Transforms.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Radiometry/Correction/RadarEquation.cpp.o -c /home/ns/Desktop/DUNE/src/Radiometry/Correction/RadarEquation.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Radiometry/Correction/RadarEquation.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_global.cpp.o -c /home/ns/Desktop/DUNE/src/Radiometry/Correction/Separation_global.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Radiometry/Correction/Separation_global.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_local.cpp.o -c /home/ns/Desktop/DUNE/src/Radiometry/Correction/Separation_local.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Radiometry/Correction/Separation_local.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_globalPiecewise.cpp.o -c /home/ns/Desktop/DUNE/src/Radiometry/Correction/Surfacic_globalPiecewise.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Radiometry/Correction/Surfacic_globalPiecewise.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_local.cpp.o -c /home/ns/Desktop/DUNE/src/Radiometry/Correction/Surfacic_local.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Radiometry/Correction/Surfacic_local.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_segmented.cpp.o -c /home/ns/Desktop/DUNE/src/Radiometry/Correction/Surfacic_segmented.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Radiometry/Correction/Surfacic_segmented.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_simplified.cpp.o -c /home/ns/Desktop/DUNE/src/Radiometry/Correction/Surfacic_simplified.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Radiometry/Correction/Surfacic_simplified.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_targeted.cpp.o -c /home/ns/Desktop/DUNE/src/Radiometry/Correction/Surfacic_targeted.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Radiometry/Correction/Surfacic_targeted.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Radiometry/Linearization.cpp.o -c /home/ns/Desktop/DUNE/src/Radiometry/Linearization.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Radiometry/Linearization.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Radiometry/Radiometry.cpp.o -c /home/ns/Desktop/DUNE/src/Radiometry/Radiometry.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Radiometry/Radiometry.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Radiometry/Radiometry_plotting.cpp.o -c /home/ns/Desktop/DUNE/src/Radiometry/Radiometry_plotting.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Radiometry/Radiometry_plotting.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Radiometry/Target/Ref_Operation.cpp.o -c /home/ns/Desktop/DUNE/src/Radiometry/Target/Ref_Operation.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Radiometry/Target/Ref_Operation.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Radiometry/Target/Reference.cpp.o -c /home/ns/Desktop/DUNE/src/Radiometry/Target/Reference.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Radiometry/Target/Reference.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Registration/Algo_PCL.cpp.o -c /home/ns/Desktop/DUNE/src/Registration/Algo_PCL.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Registration/Algo_PCL.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Registration/MutualInformation.cpp.o -c /home/ns/Desktop/DUNE/src/Registration/MutualInformation.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Registration/MutualInformation.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Registration/Pipeline/ICP.cpp.o -c /home/ns/Desktop/DUNE/src/Registration/Pipeline/ICP.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Registration/Pipeline/ICP.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Matching.cpp.o -c /home/ns/Desktop/DUNE/src/Registration/Pipeline/ICP_Matching.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Registration/Pipeline/ICP_Matching.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Optimization.cpp.o -c /home/ns/Desktop/DUNE/src/Registration/Pipeline/ICP_Optimization.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Registration/Pipeline/ICP_Optimization.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Rejection.cpp.o -c /home/ns/Desktop/DUNE/src/Registration/Pipeline/ICP_Rejection.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Registration/Pipeline/ICP_Rejection.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Registration/Pipeline/Keypoint.cpp.o -c /home/ns/Desktop/DUNE/src/Registration/Pipeline/Keypoint.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Registration/Pipeline/Keypoint.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/Registration/Registration.cpp.o -c /home/ns/Desktop/DUNE/src/Registration/Registration.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/Registration/Registration.cpp"
+},
+{
+  "directory": "/home/ns/Desktop/DUNE/build",
+  "command": "/usr/bin/c++  -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11    -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17 -o CMakeFiles/executable.dir/src/main.cpp.o -c /home/ns/Desktop/DUNE/src/main.cpp",
+  "file": "/home/ns/Desktop/DUNE/src/main.cpp"
+}
+]
