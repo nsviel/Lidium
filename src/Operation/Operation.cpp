@@ -48,84 +48,32 @@ void Operation::fastScene(int mode){
       sceneManager->loadCloud("../media/fastScene/buddha_moved.pts", realTransformation);
       break;
     }
-    case 1:{//ICP
+    case 1:{//Torus
       sceneManager->removeCloud_all();
       sceneManager->loadCloud("../media/fastScene/torus_1.ply");
       sceneManager->loadCloud("../media/fastScene/torus_2.ply");
       break;
     }
-    case 2:{//AB sparse
-      sceneManager->loadCloud("../media/bigFiles/init/AB_OneSide_sampled.pts");
-      break;
-    }
-    case 3:{//AB dense
-      sceneManager->loadCloud("../media/bigFiles/init/AB_OneSide.pts");
-      break;
-    }
-    case 4:{//Radiometry Spheres serie 3 - 80° max
-      if(realpath("../media/bigFiles/init/Sphere_80d", path)) this->loadingFolder(path);
-      break;
-    }
-    case 5:{//Radiometry - Sphere + additional distances
-      if(realpath("../media/bigFiles/init/Sphere_additional_80d", path)) this->loadingFolder(path);
-      break;
-    }
-    case 6:{//Spectralon distance
-      if(realpath("../media/bigFiles/init/Spectralon_distance", path)) this->loadingFolder(path);
-      break;
-    }
-    case 7:{//Spectralon Angles
-      if(realpath("../media/bigFiles/init/Spectralon_angle/10m", path)) this->loadingFolder(path);
-      if(realpath("../media/bigFiles/init/Spectralon_angle/20m", path)) this->loadingFolder(path);
-      if(realpath("../media/bigFiles/init/Spectralon_angle/30m", path)) this->loadingFolder(path);
-      if(realpath("../media/bigFiles/init/Spectralon_angle/40m", path)) this->loadingFolder(path);
-      break;
-    }
-    case 8:{//Spectralon complete
-      if(realpath("../media/bigFiles/init/Spectralon_distance", path)) this->loadingFolder(path);
-      if(realpath("../media/bigFiles/init/Spectralon_angle/10m", path)) this->loadingFolder(path);
-      break;
-    }
-    case 9:{//Spectralon
+    case 2:{//Spectralon
+      sceneManager->removeCloud_all();
       sceneManager->loadCloud("../media/fastScene/Spectr_5m.pts");
       break;
     }
-    case 13:{//keypoints
-      sceneManager->removeCloud_all();
-      sceneManager->loadCloud("../media/bigFiles/init/AB_01_colored_sampled.pts");
-      sceneManager->loadCloud("../media/bigFiles/init/AB_02_colored_sampled.pts");
-      break;
-    }
-    case 14:{
-      sceneManager->removeCloud_all();
-      sceneManager->loadCloud("../media/bigFiles/init/AB_01_colored_sampled.pts");
-      sceneManager->loadCloud("../media/bigFiles/init/AB_01_colored_sampled.pts");
-      break;
-    }
-    case 16:{//Chapelle limited
+
+    /* Example :
+    case 0:{
       sceneManager->removeCloud_all();
       Matrix4f realTransformation;
-      realTransformation <<
+      realTransformation <<   // Real transformation for register the next point cloud to the second
       -0.2016,    0.9793,   -0.0148,   -5.3515,
       -0.9794,   -0.2017,   -0.0052,   -3.0974,
       -0.0081,    0.0134,    0.9999,    -0.18,
             0,         0,         0,    1.0000;
-      sceneManager->loadCloud("../media/bigFiles/chapelle/pts_regis_01_limited_v2_80d.pts", realTransformation);
-      sceneManager->loadCloud("../media/bigFiles/chapelle/pts_regis_03_limited_v2_80d.pts");
+      sceneManager->loadCloud("../path_of_the_cloud_to_register", realTransformation);
+      sceneManager->loadCloud("../path_of_the_cloud_statique");
       break;
     }
-    case 17:{//Chapelle tableau
-      sceneManager->removeCloud_all();
-      Matrix4f realTransformation;
-      realTransformation <<
-      -0.2016,    0.9793,   -0.0148,   -5.3515,
-      -0.9794,   -0.2017,   -0.0052,   -3.0974,
-      -0.0081,    0.0134,    0.9999,    -0.18,
-            0,         0,         0,    1.0000;
-      sceneManager->loadCloud("../media/bigFiles/chapelle/pts_regis_01_limited_tableau_plan.pts", realTransformation);
-      sceneManager->loadCloud("../media/bigFiles/chapelle/pts_regis_03_limited_tableau_plan.pts");
-      break;
-    }
+    */
   }
 
   //---------------------------

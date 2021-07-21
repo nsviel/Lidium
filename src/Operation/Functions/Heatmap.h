@@ -28,7 +28,7 @@ public:
   void plot_colorPalette(Mesh* mesh);
 
   //Setters / Getters
-  inline void set_normalized(bool value){this->normalized = value;}
+  inline bool* get_param_Normalized(){ return &normalized;}
 
 private:
   Scene* sceneManager;

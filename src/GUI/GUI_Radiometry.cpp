@@ -291,7 +291,7 @@ void GUI_radiometry::plotting(){
 
         //Write data on file
         ofstream file_99_R;
-        file_99_R.open ("../data/data/Spectralon_random_IbyR_99.txt");
+        file_99_R.open ("../media/data/data/Spectralon_random_IbyR_99.txt");
         file_99_R << "#99% -> Is Istd R \n";
         file_99_R << "#CV = "<<fct_CV(Is_99)<< "\n";
         file_99_R << "#--------------------------------"<<"\n";
@@ -309,7 +309,7 @@ void GUI_radiometry::plotting(){
         }
 
         ofstream file_99_It;
-        file_99_It.open ("../data/data/Spectralon_random_IbyIt_99.txt");
+        file_99_It.open ("../media/data/data/Spectralon_random_IbyIt_99.txt");
         file_99_It << "#99% -> Is Istd R It \n";
         file_99_It << "#CV = "<<fct_CV(Is_99)<< "\n";
         file_99_It << "#--------------------------------"<<"\n";
@@ -333,7 +333,7 @@ void GUI_radiometry::plotting(){
 
         //Write data on file
         ofstream file_50_R;
-        file_50_R.open ("../data/data/Spectralon_random_IbyR_50.txt");
+        file_50_R.open ("../media/data/data/Spectralon_random_IbyR_50.txt");
         file_50_R << "#99% -> Is Istd R \n";
         file_50_R << "#CV = "<<fct_CV(Is_50)<< "\n";
         file_50_R << "#--------------------------------"<<"\n";
@@ -351,7 +351,7 @@ void GUI_radiometry::plotting(){
         }
 
         ofstream file_50_It;
-        file_50_It.open ("../data/data/Spectralon_random_IbyIt_50.txt");
+        file_50_It.open ("../media/data/data/Spectralon_random_IbyIt_50.txt");
         file_50_It << "#99% -> Is Istd R It \n";
         file_50_It << "#CV = "<<fct_CV(Is_50)<< "\n";
         file_50_It << "#--------------------------------"<<"\n";
@@ -375,7 +375,7 @@ void GUI_radiometry::plotting(){
 
         //Write data on file
         ofstream file_25_R;
-        file_25_R.open ("../data/data/Spectralon_random_IbyR_25.txt");
+        file_25_R.open ("../media/data/data/Spectralon_random_IbyR_25.txt");
         file_25_R << "#99% -> Is Istd R \n";
         file_25_R << "#CV = "<<fct_CV(Is_25)<< "\n";
         file_25_R << "#--------------------------------"<<"\n";
@@ -393,7 +393,7 @@ void GUI_radiometry::plotting(){
         }
 
         ofstream file_25_It;
-        file_25_It.open ("../data/data/Spectralon_random_IbyIt_25.txt");
+        file_25_It.open ("../media/data/data/Spectralon_random_IbyIt_25.txt");
         file_25_It << "#99% -> Is Istd R It \n";
         file_25_It << "#CV = "<<fct_CV(Is_25)<< "\n";
         file_25_It << "#--------------------------------"<<"\n";
@@ -417,7 +417,7 @@ void GUI_radiometry::plotting(){
 
         //Write data on file
         ofstream file_10_R;
-        file_10_R.open ("../data/data/Spectralon_random_IbyR_10.txt");
+        file_10_R.open ("../media/data/data/Spectralon_random_IbyR_10.txt");
         file_10_R << "#99% -> Is Istd R \n";
         file_10_R << "#CV = "<<fct_CV(Is_10)<< "\n";
         file_10_R << "#--------------------------------"<<"\n";
@@ -435,7 +435,7 @@ void GUI_radiometry::plotting(){
         }
 
         ofstream file_10_It;
-        file_10_It.open ("../data/data/Spectralon_random_IbyIt_10.txt");
+        file_10_It.open ("../media/data/data/Spectralon_random_IbyIt_10.txt");
         file_10_It << "#99% -> Is Istd R It \n";
         file_10_It << "#CV = "<<fct_CV(Is_10)<< "\n";
         file_10_It << "#--------------------------------"<<"\n";

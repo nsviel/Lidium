@@ -200,6 +200,7 @@ void GUI_leftPanel::fileOptions(Mesh* mesh, bool cloudInfo){
   //Modification window
   ImGui::SameLine(ImGui::GetWindowWidth()-50);
   if(ImGui::SmallButton(ICON_FA_CLIPBOARD)){
+    sceneManager->set_selectedMesh(mesh);
     bool* ptr = gui_winManager->get_show_modifyFileInfo();
     *ptr = !*ptr;
   }

@@ -145,17 +145,26 @@ void GUI_registration::regist_Parameters(){
     //---------------------------
 
     //Choose registration algo
-    const char* cstch = "Custom\0ICP pcl\0NDT pcl\0GICP pcl\0LUM\0pts4congruents\0";
+    ImGui::TextColored(ImVec4(0.4f,0.4f,0.4f,1.0f), "Pipeline");
+    const char* cstch = "Custom\0ICP PCL\0NDT PCL\0GICP PCL\0LUM PCL\0pts4congruents PCL\0";
     ImGui::SetNextItemWidth(150);
     ImGui::Combo("##1", &regis_algo, cstch);
 
     //Choose optimization algo
+    ImGui::TextColored(ImVec4(0.4f,0.4f,0.4f,1.0f), "Optimization");
     int* optim_algo = icpManager->get_optimizationMethod();
-    const char* optim_choices = "Newton-Raphson\0SVD pcl\0LM pcl\0Dual quaternion pcl\0None\0";
+    const char* optim_choices = "Newton-Raphson\0SVD PCL\0LM PCL\0Dual quaternion PCL\0None\0";
     ImGui::SetNextItemWidth(150);
     ImGui::Combo("##2", optim_algo, optim_choices);
 
+    static float icpGain = 1.0f;
+    ImGui::PushItemWidth(100);
+    if(ImGui::DragFloat("Gain", &icpGain, 0.01f, 0, 10, "%.2f")){
+      icpManager->set_icpGain(icpGain);
+    }
+
     //Choose center of mass - root or COM
+    ImGui::TextColored(ImVec4(0.4f,0.4f,0.4f,1.0f), "Rotation centering");
     if(regis_algo == 0){
       int* com = icpManager->get_optimCOM();
       ImGui::RadioButton("COM", com, 0);
@@ -163,7 +172,8 @@ void GUI_registration::regist_Parameters(){
       ImGui::RadioButton("Root", com, 1);
     }
 
-    //PNumber of iteration
+    //End loop conditions
+    ImGui::TextColored(ImVec4(0.4f,0.4f,0.4f,1.0f), "End loop conditions");
     int* nbIter = regisManager->get_nbIter_max();
     ImGui::PushItemWidth(100);
     ImGui::InputInt("max iter", nbIter);
@@ -171,12 +181,6 @@ void GUI_registration::regist_Parameters(){
     float* SSE_max = regisManager->get_SSE_max();
     ImGui::PushItemWidth(100);
     ImGui::DragFloat("max SSE", SSE_max, 0.001f, 0, 1.0f, "%.4f");
-
-    static float icpGain = 1.0f;
-    ImGui::PushItemWidth(100);
-    if(ImGui::DragFloat("icp gain", &icpGain, 0.01f, 0, 10, "%.2f")){
-      icpManager->set_icpGain(icpGain);
-    }
 
     //---------------------------
     ImGui::Separator();

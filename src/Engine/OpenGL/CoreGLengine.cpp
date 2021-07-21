@@ -58,7 +58,7 @@ bool CoreGLengine::init_OGL(){
   glfwWindowHint(GLFW_OPENGL_CORE_PROFILE, GLFW_OPENGL_CORE_PROFILE);
   glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
 
-  window = glfwCreateWindow(gl_width,gl_height,"Interface",NULL,NULL);
+  window = glfwCreateWindow(gl_width,gl_height,"window",NULL,NULL);
   if(window == NULL){
     std::cout << "Failed to create GLFW window" << std::endl;
     glfwTerminate();

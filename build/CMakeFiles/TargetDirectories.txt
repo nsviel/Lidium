@@ -1,3 +1,3 @@
-/home/ns/Desktop/DUNE/build/CMakeFiles/rebuild_cache.dir
-/home/ns/Desktop/DUNE/build/CMakeFiles/edit_cache.dir
-/home/ns/Desktop/DUNE/build/CMakeFiles/executable.dir
+/home/ns/Desktop/Lidium/build/CMakeFiles/rebuild_cache.dir
+/home/ns/Desktop/Lidium/build/CMakeFiles/edit_cache.dir
+/home/ns/Desktop/Lidium/build/CMakeFiles/executable.dir

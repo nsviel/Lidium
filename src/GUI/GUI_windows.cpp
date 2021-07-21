@@ -31,6 +31,7 @@ GUI_windows::GUI_windows(Engine* engine){
   this->radioManager = engineManager->get_RadioManager();
   this->opeManager = engineManager->get_OpeManager();
   this->fitManager = new Fitting(sceneManager);
+  this->extractionManager = new Extraction(sceneManager);
   this->plotManager = new Plotting();
 
   //---------------------------
@@ -54,7 +55,6 @@ void GUI_windows::init(){
   this->show_normal = false;
   this->show_intensity = false;
   this->show_color = false;
-  this->show_fileTreatment = false;
   this->show_dataOpe = false;
   this->show_selection = false;
   this->show_fitting = false;
@@ -81,7 +81,6 @@ void GUI_windows::window_Draw(){
   this->window_normal();
   this->window_intensity();
   this->window_color();
-  this->window_fileTreatment();
   this->window_dataOpe();
   this->window_fitting();
 
@@ -95,7 +94,6 @@ void GUI_windows::window_loadOption(){
     //---------------------------
 
     //File format
-    ImGui::Separator();
     ImGui::TextColored(ImVec4(0.4f,0.4f,0.4f,1.0f),"File format");
     static int format = 3;
     ImGui::RadioButton("pts", &format, 0);
@@ -121,7 +119,7 @@ void GUI_windows::window_loadOption(){
 
     //Intensity data format
     if(IdataON){
-      ImGui::TextColored(ImVec4(0.4f,0.4f,0.4f,1.0f),"Intensity data format");
+      ImGui::TextColored(ImVec4(0.4f,0.4f,0.4f,1.0f),"Intensity scaling");
       static int Idata = 2;
       static bool osef = false;
       if(ImGui::RadioButton("[0;1]", &Idata, 0)){
@@ -167,12 +165,11 @@ void GUI_windows::window_loadOption(){
     }
 
     //---------------------------
-    if(ImGui::Button("Close")){
-      show_openOptions = false;
-    }
-    ImGui::SameLine();
     if(ImGui::Button("Load")){
       opeManager->loading();
+    }
+    if(ImGui::Button("Close")){
+      show_openOptions = false;
     }
     ImGui::End();
   }
@@ -194,9 +191,9 @@ void GUI_windows::window_saveOption(){
     if(ImGui::RadioButton("[-2048;2048]", &e, 3)){
       loaderManager.save_option(e);
     }*/
-    ImGui::Separator();
 
     //---------------------------
+    ImGui::Separator();
     if(ImGui::Button("Save")){
       opeManager->saving();
       show_saveOptions = false;
@@ -220,7 +217,10 @@ void GUI_windows::window_asciiData(){
     //---------------------------
 
     //Settings
-    int nbLines = 100, nb = 1;
+    static int nbLines = 100;
+    ImGui::SliderInt("Number of lines", &nbLines, 1, mesh->NbPoints);
+
+    int nb = 2;
     if(nbLines > XYZ.size()) nbLines = XYZ.size();
     if(mesh->intensity.hasData) nb++;
     if(mesh->color.hasData) nb++;
@@ -229,7 +229,10 @@ void GUI_windows::window_asciiData(){
     //Columns
     ImGui::Columns(nb);
     ImGui::Separator();
-    ImGui::Text("XYZ"); ImGui::NextColumn();
+    ImGui::Text("#");
+    ImGui::NextColumn();
+    ImGui::Text("XYZ");
+    ImGui::NextColumn();
     if(mesh->intensity.hasData){
       ImGui::Text("I");
       ImGui::NextColumn();
@@ -247,15 +250,22 @@ void GUI_windows::window_asciiData(){
     //Data in columns
     static int selected = -1;
     for(int i=0; i<nbLines; i++){
-      ImGui::Text("%f %f %f", XYZ[i].x, XYZ[i].y, XYZ[i].z); ImGui::NextColumn();
+      ImGui::TextColored(ImVec4(0.4f,0.9f,0.4f,1.0f),"%i", i+1);
+      ImGui::NextColumn();
+
+      ImGui::Text("%f %f %f", XYZ[i].x, XYZ[i].y, XYZ[i].z);
+      ImGui::NextColumn();
+
       if(mesh->intensity.hasData){
         ImGui::Text("%f", Is[i]);
         ImGui::NextColumn();
       }
+
       if(mesh->color.hasData){
         ImGui::Text("%f %f %f", RGB[i].x, RGB[i].y, RGB[i].z);
         ImGui::NextColumn();
       }
+
       if(mesh->normal.hasData){
         ImGui::Text("%f %f %f", Nxyz[i].x, Nxyz[i].y, Nxyz[i].z);
         ImGui::NextColumn();
@@ -275,11 +285,11 @@ void GUI_windows::window_camera(){
 
     //Zoom - Field Of View
     float fov_value = cameraManager->get_fov();
-    if(ImGui::SliderFloat("FOV", &fov_value, 100.0f, 1.0f)){
+    if(ImGui::SliderFloat("FOV (°)", &fov_value, 100.0f, 1.0f)){
       cameraManager->set_fov(fov_value);
     }
     static float cam_speed = configuration.CAM_MoveSpeed;
-    if(ImGui::DragFloat("speed", &cam_speed, 0.01, 0, 20, "%.2f")){
+    if(ImGui::DragFloat("speed (m/s)", &cam_speed, 0.01, 0, 20, "%.2f")){
       cameraManager->set_cameraSpeed(cam_speed);
     }
     ImGui::Separator();
@@ -331,11 +341,11 @@ void GUI_windows::window_camera(){
     //Camera angles
     float HAngle = cameraManager->get_horizAngle();
     float VAngle = cameraManager->get_vertiAngle();
-    ImGui::Text("H angle : %.2f", HAngle * 180 / M_PI);
-    ImGui::Text("V angle : %.2f", VAngle * 180 / M_PI);
+    ImGui::Text("Horizontal angle : %.2f°", HAngle * 180 / M_PI);
+    ImGui::Text("Vertical angle : %.2f°", VAngle * 180 / M_PI);
 
     //Insert pre-defined pose
-    static bool dPoseInit = false;
+    /*static bool dPoseInit = false;
     if(ImGui::Button("Insert")){
       string zenity = "zenity --file-selection --title=CameraPose 2> /dev/null";
       FILE *file = popen(zenity.c_str(), "r");
@@ -390,10 +400,10 @@ void GUI_windows::window_camera(){
     static bool blockPose = false;
     if(ImGui::Checkbox("Block pose", &blockPose) && dPoseInit == true){
       cameraManager->set_desiredPoseON(dPoseInit);
-    }
-    ImGui::Separator();
+    }*/
 
     //---------------------------
+    ImGui::Separator();
     if(ImGui::Button("Close")){
       show_camera = false;
     }
@@ -406,40 +416,39 @@ void GUI_windows::window_heatmap(){
     Mesh* mesh = sceneManager->get_selectedMesh();
     //---------------------------
 
-    //Normalize palette
-    static bool normalizeON = false;
-    if(ImGui::Checkbox("Normalized", &normalizeON)){
-      heatmapManager->set_normalized(normalizeON);
-    }
-
-    //Select heatmap channel
-    static int style_idx = 0;
-    ImGui::PushItemWidth(150);
-    if (ImGui::Combo("##1", &style_idx, "Is\0dist\0cos(It)\0It\0")){
-        heatmapManager->set_HeatMapField(style_idx);
-    }
-
-    //Display color palette
-    if(ImGui::Button("Palette", ImVec2(150,0))){
-      if(mesh->intensity.heatmap){
-        heatmapManager->plot_colorPalette(mesh);
-      }
-    }
-    ImGui::Separator();
-
     //Apply heatMap on one cloud
-    if(ImGui::Button("Heatmap", ImVec2(75,0))){
+    if(ImGui::Button("Apply", ImVec2(75,0))){
       if(sceneManager->is_atLeastOneMesh()){
         heatmapManager->set_HeatMap(mesh);
       }
     }
     ImGui::SameLine();
+
     //Heatmap all clouds
     static bool heatAll = false;
     if(ImGui::Button("Apply all", ImVec2(75,0))){
       if(sceneManager->is_atLeastOneMesh()){
         heatAll = !heatAll;
         heatmapManager->set_HeatMap_all(heatAll);
+      }
+    }
+
+    //Select heatmap channel
+    static int style_idx = 0;
+    ImGui::SetNextItemWidth(75);
+    if (ImGui::Combo("##1", &style_idx, "Is\0dist\0cos(It)\0It\0")){
+        heatmapManager->set_HeatMapField(style_idx);
+    }
+    ImGui::SameLine();
+
+    //Normalize palette
+    bool* normalizeON = heatmapManager->get_param_Normalized();
+    ImGui::Checkbox("Normalized", normalizeON);
+
+    //Display color palette
+    if(ImGui::Button("Palette", ImVec2(75,0))){
+      if(mesh->intensity.heatmap){
+        heatmapManager->plot_colorPalette(mesh);
       }
     }
 
@@ -458,6 +467,12 @@ void GUI_windows::window_transformation(){
     //---------------------------
 
     //Z scanner
+    /*ImGui::TextColored(ImVec4(0.4f,0.4f,0.4f,1.0f),"Cloud elevation");
+
+    //One or all cloud to operate
+    static bool allClouds = false;
+    ImGui::Checkbox("All clouds", &allClouds);
+
     static float Z_approx = 0.0f;
     static float Zpos = 0.0f;
     ImGui::PushItemWidth(75);
@@ -487,10 +502,6 @@ void GUI_windows::window_transformation(){
       }
     }
 
-    //One or all cloud to operate
-    static bool allClouds = false;
-    ImGui::Checkbox("All clouds", &allClouds);
-
     if(ImGui::Button("Accept##0")){
       if(allClouds){
         list<Mesh*>* list_Mesh = sceneManager->get_listMesh();
@@ -508,56 +519,47 @@ void GUI_windows::window_transformation(){
         }
       }
     }
-    ImGui::Separator();
+    ImGui::Separator();*/
     //---------------------------
-
-    ImGui::PushItemWidth(150);
-    static float trans[3] = {0.0f, 0.0f, 0.0f};
-    ImGui::DragFloat3("XYZ", trans, 0.01f, -10.0f, 10.0f);
-    if(ImGui::Button("Accept##1")){
-      if(sceneManager->is_atLeastOneMesh()){
-        vec3 translation = vec3(trans[0], trans[1], trans[2]);
-        transformManager.make_translation(mesh, translation);
-        sceneManager->update_CloudPosition(mesh);
-        trans[0] = 0;
-        trans[1] = 0;
-        trans[2] = 0;
-      }
-    }
-    ImGui::Separator();
-    //---------------------------
-
-    //Real transformation matrix registration
-    ImGui::TextColored(ImVec4(0.4f,0.4f,0.4f,1.0f),"Real transformation matrix");
-    MatrixXf realTransformation = glm_to_eigen_mat4(mesh->transformation.RealTransformation);
-    std::stringstream ss1;
-    ss1 << realTransformation;
-    string bla1 = ss1.str();
-    static char realTransformation_c[1024 * 16];
-    strcpy(realTransformation_c, bla1.c_str());
-    static ImGuiInputTextFlags flags = ImGuiInputTextFlags_AllowTabInput | ImGuiInputTextFlags_CtrlEnterForNewLine;
-    ImGui::InputTextMultiline("##realTransfo", realTransformation_c, IM_ARRAYSIZE(realTransformation_c), ImVec2(400, ImGui::GetTextLineHeight() * 6), flags);
 
     //Transformation matrix from initial
-    ImGui::TextColored(ImVec4(0.4f,0.4f,0.4f,1.0f),"Actual transformation from init");
+    ImGui::TextColored(ImVec4(0.4f,0.4f,0.4f,1.0f),"Actual transformation from initial position");
     MatrixXf meshTransformation = glm_to_eigen_mat4(mesh->transformation.TransformationMatrix);
     std::stringstream ss;
     ss << meshTransformation;
     string bla = ss.str();
     static char meshTransformation_c[1024 * 16];
     strcpy(meshTransformation_c, bla.c_str());
+    static ImGuiInputTextFlags flags = ImGuiInputTextFlags_AllowTabInput | ImGuiInputTextFlags_CtrlEnterForNewLine;
     ImGui::InputTextMultiline("##source", meshTransformation_c, IM_ARRAYSIZE(meshTransformation_c), ImVec2(400, ImGui::GetTextLineHeight() * 6), flags);
 
-    //Applyable transformation matrix
-    ImGui::TextColored(ImVec4(0.4f,0.4f,0.4f,1.0f),"Manual transformation matrix");
+    //Real transformation matrix registration
+    if(ImGui::CollapsingHeader("Real transformation matrix")){
+      MatrixXf realTransformation = glm_to_eigen_mat4(mesh->transformation.RealTransformation);
+      std::stringstream ss1;
+      ss1 << realTransformation;
+      string bla1 = ss1.str();
+      static char realTransformation_c[1024 * 16];
+      strcpy(realTransformation_c, bla1.c_str());
+      ImGui::InputTextMultiline("##realTransfo", realTransformation_c, IM_ARRAYSIZE(realTransformation_c), ImVec2(400, ImGui::GetTextLineHeight() * 6), flags);
+
+      if(ImGui::Button("Apply real transformation from init", ImVec2(300,0))){
+        sceneManager->update_ResetMesh(mesh);
+        transformManager.make_Transformation(mesh, vec3(0,0,0), mesh->transformation.RealTransformation);
+        sceneManager->update_CloudPosition(mesh);
+      }
+    }
+    ImGui::Separator();
+    //---------------------------
+
+    //Applicable transformation matrix
+    ImGui::TextColored(ImVec4(0.4f,0.4f,0.4f,1.0f),"Applicable transformation matrix");
     static char TransfoMatrix[1024 * 16] =
       "1.000 0.000 0.000 0.000\n"
       "0.000 1.000 0.000 0.000\n"
       "0.000 0.000 1.000 0.000\n"
       "0.000 0.000 0.000 1.000\n";
-    ImGui::InputTextMultiline("##source2", TransfoMatrix, IM_ARRAYSIZE(TransfoMatrix), ImVec2(400, ImGui::GetTextLineHeight() * 6), flags);
 
-    //---------------------------
     if(ImGui::Button("Reset##2", ImVec2(100,0))){
       strcpy(TransfoMatrix,
           "1.000 0.000 0.000 0.000\n"
@@ -594,7 +596,10 @@ void GUI_windows::window_transformation(){
       string bla = ss.str();
       strcpy(TransfoMatrix, bla.c_str());
     }
-    if(ImGui::Button("Accept - from Init", ImVec2(150,0))){
+
+    ImGui::InputTextMultiline("##source2", TransfoMatrix, IM_ARRAYSIZE(TransfoMatrix), ImVec2(400, ImGui::GetTextLineHeight() * 6), flags);
+
+    if(ImGui::Button("Apply from initial pos", ImVec2(150,0))){
       if(sceneManager->is_atLeastOneMesh()){
         mat4 mat = char_to_glm_mat4(TransfoMatrix);
 
@@ -605,7 +610,7 @@ void GUI_windows::window_transformation(){
       }
     }
     ImGui::SameLine();
-    if(ImGui::Button("Accept - from Pos", ImVec2(150,0))){
+    if(ImGui::Button("Apply from actual pos", ImVec2(150,0))){
       if(sceneManager->is_atLeastOneMesh()){
         mat4 mat = char_to_glm_mat4(TransfoMatrix);
 
@@ -615,7 +620,7 @@ void GUI_windows::window_transformation(){
         sceneManager->update_CloudPosition(mesh);
       }
     }
-    if(ImGui::Button("Reverse - from Init", ImVec2(150,0))){
+    if(ImGui::Button("Reverse from initial pos", ImVec2(150,0))){
       if(sceneManager->is_atLeastOneMesh()){
         mat4 mat = char_to_glm_mat4(TransfoMatrix);
         mat4 mat2 = inverse(mat);
@@ -627,7 +632,7 @@ void GUI_windows::window_transformation(){
       }
     }
     ImGui::SameLine();
-    if(ImGui::Button("Reverse - from Pos", ImVec2(150,0))){
+    if(ImGui::Button("Reverse from actual pos", ImVec2(150,0))){
       if(sceneManager->is_atLeastOneMesh()){
         mat4 mat = char_to_glm_mat4(TransfoMatrix);
         mat4 mat2 = inverse(mat);
@@ -637,15 +642,27 @@ void GUI_windows::window_transformation(){
         sceneManager->update_CloudPosition(mesh);
       }
     }
-
-    if(ImGui::Button("Apply real transformation from init", ImVec2(300,0))){
-      sceneManager->update_ResetMesh(mesh);
-      transformManager.make_Transformation(mesh, vec3(0,0,0), mesh->transformation.RealTransformation);
-      sceneManager->update_CloudPosition(mesh);
-    }
     ImGui::Separator();
 
     //---------------------------
+    ImGui::TextColored(ImVec4(0.4f,0.4f,0.4f,1.0f),"Cloud translation");
+    ImGui::PushItemWidth(150);
+    static float trans[3] = {0.0f, 0.0f, 0.0f};
+    ImGui::DragFloat3("XYZ", trans, 0.01f, -10.0f, 10.0f);
+    ImGui::SameLine();
+    if(ImGui::Button("Apply##1")){
+      if(sceneManager->is_atLeastOneMesh()){
+        vec3 translation = vec3(trans[0], trans[1], trans[2]);
+        transformManager.make_translation(mesh, translation);
+        sceneManager->update_CloudPosition(mesh);
+        trans[0] = 0;
+        trans[1] = 0;
+        trans[2] = 0;
+      }
+    }
+
+    //---------------------------
+    ImGui::Separator();
     if(ImGui::Button("Close")){
       show_transformation = false;
     }
@@ -661,13 +678,13 @@ void GUI_windows::window_filter(){
 
     //Filter by angle
     static int maxAngle = 80;
-    if(ImGui::Button("Sample by angle", ImVec2(sizeButton,0))){
+    if(ImGui::Button("Filter by angle", ImVec2(sizeButton,0))){
       if(sceneManager->is_atLeastOneMesh()){
 
         list<Mesh*>* list_Mesh = sceneManager->get_listMesh();
         for(int i=0; i<list_Mesh->size(); i++){
           Mesh* mesh = *next(list_Mesh->begin(),i);
-          filterManager->filterByAngle(mesh, maxAngle);
+          filterManager->filter_maxAngle(mesh, maxAngle);
           sceneManager->update_CloudPosition(mesh);
         }
 
@@ -680,7 +697,7 @@ void GUI_windows::window_filter(){
     //Random sampling
     if(ImGui::Button("Random sampling", ImVec2(sizeButton,0))){
       if(sceneManager->is_atLeastOneMesh()){
-        filterManager->randSampling(mesh);
+        filterManager->sampling_random(mesh);
       }
     }
     ImGui::SameLine();
@@ -694,7 +711,7 @@ void GUI_windows::window_filter(){
     static float resolution = 0.1f;
     if(ImGui::Button("Space sampling", ImVec2(sizeButton,0))){
       if(sceneManager->is_atLeastOneMesh()){
-        filterManager->spaceSampling(mesh, resolution);
+        filterManager->sampling_spaceRadius(mesh, resolution);
       }
     }
     ImGui::SameLine();
@@ -703,7 +720,7 @@ void GUI_windows::window_filter(){
     //Outliers filtering
     if(ImGui::Button("Outlier sampling", ImVec2(sizeButton,0))){
       if(sceneManager->is_atLeastOneMesh()){
-        filterManager->outlierRemoval(mesh);
+        filterManager->sampling_outlier(mesh);
       }
     }
     ImGui::SameLine();
@@ -714,9 +731,9 @@ void GUI_windows::window_filter(){
     }
 
     //Statistical filtering
-    if(ImGui::Button("Statistical samp.", ImVec2(sizeButton,0))){
+    if(ImGui::Button("Statistical sampling", ImVec2(sizeButton,0))){
       if(sceneManager->is_atLeastOneMesh()){
-        filterManager->statisticalRemoval(mesh);
+        filterManager->sampling_statistical(mesh);
       }
     }
     ImGui::SameLine();
@@ -727,9 +744,9 @@ void GUI_windows::window_filter(){
     }
 
     //Sphere filtering
-    if(ImGui::Button("Sphere cleaning all", ImVec2(sizeButton,0))){
+    if(ImGui::Button("Clean sphere cloud", ImVec2(sizeButton,0))){
       if(sceneManager->is_atLeastOneMesh()){
-        filterManager->sphereCleaning_all();
+        filterManager->filter_sphereCleaning();
       }
     }
     ImGui::SameLine();
@@ -740,6 +757,7 @@ void GUI_windows::window_filter(){
     }
 
     //---------------------------
+    ImGui::Separator();
     if(ImGui::Button("Close")){
       show_filtering = false;
     }
@@ -789,93 +807,147 @@ void GUI_windows::window_normal(){
     Mesh* mesh = sceneManager->get_selectedMesh();
     //---------------------------
 
-    //Standard normal computation
-    if(ImGui::Button("Compute all clouds", ImVec2(200,0))){
+    if(ImGui::Button("Compute attributs for all clouds", ImVec2(200,0))){
       attribManager->compute_meshAttributs_all();
     }
-    if(ImGui::Button("Reorient. normals", ImVec2(200,0))){
-      if(sceneManager->is_atLeastOneMesh()){
-        attribManager->compute_normalReorientation(mesh);
-        glyphManager->obj_normals(mesh);
-      }
-    }
-    if(ImGui::Button("Invert Nxyz", ImVec2(200,0))){
-      if(sceneManager->is_atLeastOneMesh()){
-        attribManager->compute_normalInversion();
-        glyphManager->obj_normals(mesh);
-      }
-    }
-    ImGui::Separator();
-    if(ImGui::Button("Normals HOUGH", ImVec2(200,0))){
-      if(sceneManager->is_atLeastOneMesh()){
-        attribManager->compute_normalsHough(mesh);
-        glyphManager->obj_normals(mesh);
-      }
-    }
-    if(ImGui::Button("Normals PCL", ImVec2(200,0))){
-      if(sceneManager->is_atLeastOneMesh()){
-        attribManager->compute_normals(mesh);
-        glyphManager->obj_normals(mesh);
-      }
-    }
-    static float radius_normal = 0.03f;
-    ImGui::PushItemWidth(100);
-    if(ImGui::InputFloat("Radius", &radius_normal, 0.01f, 1.0f, "%.3f")){
-      if(radius_normal < 0.01) radius_normal = 0.01;
-      attribManager->set_normalRadiusSeach(radius_normal);
-    }
-    ImGui::Separator();
 
-    //Normal estimation by fitting
-    ImGui::Text("By fitting");
-    if(ImGui::Button("Sphere normal", ImVec2(200,0))){
-      attribManager->compute_sphereNormals(mesh);
+    //Standard normal computation
+    ImGui::TextColored(ImVec4(0.4f,0.4f,0.4f,1.0f),"Normals");
+
+    static int normalMethod = 0;
+    ImGui::PushItemWidth(207.5);
+    ImGui::Combo("##11", &normalMethod, "PCL\0Hough\0Sphere fitting\0Plane fitting\0X axis\0Y axis\0Z axis\0");
+
+    static float radius_normal = 0.03f;
+    if(normalMethod == 1){
+      ImGui::SetNextItemWidth(100);
+      if(ImGui::InputFloat("Hough radius", &radius_normal, 0.01f, 1.0f, "%.3f")){
+        if(radius_normal < 0.01) radius_normal = 0.01;
+        attribManager->set_normalRadiusSeach(radius_normal);
+      }
     }
-    static float radius = attribManager->get_sphereRadius();
-    if(ImGui::DragFloat("radius", &radius, 0.0001, 0, 1, "%.4f")){
-      attribManager->set_sphereRadius(radius);
+    if(normalMethod == 2){
+      static float radius = attribManager->get_sphereRadius();
+      ImGui::SetNextItemWidth(100);
+      if(ImGui::DragFloat("Sphere radius", &radius, 0.0001, 0, 1, "%.4f")){
+        attribManager->set_sphereRadius(radius);
+      }
     }
-    if(ImGui::Button("Plane normal", ImVec2(200,0))){
+
+    if(ImGui::Button("Compute", ImVec2(200,0))){
       if(sceneManager->is_atLeastOneMesh()){
-        attribManager->compute_planeNormals_fitting(mesh);
+        //---------------------------
+
+        if(normalMethod == 0){
+          attribManager->compute_normals(mesh);
+        }
+
+        if(normalMethod == 1){
+          attribManager->compute_normals_Hough(mesh);
+        }
+
+        if(normalMethod == 2){
+          attribManager->compute_normals_sphere(mesh);
+        }
+
+        if(normalMethod == 3){
+          attribManager->compute_normals_planFitting(mesh);
+        }
+
+        if(normalMethod == 4){
+          float angle = transformManager.make_orientAxis_X(mesh);
+          attribManager->compute_normals_planXaxis(mesh);
+          vec3 rotation = vec3(0, 0, -angle);
+          transformManager.make_rotation(mesh, vec3(0,0,0), rotation);
+          mesh->normal.Initial = mesh->normal.OBJ;
+          sceneManager->update_CloudPosition(mesh);
+        }
+
+        if(normalMethod == 5){
+          attribManager->compute_normals_planYaxis(mesh);
+          mesh->normal.Initial = mesh->normal.OBJ;
+          sceneManager->update_CloudPosition(mesh);
+        }
+
+        if(normalMethod == 6){
+          attribManager->compute_normals_planZaxis(mesh);
+          mesh->normal.Initial = mesh->normal.OBJ;
+          sceneManager->update_CloudPosition(mesh);
+        }
+
+        glyphManager->obj_normals(mesh);
+
+        //---------------------------
       }
     }
-    if(ImGui::Button("Plane normal all", ImVec2(200,0))){
-      list<Mesh*>* list_Mesh = sceneManager->get_listMesh();
-      for(int i=0;i<list_Mesh->size();i++){
-        Mesh* mesh = *next(list_Mesh->begin(),i);
-        attribManager->compute_planeNormals_fitting(mesh);
-      }
-    }
-    if(ImGui::Button("X axis", ImVec2(50,0))){
+    if(ImGui::Button("Compute all clouds", ImVec2(200,0))){
       if(sceneManager->is_atLeastOneMesh()){
-        float angle = transformManager.make_orientAxis_X(mesh);
-        attribManager->compute_planeNormals_Xaxis(mesh);
-        vec3 rotation = vec3(0, 0, -angle);
-        transformManager.make_rotation(mesh, vec3(0,0,0), rotation);
-        mesh->normal.Initial = mesh->normal.OBJ;
-        sceneManager->update_CloudPosition(mesh);
+        //---------------------------
+
+
+        list<Mesh*>* list_Mesh = sceneManager->get_listMesh();
+        for(int i=0;i<list_Mesh->size();i++){
+          Mesh* mesh = *next(list_Mesh->begin(),i);
+
+          if(normalMethod == 0){
+            attribManager->compute_normals(mesh);
+          }
+
+          if(normalMethod == 1){
+            attribManager->compute_normals_Hough(mesh);
+          }
+
+          if(normalMethod == 2){
+            attribManager->compute_normals_sphere(mesh);
+          }
+
+          if(normalMethod == 3){
+            attribManager->compute_normals_planFitting(mesh);
+          }
+
+          if(normalMethod == 4){
+            float angle = transformManager.make_orientAxis_X(mesh);
+            attribManager->compute_normals_planXaxis(mesh);
+            vec3 rotation = vec3(0, 0, -angle);
+            transformManager.make_rotation(mesh, vec3(0,0,0), rotation);
+            mesh->normal.Initial = mesh->normal.OBJ;
+            sceneManager->update_CloudPosition(mesh);
+          }
+
+          if(normalMethod == 5){
+            attribManager->compute_normals_planYaxis(mesh);
+            mesh->normal.Initial = mesh->normal.OBJ;
+            sceneManager->update_CloudPosition(mesh);
+          }
+
+          if(normalMethod == 6){
+            attribManager->compute_normals_planZaxis(mesh);
+            mesh->normal.Initial = mesh->normal.OBJ;
+            sceneManager->update_CloudPosition(mesh);
+          }
+
+          glyphManager->obj_normals(mesh);
+        }
+
+        //---------------------------
       }
     }
-    ImGui::SameLine();
-    if(ImGui::Button("Y axis", ImVec2(50,0))){
+
+    if(ImGui::Button("Reoriente to origin", ImVec2(200,0))){
       if(sceneManager->is_atLeastOneMesh()){
-        attribManager->compute_planeNormals_Yaxis(mesh);
-        mesh->normal.Initial = mesh->normal.OBJ;
-        sceneManager->update_CloudPosition(mesh);
+        attribManager->compute_normals_reorientToOrigin(mesh);
+        glyphManager->obj_normals(mesh);
       }
     }
-    ImGui::SameLine();
-    if(ImGui::Button("Z axis", ImVec2(50,0))){
+    if(ImGui::Button("Invert", ImVec2(200,0))){
       if(sceneManager->is_atLeastOneMesh()){
-        attribManager->compute_planeNormals_Zaxis(mesh);
-        mesh->normal.Initial = mesh->normal.OBJ;
-        sceneManager->update_CloudPosition(mesh);
+        attribManager->compute_normals_invert();
+        glyphManager->obj_normals(mesh);
       }
     }
-    ImGui::Separator();
 
     //---------------------------
+    ImGui::Separator();
     if(ImGui::Button("Close")){
       show_normal = false;
     }
@@ -884,16 +956,13 @@ void GUI_windows::window_normal(){
 }
 void GUI_windows::window_intensity(){
   if(show_intensity){
-    ImGui::Begin("Intensity", &show_intensity,ImGuiWindowFlags_AlwaysAutoResize);
+    ImGui::Begin("Intensity", &show_intensity, ImGuiWindowFlags_AlwaysAutoResize);
     Mesh* mesh = sceneManager->get_selectedMesh();
     //---------------------------
 
-    if(ImGui::Button("Inversion Is", ImVec2(200,0))){
-      if(sceneManager->is_atLeastOneMesh()){
-        attribManager->compute_intensityInversion();
-        sceneManager->update_IntensityToColor(mesh);
-      }
-    }
+    ImGui::TextColored(ImVec4(0.4f,0.4f,0.4f,1.0f),"Intensity functions");
+
+    //Display intensity or color channel
     static bool colorON = false;
     if(ImGui::Button("Intensity / Color all", ImVec2(200,0))){
       colorON = !colorON;
@@ -903,60 +972,36 @@ void GUI_windows::window_intensity(){
         attribManager->set_colorI_all();
       }
     }
-    if(ImGui::Button("Color to Intensity", ImVec2(200,0))){
-      attribManager->compute_colorToIntensity(mesh);
+
+    //Invert the intensity values
+    if(ImGui::Button("Inversion Is", ImVec2(200,0))){
+      if(sceneManager->is_atLeastOneMesh()){
+        attribManager->compute_intensityInversion();
+        sceneManager->update_IntensityToColor(mesh);
+      }
     }
-    if(ImGui::Button("Intensity to Color", ImVec2(200,0))){
-      sceneManager->update_IntensityToColor(mesh);
-    }
-    if(ImGui::Button("Normalize", ImVec2(200,0))){
+
+    //Normalize the intensity values
+    if(ImGui::Button("Normalize Intensity to [0,1]", ImVec2(200,0))){
       vector<float>& Is = mesh->intensity.OBJ;
       Is = Normalize(Is);
       sceneManager->update_IntensityToColor(mesh);
     }
-    if(ImGui::Button("I:255->2048", ImVec2(100,0))){
-      attribManager->fct_convert255to2048(mesh);
-    }
-    ImGui::SameLine();
-    if(ImGui::Button("I:2048->255", ImVec2(100,0))){
-      attribManager->fct_convert2048to255(mesh);
-    }
 
-    if(ImGui::Button("I:1->2048", ImVec2(100,0))){
-      vector<float>& Is = mesh->intensity.OBJ;
-      for(int i=0; i<Is.size(); i++){
-        Is[i] = Is[i]*4096-2048;
-      }
-      sceneManager->update_allCloudData(mesh);
-    }
-    ImGui::SameLine();
-    if(ImGui::Button("I:2048->1", ImVec2(100,0))){
-      vector<float>& Is = mesh->intensity.OBJ;
-      for(int i=0; i<Is.size(); i++){
-        Is[i] = (Is[i]+2048)/4096;
-      }
-      sceneManager->update_allCloudData(mesh);
-    }
-    if(ImGui::Button("I initial", ImVec2(200,0))){
-      mesh->intensity.OBJ = mesh->intensity.Initial;
-      sceneManager->update_IntensityToColor(mesh);
-    }
-    ImGui::Separator();
-
-    //Intensity slider
+    //Intensity display slider
     ImGui::Text("Selection intensity");
     static float min = 0, max = 1;
     if(ImGui::DragFloatRange2("##123321", &min, &max, 0.001f, 0.00f, 1.0f, "%.3f", "%.3f")){
       mesh->intensity.OBJ = mesh->intensity.Initial;
       attribManager->fct_IsRange(vec2(min, max));
     }
-    //Shifting
+
+    //Intensity shifting
+    ImGui::Text("Shift intensity");
     static float shift = 0.01;
     ImGui::PushItemWidth(100);
-    ImGui::Text("Shift");
     ImGui::InputFloat("##123322", &shift, 0.0f, 1.0f, "%.4f");
     ImGui::SameLine();
-    //ImGui::AlignTextToFramePadding();
     ImGuiStyle& style = ImGui::GetStyle();
     float spacing = style.ItemInnerSpacing.x;
     ImGui::PushButtonRepeat(true);
@@ -980,7 +1025,39 @@ void GUI_windows::window_intensity(){
     ImGui::PopButtonRepeat();
     ImGui::Separator();
 
+    //Reconvert intensity
+    ImGui::TextColored(ImVec4(0.4f,0.4f,0.4f,1.0f),"Intensity scaling");
+    if(ImGui::Button("Restore I initial", ImVec2(200,0))){
+      mesh->intensity.OBJ = mesh->intensity.Initial;
+      sceneManager->update_IntensityToColor(mesh);
+    }
+    if(ImGui::Button("I:255->2048", ImVec2(100,0))){
+      attribManager->fct_convert255to2048(mesh);
+      sceneManager->update_IntensityToColor(mesh);
+    }
+    ImGui::SameLine();
+    if(ImGui::Button("I:2048->255", ImVec2(100,0))){
+      attribManager->fct_convert2048to255(mesh);
+      sceneManager->update_IntensityToColor(mesh);
+    }
+    if(ImGui::Button("I:1->2048", ImVec2(100,0))){
+      vector<float>& Is = mesh->intensity.OBJ;
+      for(int i=0; i<Is.size(); i++){
+        Is[i] = Is[i]*4096-2048;
+      }
+      sceneManager->update_IntensityToColor(mesh);
+    }
+    ImGui::SameLine();
+    if(ImGui::Button("I:2048->1", ImVec2(100,0))){
+      vector<float>& Is = mesh->intensity.OBJ;
+      for(int i=0; i<Is.size(); i++){
+        Is[i] = (Is[i]+2048)/4096;
+      }
+      sceneManager->update_IntensityToColor(mesh);
+    }
+
     //---------------------------
+    ImGui::Separator();
     if(ImGui::Button("Close")){
       show_intensity = false;
     }
@@ -989,21 +1066,71 @@ void GUI_windows::window_intensity(){
 }
 void GUI_windows::window_color(){
   if(show_color){
-    ImGui::Begin("Color", &show_color,ImGuiWindowFlags_AlwaysAutoResize);
+    ImGui::Begin("Color", &show_color, ImGuiWindowFlags_AlwaysAutoResize);
     Mesh* mesh = sceneManager->get_selectedMesh();
     //---------------------------
 
-    //Color or intensity channel
-    static bool colorON = false;
-    if(ImGui::Button("Intensity / Color all", ImVec2(150,0))){
-      colorON = !colorON;
-      if(colorON){
-        attribManager->set_colorRGB_all();
-      }else{
-        attribManager->set_colorI_all();
+    //Color channel
+    ImGui::Text("Color channel");
+    static int e = 0;
+    ImGui::Separator();
+    ImGui::Columns(2);
+    ImGui::Text("Selected cloud"); ImGui::NextColumn();
+    ImGui::Text("All cloud"); ImGui::NextColumn();
+    if(ImGui::RadioButton("I    ##1", &e, 1)){
+      if(mesh->intensity.hasData){
+        sceneManager->update_IntensityToColor(mesh);
       }
-    }
-    if(ImGui::Button("Supress color all", ImVec2(150,0))){
+    } ImGui::NextColumn();
+    if(ImGui::RadioButton("I    ##2", &e, 2)){
+      list<Mesh*>* list_Mesh = sceneManager->get_listMesh();
+      for(int i=0;i<list_Mesh->size();i++){
+        Mesh* mesh = *next(list_Mesh->begin(),i);
+
+        if(mesh->intensity.hasData){
+          sceneManager->update_IntensityToColor(mesh);
+        }
+      }
+    } ImGui::NextColumn();
+    if(ImGui::RadioButton("RGB  ##1", &e, 3)){
+      if(mesh->color.hasData){
+        mesh->color.OBJ = mesh->color.Initial;
+        sceneManager->update_CloudColor(mesh);
+      }
+    } ImGui::NextColumn();
+    if(ImGui::RadioButton("RGB  ##2", &e, 4)){
+      list<Mesh*>* list_Mesh = sceneManager->get_listMesh();
+      for(int i=0;i<list_Mesh->size();i++){
+        Mesh* mesh = *next(list_Mesh->begin(),i);
+
+        if(mesh->color.hasData){
+          mesh->color.OBJ = mesh->color.Initial;
+          sceneManager->update_CloudColor(mesh);
+        }
+      }
+    } ImGui::NextColumn();
+    if(ImGui::RadioButton("RGB*I##1", &e, 5)){
+      if(mesh->intensity.hasData && mesh->color.hasData){
+        attribManager->set_enhancedColor(mesh);
+      }else{
+        cout<<"Selected mesh: I="<<mesh->intensity.hasData<<" | Color="<<mesh->color.hasData<<endl;
+      }
+    } ImGui::NextColumn();
+    if(ImGui::RadioButton("RGB*I##2", &e, 6)){
+      list<Mesh*>* list_Mesh = sceneManager->get_listMesh();
+      for(int i=0;i<list_Mesh->size();i++){
+        Mesh* mesh = *next(list_Mesh->begin(),i);
+
+        if(mesh->intensity.hasData && mesh->color.hasData){
+          attribManager->set_enhancedColor(mesh);
+        }
+      }
+    } ImGui::NextColumn();
+    ImGui::Columns(1);
+    ImGui::Separator();
+
+    //Color functions
+    if(ImGui::Button("Supress color all clouds", ImVec2(150,0))){
       list<Mesh*>* list_Mesh = sceneManager->get_listMesh();
       for(int i=0;i<list_Mesh->size();i++){
         Mesh* mesh = *next(list_Mesh->begin(),i);
@@ -1015,71 +1142,13 @@ void GUI_windows::window_color(){
         sceneManager->update_dataFormat(mesh);
       }
     }
-    ImGui::Separator();
-
-    static int e = 0;
-    ImGui::Text("Selected | All");
-    if(ImGui::RadioButton("I    ##1", &e, 1)){
-      if(mesh->intensity.hasData){
-        sceneManager->update_IntensityToColor(mesh);
-      }
-    }
-    ImGui::SameLine();
-    if(ImGui::RadioButton("I    ##2", &e, 2)){
-      list<Mesh*>* list_Mesh = sceneManager->get_listMesh();
-      for(int i=0;i<list_Mesh->size();i++){
-        Mesh* mesh = *next(list_Mesh->begin(),i);
-
-        if(mesh->intensity.hasData){
-          sceneManager->update_IntensityToColor(mesh);
-        }
-      }
-    }
-    if(ImGui::RadioButton("RGB  ##1", &e, 3)){
-      if(mesh->color.hasData){
-        mesh->color.OBJ = mesh->color.Initial;
-        sceneManager->update_CloudColor(mesh);
-      }
-    }
-    ImGui::SameLine();
-    if(ImGui::RadioButton("RGB  ##2", &e, 4)){
-      list<Mesh*>* list_Mesh = sceneManager->get_listMesh();
-      for(int i=0;i<list_Mesh->size();i++){
-        Mesh* mesh = *next(list_Mesh->begin(),i);
-
-        if(mesh->color.hasData){
-          mesh->color.OBJ = mesh->color.Initial;
-          sceneManager->update_CloudColor(mesh);
-        }
-      }
-    }
-    if(ImGui::RadioButton("RGB*I##1", &e, 5)){
-      if(mesh->intensity.hasData && mesh->color.hasData){
-        attribManager->set_enhancedColor(mesh);
-      }else{
-        cout<<"Selected mesh: I="<<mesh->intensity.hasData<<" | Color="<<mesh->color.hasData<<endl;
-      }
-    }
-    ImGui::SameLine();
-    if(ImGui::RadioButton("RGB*I##2", &e, 6)){
-      list<Mesh*>* list_Mesh = sceneManager->get_listMesh();
-      for(int i=0;i<list_Mesh->size();i++){
-        Mesh* mesh = *next(list_Mesh->begin(),i);
-
-        if(mesh->intensity.hasData && mesh->color.hasData){
-          attribManager->set_enhancedColor(mesh);
-        }
-      }
-    }
-    ImGui::Separator();
-
-    if(ImGui::Button("All point color rdm")){
-      attribManager->set_pointsRandomColor(mesh);
+    if(ImGui::Button("Random color for all points", ImVec2(150,0))){
+      attribManager->set_randomizeAllPointsColor(mesh);
       sceneManager->update_CloudColor(mesh);
     }
-    ImGui::Separator();
 
     //---------------------------
+    ImGui::Separator();
     if(ImGui::Button("Close")){
       show_color = false;
     }
@@ -1090,14 +1159,12 @@ void GUI_windows::window_selection(){
   if(show_selection){
     ImGui::Begin("Selection part", &show_selection,ImGuiWindowFlags_AlwaysAutoResize);
     Mesh* mesh = sceneManager->get_selectedMesh();
-    Extraction extractionManager(sceneManager);
     //---------------------------
 
     ImGui::Text("Point");
     static bool selectionPtON = false;
     if(ImGui::Checkbox("Selection mode", &selectionPtON)){
       if(sceneManager->is_atLeastOneMesh() && selectionPtON){
-        heatmapManager->set_normalized(true);
         heatmapManager->set_HeatMap_all(true);
         selectionManager->set_markMode("sphere");
         engineManager->set_pointSize(10);
@@ -1106,7 +1173,6 @@ void GUI_windows::window_selection(){
 
       if(!selectionPtON){
         heatmapManager->set_HeatMap_all(false);
-        heatmapManager->set_normalized(false);
         selectionManager->set_markMode("cube");
         engineManager->set_pointSize(1);
         cloud_movement = true;
@@ -1132,11 +1198,10 @@ void GUI_windows::window_selection(){
       zmin = 0; zmax = 100;
     }
     ImGui::SameLine();
-    static bool highlightON = false;
-    if(ImGui::Checkbox("Hightligth", &highlightON) || ImGui::IsKeyPressed(258)){
+    bool* highlightON = extractionManager->get_highlightON();
+    if(ImGui::Checkbox("Hightligth", highlightON) || ImGui::IsKeyPressed(258)){
       if(sceneManager->is_atLeastOneMesh()){
-        extractionManager.set_highlightON(highlightON);
-        extractionManager.fct_highlighting(mesh);
+        extractionManager->fct_highlighting(mesh);
       }
     }
 
@@ -1144,22 +1209,22 @@ void GUI_windows::window_selection(){
     ImGui::PushAllowKeyboardFocus(false);
     if(ImGui::DragFloatRange2("X", &xmin, &xmax, 0.25f, 0.01f, 100.0f, "%.1f %%", "%.1f %%")){
       if(sceneManager->is_atLeastOneMesh()){
-        extractionManager.set_AABB_min(vec3(xmin,ymin,zmin));
-        extractionManager.set_AABB_max(vec3(xmax,ymax,zmax));
+        extractionManager->set_AABB_min(vec3(xmin,ymin,zmin));
+        extractionManager->set_AABB_max(vec3(xmax,ymax,zmax));
         glyphManager->obj_aabb(mesh);
       }
     }
     if(ImGui::DragFloatRange2("Y", &ymin, &ymax, 0.25f, 0.0f, 100.0f, "%.1f %%", "%.1f %%")){
       if(sceneManager->is_atLeastOneMesh()){
-        extractionManager.set_AABB_min(vec3(xmin,ymin,zmin));
-        extractionManager.set_AABB_max(vec3(xmax,ymax,zmax));
+        extractionManager->set_AABB_min(vec3(xmin,ymin,zmin));
+        extractionManager->set_AABB_max(vec3(xmax,ymax,zmax));
         glyphManager->obj_aabb(mesh);
       }
     }
     if(ImGui::DragFloatRange2("Z", &zmin, &zmax, 0.25f, 0.0f, 100.0f, "%.1f %%", "%.1f %%")){
       if(sceneManager->is_atLeastOneMesh()){
-        extractionManager.set_AABB_min(vec3(xmin,ymin,zmin));
-        extractionManager.set_AABB_max(vec3(xmax,ymax,zmax));
+        extractionManager->set_AABB_min(vec3(xmin,ymin,zmin));
+        extractionManager->set_AABB_max(vec3(xmax,ymax,zmax));
         glyphManager->obj_aabb(mesh);
       }
     }
@@ -1169,12 +1234,12 @@ void GUI_windows::window_selection(){
       if(sceneManager->is_atLeastOneMesh()){
         vec3 min_pourc = vec3(xmin, ymin, zmin);
         vec3 max_pourc = vec3(xmax, ymax, zmax);
-        extractionManager.fct_selectPart(mesh, min_pourc, max_pourc);
+        extractionManager->fct_selectPart(mesh, min_pourc, max_pourc);
       }
     }
 
     //Table of selected parts
-    list<subpart*>* list = extractionManager.get_listParts();
+    list<subpart*>* list = extractionManager->get_listParts();
     ImGui::Columns(5, "part");
     ImGui::Separator();
     ImGui::Text("ID"); ImGui::NextColumn();
@@ -1189,9 +1254,7 @@ void GUI_windows::window_selection(){
     ImGui::SetColumnWidth(1,125);
 
     for (int i=0; i<list->size(); i++){
-      say("1");
       subpart* part = *next(list->begin(),i);
-      say("2");
 
       //ID
       char label[32];
@@ -1215,7 +1278,7 @@ void GUI_windows::window_selection(){
       ImGui::PushID(i);
       ImGui::SameLine();
       if(ImGui::SmallButton("X")){
-        extractionManager.supress_selectedpart(part);
+        extractionManager->supress_selectedpart(part);
       }
       ImGui::PopID();
       ImGui::NextColumn();
@@ -1248,68 +1311,22 @@ void GUI_windows::window_extractCloud(){
   if(show_extractCloud){
     ImGui::Begin("Extract cloud", &show_extractCloud,ImGuiWindowFlags_AlwaysAutoResize);
     Mesh* mesh = sceneManager->get_selectedMesh();
-    Extraction extractionManager(sceneManager);
     //---------------------------
 
     //Extraction functions
-    static bool highlightON = false;
-    if(ImGui::Checkbox("Hightligth", &highlightON) || ImGui::IsKeyPressed(258)){
+    ImGui::TextColored(ImVec4(0.4f,0.4f,0.4f,1.0f),"Extract from AABB manipulators");
+    bool* highlightON = extractionManager->get_highlightON();
+    if(ImGui::Checkbox("Hightligth", highlightON)){
       if(sceneManager->is_atLeastOneMesh()){
-        extractionManager.set_highlightON(highlightON);
-        extractionManager.fct_highlighting(mesh);
+        extractionManager->fct_highlighting(mesh);
       }
-    }
-    ImGui::SameLine();
-    static bool autoSelect = false;
-    if(ImGui::Checkbox("Select new", &autoSelect)){
-      sceneManager->set_selectNew(autoSelect);
-    }
-    if(ImGui::Button("Extract selected", ImVec2(100,0))){
-      if(sceneManager->is_atLeastOneMesh()){
-        extractionManager.fct_extractSelected(mesh);
-      }
-    }
-    if(ImGui::Button("Extract cloud", ImVec2(100,0))){
-      if(sceneManager->is_atLeastOneMesh()){
-        extractionManager.fct_extractCloud(mesh);
-      }
-    }
-    ImGui::SameLine();
-    static bool sliceON = false;
-    if(ImGui::Checkbox("Slice", &sliceON)){
-      extractionManager.set_sliceON(sliceON);
     }
 
-
-    //AABB manipulators
+    //Reset manipulators
     static float xmin = 0, xmax = 100;
     static float ymin = 0, ymax = 100;
     static float zmin = 0, zmax = 100;
-    ImGui::PushAllowKeyboardFocus(false);
-    if(ImGui::DragFloatRange2("X", &xmin, &xmax, 0.25f, 0.01f, 100.0f, "%.1f %%", "%.1f %%")){
-      if(sceneManager->is_atLeastOneMesh()){
-        extractionManager.set_AABB_min(vec3(xmin,ymin,zmin));
-        extractionManager.set_AABB_max(vec3(xmax,ymax,zmax));
-        glyphManager->obj_aabb(mesh);
-      }
-    }
-    if(ImGui::DragFloatRange2("Y", &ymin, &ymax, 0.25f, 0.0f, 100.0f, "%.1f %%", "%.1f %%")){
-      if(sceneManager->is_atLeastOneMesh()){
-        extractionManager.set_AABB_min(vec3(xmin,ymin,zmin));
-        extractionManager.set_AABB_max(vec3(xmax,ymax,zmax));
-        glyphManager->obj_aabb(mesh);
-      }
-    }
-    if(ImGui::DragFloatRange2("Z", &zmin, &zmax, 0.25f, 0.0f, 100.0f, "%.1f %%", "%.1f %%")){
-      if(sceneManager->is_atLeastOneMesh()){
-        extractionManager.set_AABB_min(vec3(xmin,ymin,zmin));
-        extractionManager.set_AABB_max(vec3(xmax,ymax,zmax));
-        glyphManager->obj_aabb(mesh);
-      }
-    }
-    ImGui::PopAllowKeyboardFocus();
-
-    if(ImGui::Button("Reset", ImVec2(100,0)) || ImGui::IsKeyPressed(258)){
+    if(ImGui::Button("Reset X Y Z", ImVec2(100,0))){
       xmin = 0;
       xmax = 100;
       ymin = 0;
@@ -1318,7 +1335,69 @@ void GUI_windows::window_extractCloud(){
       zmax = 100;
     }
 
+    //AABB manipulators
+    ImGui::PushAllowKeyboardFocus(false);
+    if(ImGui::DragFloatRange2("X", &xmin, &xmax, 0.25f, 0.01f, 100.0f, "%.1f %%", "%.1f %%")){
+      if(sceneManager->is_atLeastOneMesh()){
+        extractionManager->set_AABB_min(vec3(xmin,ymin,zmin));
+        extractionManager->set_AABB_max(vec3(xmax,ymax,zmax));
+        glyphManager->obj_aabb(mesh);
+      }
+    }
+    if(ImGui::DragFloatRange2("Y", &ymin, &ymax, 0.25f, 0.0f, 100.0f, "%.1f %%", "%.1f %%")){
+      if(sceneManager->is_atLeastOneMesh()){
+        extractionManager->set_AABB_min(vec3(xmin,ymin,zmin));
+        extractionManager->set_AABB_max(vec3(xmax,ymax,zmax));
+        glyphManager->obj_aabb(mesh);
+      }
+    }
+    if(ImGui::DragFloatRange2("Z", &zmin, &zmax, 0.25f, 0.0f, 100.0f, "%.1f %%", "%.1f %%")){
+      if(sceneManager->is_atLeastOneMesh()){
+        extractionManager->set_AABB_min(vec3(xmin,ymin,zmin));
+        extractionManager->set_AABB_max(vec3(xmax,ymax,zmax));
+        glyphManager->obj_aabb(mesh);
+      }
+    }
+    ImGui::PopAllowKeyboardFocus();
+
+    //Extract a new cloud from AABB manipulators
+    if(ImGui::Button("Extract cloud", ImVec2(100,0))){
+      if(sceneManager->is_atLeastOneMesh()){
+        //Reset color
+        *highlightON = false;
+        extractionManager->fct_highlighting(mesh);
+
+        //Extract cloud
+        extractionManager->fct_extractCloud(mesh);
+      }
+    }
+    ImGui::SameLine();
+    static bool sliceON = false;
+    if(ImGui::Checkbox("Slice", &sliceON)){
+      extractionManager->set_sliceON(sliceON);
+    }
+    ImGui::Separator();
+
+    //Extract points selected with the mouse frame
+    ImGui::TextColored(ImVec4(0.4f,0.4f,0.4f,1.0f),"Extract from mouse frame");
+    if(ImGui::Button("Extract selected frame", ImVec2(150,0))){
+      if(sceneManager->is_atLeastOneMesh()){
+        extractionManager->fct_extractSelected(mesh);
+      }
+    }
+    ImGui::Separator();
+
+    //Merge and extract two clouds
+    ImGui::TextColored(ImVec4(0.4f,0.4f,0.4f,1.0f),"Merge and extract two clouds");
+    if(ImGui::Button("Merge clouds", ImVec2(150,0))){
+      if(sceneManager->get_listMeshSize() >= 2){
+        Mesh* mesh_2 = sceneManager->get_otherMesh();
+        extractionManager->fct_merging_newCloud(mesh, mesh_2);
+      }
+    }
+
     //---------------------------
+    ImGui::Separator();
     if(ImGui::Button("Close")){
       show_extractCloud = false;
     }
@@ -1329,62 +1408,21 @@ void GUI_windows::window_cutCloud(){
   if(show_cutCloud){
     ImGui::Begin("Cut cloud", &show_cutCloud,ImGuiWindowFlags_AlwaysAutoResize);
     Mesh* mesh = sceneManager->get_selectedMesh();
-    Extraction extractionManager(sceneManager);
     //---------------------------
 
-    //Extraction functions
-    static bool highlightON = false;
-    if(ImGui::Checkbox("Hightligth", &highlightON) || ImGui::IsKeyPressed(258)){
+    bool* highlightON = extractionManager->get_highlightON();
+    if(ImGui::Checkbox("Hightligth", highlightON) || ImGui::IsKeyPressed(258)){
       if(sceneManager->is_atLeastOneMesh()){
-        extractionManager.set_highlightON(highlightON);
-        extractionManager.fct_highlighting(mesh);
-      }
-    }
-    if(ImGui::Button("Cut", ImVec2(100,0))){
-      if(sceneManager->is_atLeastOneMesh()){
-        extractionManager.set_highlightON(false);
-        extractionManager.fct_highlighting(mesh);
-        extractionManager.fct_cutCloud(mesh);
+        extractionManager->fct_highlighting(mesh);
       }
     }
     ImGui::SameLine();
-    if(ImGui::Button("Cut all cloud", ImVec2(100,0))){
-      if(sceneManager->is_atLeastOneMesh()){
-        extractionManager.set_highlightON(false);
-        extractionManager.fct_highlighting(mesh);
-        extractionManager.fct_cutCloud_all();
-      }
-    }
 
-    //AABB manipulators
+    //Reset manipulator
     static float xmin = 0, xmax = 100;
     static float ymin = 0, ymax = 100;
     static float zmin = 0, zmax = 100;
-    ImGui::PushAllowKeyboardFocus(false);
-    if(ImGui::DragFloatRange2("X", &xmin, &xmax, 0.25f, 0.01f, 100.0f, "%.1f %%", "%.1f %%")){
-      if(sceneManager->is_atLeastOneMesh()){
-        extractionManager.set_AABB_min(vec3(xmin,ymin,zmin));
-        extractionManager.set_AABB_max(vec3(xmax,ymax,zmax));
-        glyphManager->obj_aabb(mesh);
-      }
-    }
-    if(ImGui::DragFloatRange2("Y", &ymin, &ymax, 0.25f, 0.0f, 100.0f, "%.1f %%", "%.1f %%")){
-      if(sceneManager->is_atLeastOneMesh()){
-        extractionManager.set_AABB_min(vec3(xmin,ymin,zmin));
-        extractionManager.set_AABB_max(vec3(xmax,ymax,zmax));
-        glyphManager->obj_aabb(mesh);
-      }
-    }
-    if(ImGui::DragFloatRange2("Z", &zmin, &zmax, 0.25f, 0.0f, 100.0f, "%.1f %%", "%.1f %%")){
-      if(sceneManager->is_atLeastOneMesh()){
-        extractionManager.set_AABB_min(vec3(xmin,ymin,zmin));
-        extractionManager.set_AABB_max(vec3(xmax,ymax,zmax));
-        glyphManager->obj_aabb(mesh);
-      }
-    }
-    ImGui::PopAllowKeyboardFocus();
-
-    if(ImGui::Button("Reset", ImVec2(100,0)) || ImGui::IsKeyPressed(258)){
+    if(ImGui::Button("Reset X Y Z", ImVec2(100,0))){
       xmin = 0;
       xmax = 100;
       ymin = 0;
@@ -1392,29 +1430,59 @@ void GUI_windows::window_cutCloud(){
       zmin = 0;
       zmax = 100;
     }
-    ImGui::Separator();
+
+    //AABB manipulators
+    ImGui::PushAllowKeyboardFocus(false);
+    if(ImGui::DragFloatRange2("X", &xmin, &xmax, 0.25f, 0.01f, 100.0f, "%.1f %%", "%.1f %%")){
+      if(sceneManager->is_atLeastOneMesh()){
+        extractionManager->set_AABB_min(vec3(xmin,ymin,zmin));
+        extractionManager->set_AABB_max(vec3(xmax,ymax,zmax));
+        glyphManager->obj_aabb(mesh);
+      }
+    }
+    if(ImGui::DragFloatRange2("Y", &ymin, &ymax, 0.25f, 0.0f, 100.0f, "%.1f %%", "%.1f %%")){
+      if(sceneManager->is_atLeastOneMesh()){
+        extractionManager->set_AABB_min(vec3(xmin,ymin,zmin));
+        extractionManager->set_AABB_max(vec3(xmax,ymax,zmax));
+        glyphManager->obj_aabb(mesh);
+      }
+    }
+    if(ImGui::DragFloatRange2("Z", &zmin, &zmax, 0.25f, 0.0f, 100.0f, "%.1f %%", "%.1f %%")){
+      if(sceneManager->is_atLeastOneMesh()){
+        extractionManager->set_AABB_min(vec3(xmin,ymin,zmin));
+        extractionManager->set_AABB_max(vec3(xmax,ymax,zmax));
+        glyphManager->obj_aabb(mesh);
+      }
+    }
+    ImGui::PopAllowKeyboardFocus();
+
+    //Cuttinf functions
+    if(ImGui::Button("Cut", ImVec2(100,0))){
+      if(sceneManager->is_atLeastOneMesh()){
+        //Reset color
+        *highlightON = false;
+        extractionManager->fct_highlighting(mesh);
+
+        //Cut cloud
+        extractionManager->fct_cutCloud(mesh);
+      }
+    }
+    ImGui::SameLine();
+    if(ImGui::Button("Cut all cloud", ImVec2(100,0))){
+      if(sceneManager->is_atLeastOneMesh()){
+        //Reset color
+        *highlightON = false;
+        extractionManager->fct_highlighting(mesh);
+
+        //Cut clouds
+        extractionManager->fct_cutCloud_all();
+      }
+    }
 
     //---------------------------
+    ImGui::Separator();
     if(ImGui::Button("Close")){
       show_cutCloud = false;
-    }
-    ImGui::End();
-  }
-}
-void GUI_windows::window_fileTreatment(){
-  if(show_fileTreatment){
-    ImGui::Begin("File treatment", &show_fileTreatment,ImGuiWindowFlags_AlwaysAutoResize);
-    //---------------------------
-
-    if(ImGui::Button("Load save cloud in dir", ImVec2(200,0))){
-      opeManager->loading_treatment();
-    }
-
-    ImGui::Separator();
-
-    //---------------------------
-    if(ImGui::Button("Close")){
-      show_fileTreatment = false;
     }
     ImGui::End();
   }
@@ -1720,8 +1788,6 @@ void GUI_windows::window_dataOpe(){
       vector<float> coeff = polyfit(X, Y, n);
       vector<float> reg = polyval(X, coeff, n);
 
-      sayVec(coeff);
-
       plotManager->set_Xlabel("X");
       plotManager->set_Ylabel("Y");
       plotManager->set_Format_data1("with linespoints ls 1 pt 13 ps 0.5 lc rgb 'black' title 'Initial'");
@@ -1731,8 +1797,6 @@ void GUI_windows::window_dataOpe(){
 
       coeff = polyfit_homemade(X, Y, n);
       reg = polyval(X, coeff, n);
-
-      sayVec(coeff);
 
       plotManager->set_Xlabel("X");
       plotManager->set_Ylabel("Y");
@@ -1766,6 +1830,7 @@ void GUI_windows::window_modifyFileInfo(){
       sceneManager->set_MeshVisibility(mesh, visible);
     }
     ImGui::SameLine();
+
     //Uniform cloud color
     static vec4 color_PC;
     ImGuiColorEditFlags flags = ImGuiColorEditFlags_NoInputs;
@@ -1775,40 +1840,54 @@ void GUI_windows::window_modifyFileInfo(){
         attribManager->set_pointCloudColor(mesh, color_PC);
       }
     }
+    ImGui::Separator();
 
     //Name
+    ImGui::Columns(2);
     static char str[256];
     strcpy(str, mesh->Name.c_str());
-    ImGui::Text("Name: "); ImGui::SameLine();
+    ImGui::Text("Name ");
+    ImGui::NextColumn();
     if(ImGui::InputText("##1", str, IM_ARRAYSIZE(str), ImGuiInputTextFlags_EnterReturnsTrue)){
       mesh->Name = str;
     }
+    ImGui::NextColumn();
 
     //Format
     strcpy(str, mesh->Format.c_str());
-    ImGui::Text("Format: "); ImGui::SameLine();
+    ImGui::Text("Format ");
+    ImGui::NextColumn();
     if(ImGui::InputText("##2", str, IM_ARRAYSIZE(str), ImGuiInputTextFlags_EnterReturnsTrue)){
       mesh->Format = str;
     }
+    ImGui::NextColumn();
 
     //Root pos
     vec3& PCroot = mesh->location.root;
-    ImGui::Text("Root (%.2f, %.2f, %.2f)", PCroot.x, PCroot.y, PCroot.z);
+    ImGui::Text("Root ");
+    ImGui::NextColumn();
+    ImGui::Text("%.2f, %.2f, %.2f", PCroot.x, PCroot.y, PCroot.z);
     ImGui::SameLine();
     if(ImGui::Button("R", ImVec2(15,0))){
       PCroot = vec3(0,0,0);
     }
+    ImGui::NextColumn();
 
     //Attributs
-    ImGui::TextWrapped("Attrib: %s", mesh->dataFormat.c_str());
-    ImGui::SameLine();
-    if(ImGui::Button("RGB", ImVec2(30,0))){
+    ImGui::TextWrapped("Attrib ");
+    ImGui::NextColumn();
+    ImGui::TextWrapped("%s", mesh->dataFormat.c_str());
+    ImGui::Columns(1);
+    ImGui::Separator();
+
+    ImGui::TextColored(ImVec4(0.4f,0.4f,0.4f,1.0f),"Functions");
+    if(ImGui::Button("Supress color", ImVec2(100,0))){
       mesh->color.hasData = !mesh->color.hasData;
       if(mesh->color.OBJ.size() == 0) mesh->color.hasData = false;
       sceneManager->update_dataFormat(mesh);
     }
     ImGui::SameLine();
-    if(ImGui::Button("Nxyz", ImVec2(30,0))){
+    if(ImGui::Button("Supress normal", ImVec2(100,0))){
       mesh->normal.hasData = !mesh->normal.hasData;
       if(mesh->normal.OBJ.size() == 0) mesh->normal.hasData = false;
       sceneManager->update_dataFormat(mesh);
@@ -1823,7 +1902,7 @@ void GUI_windows::window_modifyFileInfo(){
     ImGui::Separator();
 
     //Statistics
-    ImGui::Text("Statistics");
+    ImGui::TextColored(ImVec4(0.4f,0.4f,0.4f,1.0f),"Statistics");
     if(ImGui::Button("Location", ImVec2(100,0))){
       this->cloud_stats_location(mesh);
     }

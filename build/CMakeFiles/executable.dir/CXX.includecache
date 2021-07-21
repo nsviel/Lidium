@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/ns/Desktop/DUNE/extern/IconsFontAwesome5.h
+/home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
 
-/home/ns/Desktop/DUNE/extern/NormalHough/Normals.h
+/home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
 vector
 -
 iostream
@@ -28,11 +28,11 @@ sstream
 Eigen/Dense
 -
 nanoflann.h
-/home/ns/Desktop/DUNE/extern/NormalHough/nanoflann.h
+/home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
 omp.h
 -
 
-/home/ns/Desktop/DUNE/extern/NormalHough/nanoflann.h
+/home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
 algorithm
 -
 array
@@ -54,113 +54,113 @@ stdexcept
 vector
 -
 
-/home/ns/Desktop/DUNE/extern/OptimLib/constrained/sumt.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/line_search/more_thuente.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/determine_bounds_type.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/error_reporting.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/error_reporting.hpp
 error_reporting.ipp
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/error_reporting.ipp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/error_reporting.ipp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/error_reporting.ipp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/error_reporting.ipp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/jacobian_adjust.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/jacobian_adjust.hpp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/misc.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/misc.hpp
 determine_bounds_type.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/determine_bounds_type.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
 error_reporting.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/error_reporting.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/error_reporting.hpp
 jacobian_adjust.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/jacobian_adjust.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/jacobian_adjust.hpp
 numerical_gradient.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/numerical_gradient.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/numerical_gradient.hpp
 numerical_hessian.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/numerical_hessian.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/numerical_hessian.hpp
 transform_vals.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/transform_vals.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/transform_vals.hpp
 unit_vec.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/unit_vec.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/unit_vec.hpp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/numerical_gradient.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/numerical_gradient.hpp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/numerical_hessian.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/numerical_hessian.hpp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/optim_options.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/optim_options.hpp
 RcppArmadillo.h
 -
 armadillo
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/armadillo
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/armadillo
 
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/optim_structs.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/optim_structs.hpp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/transform_vals.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/transform_vals.hpp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/unit_vec.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/unit_vec.hpp
 unit_vec.ipp
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/unit_vec.ipp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/unit_vec.ipp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/unit_vec.ipp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/unit_vec.ipp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/optim.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/optim.hpp
 misc/optim_options.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/optim_options.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/optim_options.hpp
 misc/optim_structs.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/optim_structs.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/optim_structs.hpp
 misc/misc.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/misc/misc.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/misc/misc.hpp
 line_search/more_thuente.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/line_search/more_thuente.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
 unconstrained/bfgs.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/unconstrained/bfgs.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/unconstrained/bfgs.hpp
 unconstrained/lbfgs.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/unconstrained/lbfgs.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/unconstrained/lbfgs.hpp
 unconstrained/newton.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/unconstrained/newton.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/unconstrained/newton.hpp
 unconstrained/cg.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/unconstrained/cg.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/unconstrained/cg.hpp
 unconstrained/gd.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/unconstrained/gd.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/unconstrained/gd.hpp
 unconstrained/de.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/unconstrained/de.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/unconstrained/de.hpp
 unconstrained/de_prmm.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/unconstrained/de_prmm.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/unconstrained/de_prmm.hpp
 unconstrained/nm.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/unconstrained/nm.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/unconstrained/nm.hpp
 unconstrained/pso.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/unconstrained/pso.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/unconstrained/pso.hpp
 unconstrained/pso_dv.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/unconstrained/pso_dv.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/unconstrained/pso_dv.hpp
 constrained/sumt.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/constrained/sumt.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
 zeros/broyden.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/zeros/broyden.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/zeros/broyden.hpp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/unconstrained/bfgs.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/unconstrained/bfgs.hpp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/unconstrained/cg.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/unconstrained/cg.hpp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/unconstrained/de.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/unconstrained/de.hpp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/unconstrained/de_prmm.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/unconstrained/de_prmm.hpp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/unconstrained/gd.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/unconstrained/gd.hpp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/unconstrained/lbfgs.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/unconstrained/lbfgs.hpp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/unconstrained/newton.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/unconstrained/newton.hpp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/unconstrained/nm.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/unconstrained/nm.hpp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/unconstrained/pso.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/unconstrained/pso.hpp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/unconstrained/pso_dv.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/unconstrained/pso_dv.hpp
 
-/home/ns/Desktop/DUNE/extern/OptimLib/zeros/broyden.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/zeros/broyden.hpp
 
-/home/ns/Desktop/DUNE/extern/gnuplot/gnuplot-iostream.h
+/home/ns/Desktop/Lidium/extern/gnuplot/gnuplot-iostream.h
 cstdio
 -
 termios.h
@@ -216,11 +216,11 @@ blitz/array.h
 windows.h
 -
 
-/home/ns/Desktop/DUNE/extern/imgui/imconfig.h
+/home/ns/Desktop/Lidium/extern/imgui/imconfig.h
 
-/home/ns/Desktop/DUNE/extern/imgui/imgui.h
+/home/ns/Desktop/Lidium/extern/imgui/imgui.h
 imconfig.h
-/home/ns/Desktop/DUNE/extern/imgui/imconfig.h
+/home/ns/Desktop/Lidium/extern/imgui/imconfig.h
 float.h
 -
 stdarg.h
@@ -234,13 +234,13 @@ assert.h
 stdint.h
 -
 imgui_user.h
-/home/ns/Desktop/DUNE/extern/imgui/imgui_user.h
+/home/ns/Desktop/Lidium/extern/imgui/imgui_user.h
 
-/home/ns/Desktop/DUNE/extern/imgui/imgui_impl_glfw.h
+/home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
 
-/home/ns/Desktop/DUNE/extern/imgui/imgui_impl_opengl3.h
+/home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
 
-/home/ns/Desktop/DUNE/extern/nanoflann.hpp
+/home/ns/Desktop/Lidium/extern/nanoflann.hpp
 algorithm
 -
 array
@@ -262,123 +262,51 @@ stdexcept
 vector
 -
 
-/home/ns/Desktop/DUNE/src/Engine/Engine.h
+/home/ns/Desktop/Lidium/src/Engine/Configuration.h
 ../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
+/home/ns/Desktop/Lidium/src/Parameters.h
 
-/home/ns/Desktop/DUNE/src/Engine/Scene.h
-../Load/Loader.h
-/home/ns/Desktop/DUNE/src/Load/Loader.h
+/home/ns/Desktop/Lidium/src/Engine/Dimension.h
 ../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
+/home/ns/Desktop/Lidium/src/Parameters.h
 
-/home/ns/Desktop/DUNE/src/GUI/GUI_Radiometry.cpp
-GUI_Radiometry.h
-/home/ns/Desktop/DUNE/src/GUI/GUI_Radiometry.h
-GUI_windows.h
-/home/ns/Desktop/DUNE/src/GUI/GUI_windows.h
-../Engine/Engine.h
-/home/ns/Desktop/DUNE/src/Engine/Engine.h
-../Engine/Scene.h
-/home/ns/Desktop/DUNE/src/Engine/Scene.h
-../Operation/Plotting.h
-/home/ns/Desktop/DUNE/src/Operation/Plotting.h
-../Operation/Operation.h
-/home/ns/Desktop/DUNE/src/Operation/Operation.h
-../Operation/Attribut.h
-/home/ns/Desktop/DUNE/src/Operation/Attribut.h
-../Operation/Functions/Heatmap.h
-/home/ns/Desktop/DUNE/src/Operation/Functions/Heatmap.h
-../Operation/Functions/BundleByClass.h
-/home/ns/Desktop/DUNE/src/Operation/Functions/BundleByClass.h
-../Radiometry/Radiometry.h
-/home/ns/Desktop/DUNE/src/Radiometry/Radiometry.h
-../Radiometry/Linearization.h
-/home/ns/Desktop/DUNE/src/Radiometry/Linearization.h
-../Radiometry/Target/Reference.h
-/home/ns/Desktop/DUNE/src/Radiometry/Target/Reference.h
-../Radiometry/Correction/Surfacic_local.h
-/home/ns/Desktop/DUNE/src/Radiometry/Correction/Surfacic_local.h
-../Radiometry/Correction/Surfacic_globalPiecewise.h
-/home/ns/Desktop/DUNE/src/Radiometry/Correction/Surfacic_globalPiecewise.h
-../Radiometry/Correction/Surfacic_simplified.h
-/home/ns/Desktop/DUNE/src/Radiometry/Correction/Surfacic_simplified.h
-../Radiometry/Correction/Surfacic_segmented.h
-/home/ns/Desktop/DUNE/src/Radiometry/Correction/Surfacic_segmented.h
-../Radiometry/Correction/Separation_global.h
-/home/ns/Desktop/DUNE/src/Radiometry/Correction/Separation_global.h
-
-/home/ns/Desktop/DUNE/src/GUI/GUI_Radiometry.h
+/home/ns/Desktop/Lidium/src/Engine/Engine.h
 ../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
+/home/ns/Desktop/Lidium/src/Parameters.h
 
-/home/ns/Desktop/DUNE/src/GUI/GUI_windows.h
-../Load/Loader.h
-/home/ns/Desktop/DUNE/src/Load/Loader.h
-../Operation/Transforms.h
-/home/ns/Desktop/DUNE/src/Operation/Transforms.h
-../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
-
-/home/ns/Desktop/DUNE/src/Load/Format/file_PCD.h
+/home/ns/Desktop/Lidium/src/Engine/OpenGL/Camera.h
 ../../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
+/home/ns/Desktop/Lidium/src/Parameters.h
 
-/home/ns/Desktop/DUNE/src/Load/Format/file_PLY.h
+/home/ns/Desktop/Lidium/src/Engine/OpenGL/CoreGLengine.cpp
+CoreGLengine.h
+/home/ns/Desktop/Lidium/src/Engine/OpenGL/CoreGLengine.h
+Shader.h
+/home/ns/Desktop/Lidium/src/Engine/OpenGL/Shader.h
+Camera.h
+/home/ns/Desktop/Lidium/src/Engine/OpenGL/Camera.h
+../Dimension.h
+/home/ns/Desktop/Lidium/src/Engine/Dimension.h
+../../GUI/GUI.h
+/home/ns/Desktop/Lidium/src/GUI/GUI.h
+../Engine.h
+/home/ns/Desktop/Lidium/src/Engine/Engine.h
+../Configuration.h
+/home/ns/Desktop/Lidium/src/Engine/Configuration.h
+
+/home/ns/Desktop/Lidium/src/Engine/OpenGL/CoreGLengine.h
 ../../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
+/home/ns/Desktop/Lidium/src/Parameters.h
 
-/home/ns/Desktop/DUNE/src/Load/Format/file_PTS.h
+/home/ns/Desktop/Lidium/src/Engine/OpenGL/Shader.h
 ../../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
+/home/ns/Desktop/Lidium/src/Parameters.h
 
-/home/ns/Desktop/DUNE/src/Load/Format/file_PTX.h
-../../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
-
-/home/ns/Desktop/DUNE/src/Load/Loader.h
-Format/file_PTS.h
-/home/ns/Desktop/DUNE/src/Load/Format/file_PTS.h
-Format/file_PLY.h
-/home/ns/Desktop/DUNE/src/Load/Format/file_PLY.h
-Format/file_PTX.h
-/home/ns/Desktop/DUNE/src/Load/Format/file_PTX.h
-Format/file_PCD.h
-/home/ns/Desktop/DUNE/src/Load/Format/file_PCD.h
-dataExtraction.h
-/home/ns/Desktop/DUNE/src/Load/dataExtraction.h
+/home/ns/Desktop/Lidium/src/GUI/GUI.h
 ../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
+/home/ns/Desktop/Lidium/src/Parameters.h
 
-/home/ns/Desktop/DUNE/src/Load/dataExtraction.h
-../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
-
-/home/ns/Desktop/DUNE/src/Operation/Attribut.h
-../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
-
-/home/ns/Desktop/DUNE/src/Operation/Functions/BundleByClass.h
-../../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
-
-/home/ns/Desktop/DUNE/src/Operation/Functions/Heatmap.h
-../../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
-
-/home/ns/Desktop/DUNE/src/Operation/Operation.h
-../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
-
-/home/ns/Desktop/DUNE/src/Operation/Plotting.h
-../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
-
-/home/ns/Desktop/DUNE/src/Operation/Transforms.h
-../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
-
-/home/ns/Desktop/DUNE/src/Parameters.h
+/home/ns/Desktop/Lidium/src/Parameters.h
 algorithm
 -
 thread
@@ -454,97 +382,65 @@ Eigen/SVD
 Eigen/LU
 -
 ../extern/imgui/imgui.h
-/home/ns/Desktop/DUNE/extern/imgui/imgui.h
+/home/ns/Desktop/Lidium/extern/imgui/imgui.h
 ../extern/imgui/imgui_impl_glfw.h
-/home/ns/Desktop/DUNE/extern/imgui/imgui_impl_glfw.h
+/home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
 ../extern/imgui/imgui_impl_opengl3.h
-/home/ns/Desktop/DUNE/extern/imgui/imgui_impl_opengl3.h
+/home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
 ../extern/gnuplot/gnuplot-iostream.h
-/home/ns/Desktop/DUNE/extern/gnuplot/gnuplot-iostream.h
+/home/ns/Desktop/Lidium/extern/gnuplot/gnuplot-iostream.h
 ../extern/NormalHough/nanoflann.h
-/home/ns/Desktop/DUNE/extern/NormalHough/nanoflann.h
+/home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
 ../extern/NormalHough/Normals.h
-/home/ns/Desktop/DUNE/extern/NormalHough/Normals.h
+/home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
 ../extern/OptimLib/optim.hpp
-/home/ns/Desktop/DUNE/extern/OptimLib/optim.hpp
+/home/ns/Desktop/Lidium/extern/OptimLib/optim.hpp
 ../extern/nanoflann.hpp
-/home/ns/Desktop/DUNE/extern/nanoflann.hpp
+/home/ns/Desktop/Lidium/extern/nanoflann.hpp
 ../extern/IconsFontAwesome5.h
-/home/ns/Desktop/DUNE/extern/IconsFontAwesome5.h
+/home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
 Specific/struct_pointCloud.h
-/home/ns/Desktop/DUNE/src/Specific/struct_pointCloud.h
+/home/ns/Desktop/Lidium/src/Specific/struct_pointCloud.h
 Specific/struct_glyph.h
-/home/ns/Desktop/DUNE/src/Specific/struct_glyph.h
+/home/ns/Desktop/Lidium/src/Specific/struct_glyph.h
 Specific/struct_generic.h
-/home/ns/Desktop/DUNE/src/Specific/struct_generic.h
+/home/ns/Desktop/Lidium/src/Specific/struct_generic.h
 Specific/fct_Transtypage.h
-/home/ns/Desktop/DUNE/src/Specific/fct_Transtypage.h
+/home/ns/Desktop/Lidium/src/Specific/fct_Transtypage.h
 Specific/fct_Display.h
-/home/ns/Desktop/DUNE/src/Specific/fct_Display.h
+/home/ns/Desktop/Lidium/src/Specific/fct_Display.h
 Specific/fct_OpenGL.h
-/home/ns/Desktop/DUNE/src/Specific/fct_OpenGL.h
+/home/ns/Desktop/Lidium/src/Specific/fct_OpenGL.h
 Specific/fct_maths.h
-/home/ns/Desktop/DUNE/src/Specific/fct_maths.h
+/home/ns/Desktop/Lidium/src/Specific/fct_maths.h
 Specific/Color.h
-/home/ns/Desktop/DUNE/src/Specific/Color.h
+/home/ns/Desktop/Lidium/src/Specific/Color.h
 Specific/struct_config.h
-/home/ns/Desktop/DUNE/src/Specific/struct_config.h
+/home/ns/Desktop/Lidium/src/Specific/struct_config.h
 Specific/struct_consol.h
-/home/ns/Desktop/DUNE/src/Specific/struct_consol.h
+/home/ns/Desktop/Lidium/src/Specific/struct_consol.h
 
-/home/ns/Desktop/DUNE/src/Radiometry/Correction/Separation_global.h
-../../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
+/home/ns/Desktop/Lidium/src/Specific/Color.h
 
-/home/ns/Desktop/DUNE/src/Radiometry/Correction/Surfacic_globalPiecewise.h
-../../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
+/home/ns/Desktop/Lidium/src/Specific/fct_Display.h
 
-/home/ns/Desktop/DUNE/src/Radiometry/Correction/Surfacic_local.h
-../../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
+/home/ns/Desktop/Lidium/src/Specific/fct_OpenGL.h
 
-/home/ns/Desktop/DUNE/src/Radiometry/Correction/Surfacic_segmented.h
-../../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
+/home/ns/Desktop/Lidium/src/Specific/fct_Transtypage.h
 
-/home/ns/Desktop/DUNE/src/Radiometry/Correction/Surfacic_simplified.h
-../../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
+/home/ns/Desktop/Lidium/src/Specific/fct_maths.h
 
-/home/ns/Desktop/DUNE/src/Radiometry/Linearization.h
-../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
-
-/home/ns/Desktop/DUNE/src/Radiometry/Radiometry.h
-../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
-
-/home/ns/Desktop/DUNE/src/Radiometry/Target/Reference.h
-../../Parameters.h
-/home/ns/Desktop/DUNE/src/Parameters.h
-
-/home/ns/Desktop/DUNE/src/Specific/Color.h
-
-/home/ns/Desktop/DUNE/src/Specific/fct_Display.h
-
-/home/ns/Desktop/DUNE/src/Specific/fct_OpenGL.h
-
-/home/ns/Desktop/DUNE/src/Specific/fct_Transtypage.h
-
-/home/ns/Desktop/DUNE/src/Specific/fct_maths.h
-
-/home/ns/Desktop/DUNE/src/Specific/struct_config.h
+/home/ns/Desktop/Lidium/src/Specific/struct_config.h
 string
 -
 
-/home/ns/Desktop/DUNE/src/Specific/struct_consol.h
+/home/ns/Desktop/Lidium/src/Specific/struct_consol.h
 
-/home/ns/Desktop/DUNE/src/Specific/struct_generic.h
+/home/ns/Desktop/Lidium/src/Specific/struct_generic.h
 
-/home/ns/Desktop/DUNE/src/Specific/struct_glyph.h
+/home/ns/Desktop/Lidium/src/Specific/struct_glyph.h
 
-/home/ns/Desktop/DUNE/src/Specific/struct_pointCloud.h
+/home/ns/Desktop/Lidium/src/Specific/struct_pointCloud.h
 
 /usr/include/eigen3/Eigen/Cholesky
 Core

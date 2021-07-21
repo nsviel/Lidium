@@ -42,6 +42,7 @@ void GUI_option::design_Options(){
 void GUI_option::option_glyphs(){
   Mesh* mesh = sceneManager->get_selectedMesh();
   ImGuiStyle& style = ImGui::GetStyle();
+  ImGui::Columns(2);
   //---------------------------
 
   //Display grid
@@ -49,29 +50,34 @@ void GUI_option::option_glyphs(){
   if(ImGui::Checkbox("Grid", &gridON)){
     glyphManager->set_visibility("grid", gridON);
   }
-  ImGui::SameLine();
+  ImGui::NextColumn();
+
+  //Subgrid
   static bool subGridON = false;
   if(ImGui::Checkbox("Subgrid", &subGridON)){
     glyphManager->set_visibility("subgrid", subGridON);
     glyphManager->set_visibility("planegrid", subGridON);
   }
+  ImGui::NextColumn();
 
   //Display Bounding Box
   bool* aabbON = glyphManager->get_aabbVisibility();
   if(ImGui::Checkbox("AABB", aabbON)){
     glyphManager->set_visibility("aabb", *aabbON);
   }
-  ImGui::SameLine();
+  ImGui::NextColumn();
 
   //Display normals
   static bool normalsON = false;
   if(ImGui::Checkbox("Normal", &normalsON)){
     glyphManager->set_visibility("normal", normalsON);
   }
+  ImGui::NextColumn();
+
   //Display ICP line correspondences
   bool* matchingON = glyphManager->get_matchVisibility();
   ImGui::Checkbox("Match", matchingON);
-  ImGui::SameLine();
+  ImGui::NextColumn();
 
   //Display Axis
   static bool axisON = true;
@@ -79,6 +85,9 @@ void GUI_option::option_glyphs(){
     glyphManager->set_visibility("axis", axisON);
     glyphManager->set_visibility("axisMesh", axisON);
   }
+  ImGui::NextColumn();
+
+  ImGui::Columns(1);
 
   //Visualization mode
   static bool visualizeON = false;
@@ -110,30 +119,12 @@ void GUI_option::option_heatmap(){
     //---------------------------
 
     //HeatMap
-    if(ImGui::Button("Heatmap", ImVec2(75,0))){
+    if(ImGui::Button("Apply##238", ImVec2(75,0))){
       if(sceneManager->is_atLeastOneMesh()){
         heatmapManager->set_HeatMap(mesh);
       }
     }
     ImGui::SameLine();
-
-    ImGui::PushItemWidth(75);
-    static int style_idx = 0;
-    if (ImGui::Combo("##1", &style_idx, "Is\0dist\0cos(It)\0It\0")){
-        heatmapManager->set_HeatMapField(style_idx);
-    }
-    if(ImGui::Button("Palette", ImVec2(75,0))){
-      if(mesh->intensity.heatmap){
-        heatmapManager->plot_colorPalette(mesh);
-      }
-    }
-    ImGui::SameLine();
-
-    //Normalize heatmap
-    static bool normalizeON = false;
-    if(ImGui::Checkbox("Normalized", &normalizeON)){
-      heatmapManager->set_normalized(normalizeON);
-    }
 
     //Heatmap all
     static bool heatAll = false;
@@ -141,6 +132,24 @@ void GUI_option::option_heatmap(){
       if(sceneManager->is_atLeastOneMesh()){
         heatAll = !heatAll;
         heatmapManager->set_HeatMap_all(heatAll);
+      }
+    }
+
+    ImGui::SetNextItemWidth(75);
+    static int style_idx = 0;
+    if (ImGui::Combo("##1", &style_idx, "Is\0dist\0cos(It)\0It\0")){
+        heatmapManager->set_HeatMapField(style_idx);
+    }
+    ImGui::SameLine();
+
+    //Normalize heatmap
+    bool* normalizeON = heatmapManager->get_param_Normalized();
+    ImGui::Checkbox("Normalized", normalizeON);
+
+    //Display palette color
+    if(ImGui::Button("Palette", ImVec2(75,0))){
+      if(mesh->intensity.heatmap){
+        heatmapManager->plot_colorPalette(mesh);
       }
     }
 
@@ -232,9 +241,10 @@ void GUI_option::option_parameters(){
     }
 
     //Point size
+    ImGui::Columns(2);
     ImGui::AlignTextToFramePadding();
-    ImGui::Text("Points size:");
-    ImGui::SameLine();
+    ImGui::Text("Points size ");
+    ImGui::NextColumn();
     static int cpt_pts = 1;
     float spacing = style.ItemInnerSpacing.x;
     ImGui::PushButtonRepeat(true);
@@ -251,11 +261,12 @@ void GUI_option::option_parameters(){
     ImGui::PopButtonRepeat();
     ImGui::SameLine();
     ImGui::Text("%d", cpt_pts);
+    ImGui::NextColumn();
 
     //Normals size
     ImGui::AlignTextToFramePadding();
-    ImGui::Text("Normal size:");
-    ImGui::SameLine();
+    ImGui::Text("Normal size ");
+    ImGui::NextColumn();
     static int cpt_nor = 1;
     float spacing_n = style.ItemInnerSpacing.x;
     ImGui::PushButtonRepeat(true);
@@ -276,6 +287,7 @@ void GUI_option::option_parameters(){
     ImGui::PopButtonRepeat();
     ImGui::SameLine();
     ImGui::Text("%d", cpt_nor);
+    ImGui::Columns(1);
 
     //---------------------------
     ImGui::Separator();

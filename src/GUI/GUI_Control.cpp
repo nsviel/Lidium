@@ -154,7 +154,7 @@ void GUI_control::control_keyboard_oneAction(){
   for (int i = 0; i < IM_ARRAYSIZE(io.KeysDown); i++){
     //Esc key
     if(ImGui::IsKeyPressed(256)){
-      glfwSetWindowShouldClose(window, true);
+      engineManager->Exit();
     }
 
     //I key - ICP
@@ -167,8 +167,10 @@ void GUI_control::control_keyboard_oneAction(){
 
     //Tab key
     if (ImGui::IsKeyPressed(258)){
+      bool* highlightON = extractionManager->get_highlightON();
+      *highlightON = false;
+
       //Select the next cloud in the list
-      extractionManager->set_highlightON(false);
       sceneManager->select_nextMesh();
       break;
     }

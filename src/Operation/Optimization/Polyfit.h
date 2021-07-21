@@ -7,13 +7,47 @@
 #include <boost/numeric/ublas/matrix.hpp>
 #include <boost/numeric/ublas/lu.hpp>
 
-//https://gist.github.com/chrisengelsma/108f7ab0a746323beaaf7d6634cf4add
+/**
+ * PURPOSE:
+ *
+ *  Polynomial Regression aims to fit a non-linear relationship to a set of
+ *  points. It approximates this by solving a series of linear equations using
+ *  a least-squares approach.
+ *
+ *  We can model the expected value y as an nth degree polynomial, yielding
+ *  the general polynomial regression model:
+ *
+ *  y = a0 + a1 * x + a2 * x^2 + ... + an * x^n
+ *
+ * LICENSE:
+ *
+ * MIT License
+ *
+ * Copyright (c) 2020 Chris Engelsma
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *
+ * @author Chris Engelsma
+ * https://gist.github.com/chrisengelsma/108f7ab0a746323beaaf7d6634cf4add
+ */
 template <class TYPE>
-std::vector<TYPE> polyfit(
-  const std::vector<TYPE> & x,
-  const std::vector<TYPE> & y,
-  const int &               order)
-{
+std::vector<TYPE> polyfit(const std::vector<TYPE> & x, const std::vector<TYPE> & y, const int &               order){
 
   // The size of xValues and yValues should be same
   if (x.size() != y.size()) {
@@ -101,13 +135,76 @@ std::vector<TYPE> polyfit(
   return a;
 }
 
+/**
+ * Created by Patrick Löber on 23.11.18.
+ * Copyright © 2018 Patrick Loeber. All rights reserved.
+ */
+template <typename T>
+std::vector<T> polyfit_boost(
+  const std::vector<T> &xValues,
+  const std::vector<T> &yValues,
+  const int degree,
+  const std::vector<T>& weights = std::vector<T>()){
+    using namespace boost::numeric::ublas;
+
+    if (xValues.size() != yValues.size())
+        throw std::invalid_argument("X and Y vector sizes do not match");
+
+    bool useWeights = weights.size() > 0 && weights.size() == xValues.size();
+
+    // one more because of c0 coefficient
+    int numCoefficients = degree + 1;
+
+    size_t nCount = xValues.size();
+    matrix<T> X(nCount, numCoefficients);
+    matrix<T> Y(nCount, 1);
+
+    // fill Y matrix
+    for (size_t i = 0; i < nCount; i++)
+    {
+        if (useWeights)
+            Y(i, 0) = yValues[i] * weights[i];
+        else
+            Y(i, 0) = yValues[i];
+    }
+
+    // fill X matrix (Vandermonde matrix)
+    for (size_t nRow = 0; nRow < nCount; nRow++)
+    {
+        T nVal = 1.0f;
+        for (int nCol = 0; nCol < numCoefficients; nCol++)
+        {
+            if (useWeights)
+                X(nRow, nCol) = nVal * weights[nRow];
+            else
+                X(nRow, nCol) = nVal;
+            nVal *= xValues[nRow];
+        }
+    }
+
+    // transpose X matrix
+    matrix<T> Xt(trans(X));
+    // multiply transposed X matrix with X matrix
+    matrix<T> XtX(prec_prod(Xt, X));
+    // multiply transposed X matrix with Y matrix
+    matrix<T> XtY(prec_prod(Xt, Y));
+
+    // lu decomposition
+    permutation_matrix<int> pert(XtX.size1());
+    const std::size_t singular = lu_factorize(XtX, pert);
+    // must be singular
+    assert(singular == 0);
+
+    // backsubstitution
+    lu_substitute(XtX, pert, XtY);
+
+    // copy the result to coeff
+    return std::vector<T>(XtY.data().begin(), XtY.data().end());
+}
+
 //Homemade function
 template <class TYPE>
-vector<TYPE> polyfit_homemade(
-  const vector<TYPE>& vec_x,
-  const vector<TYPE>& vec_y,
-  const int& n)
-{
+vector<TYPE> polyfit_homemade(const vector<TYPE>& vec_x, const vector<TYPE>& vec_y, const int& n){
   //Checking
   if(vec_x.size() != vec_y.size()) {
     throw std::invalid_argument( "The size of x & y arrays are different" );
@@ -197,70 +294,6 @@ vector<TYPE> polyfit_homemade(
   }
 
   return coeffs;
-}
-
-//https://github.com/patLoeber/Polyfit/tree/8ebea0ee4480c293d556e4061fa549c98218693c
-template <typename T>
-std::vector<T> polyfit_boost(
-  const std::vector<T> &xValues,
-  const std::vector<T> &yValues,
-  const int degree,
-  const std::vector<T>& weights = std::vector<T>()){
-    using namespace boost::numeric::ublas;
-
-    if (xValues.size() != yValues.size())
-        throw std::invalid_argument("X and Y vector sizes do not match");
-
-    bool useWeights = weights.size() > 0 && weights.size() == xValues.size();
-
-    // one more because of c0 coefficient
-    int numCoefficients = degree + 1;
-
-    size_t nCount = xValues.size();
-    matrix<T> X(nCount, numCoefficients);
-    matrix<T> Y(nCount, 1);
-
-    // fill Y matrix
-    for (size_t i = 0; i < nCount; i++)
-    {
-        if (useWeights)
-            Y(i, 0) = yValues[i] * weights[i];
-        else
-            Y(i, 0) = yValues[i];
-    }
-
-    // fill X matrix (Vandermonde matrix)
-    for (size_t nRow = 0; nRow < nCount; nRow++)
-    {
-        T nVal = 1.0f;
-        for (int nCol = 0; nCol < numCoefficients; nCol++)
-        {
-            if (useWeights)
-                X(nRow, nCol) = nVal * weights[nRow];
-            else
-                X(nRow, nCol) = nVal;
-            nVal *= xValues[nRow];
-        }
-    }
-
-    // transpose X matrix
-    matrix<T> Xt(trans(X));
-    // multiply transposed X matrix with X matrix
-    matrix<T> XtX(prec_prod(Xt, X));
-    // multiply transposed X matrix with Y matrix
-    matrix<T> XtY(prec_prod(Xt, Y));
-
-    // lu decomposition
-    permutation_matrix<int> pert(XtX.size1());
-    const std::size_t singular = lu_factorize(XtX, pert);
-    // must be singular
-    assert(singular == 0);
-
-    // backsubstitution
-    lu_substitute(XtX, pert, XtY);
-
-    // copy the result to coeff
-    return std::vector<T>(XtY.data().begin(), XtY.data().end());
 }
 
 //Eigen based

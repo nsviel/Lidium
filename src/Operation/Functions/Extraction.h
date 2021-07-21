@@ -34,7 +34,7 @@ public:
 
   //Setters / Getters
   inline void set_sliceON(bool value){this->sliceON = value;}
-  inline void set_highlightON(bool value){this->highlightON = value;}
+  inline bool* get_highlightON(){return &highlightON;}
   inline list<subpart*>* get_listParts(){return list_part;}
 
 private:

@@ -48,32 +48,29 @@ void GUI_menuBar::MenuBar_menus(){
   //-------------------------
 
   if (ImGui::BeginMenu("File")){
-    if (ImGui::MenuItem("Open","ctrl+w")){
+    if (ImGui::MenuItem("Open")){
       opeManager->loading();
     }
-    if (ImGui::MenuItem("Open parameters")){
+    if (ImGui::MenuItem("Open options")){
       *gui_winManager->get_show_openOptions() = true;
     }
 
-    if (ImGui::MenuItem("Save as","ctrl+s")){
+    if (ImGui::MenuItem("Save as")){
       opeManager->saving();
-    }
-    if (ImGui::MenuItem("Save options")){
-      *gui_winManager->get_show_saveOptions() = true;
     }
     if (ImGui::MenuItem("Save all")){
       opeManager->allSaving();
     }
-    if(ImGui::MenuItem("Remove", "Suppr")){
+    if(ImGui::MenuItem("Remove cloud", "Suppr")){
       sceneManager->removeCloud(sceneManager->get_selectedMesh());
     }
     if(ImGui::MenuItem("Remove all")){
       sceneManager->removeCloud_all();
     }
-    if(ImGui::MenuItem("Next","tab")){
+    if(ImGui::MenuItem("Next cloud","tab")){
       sceneManager->select_nextMesh();
     }
-    if(ImGui::MenuItem("Center","c")){
+    if(ImGui::MenuItem("Center cloud")){
       if(!sceneManager->is_listMeshEmpty()){
         Mesh* mesh = sceneManager->get_selectedMesh();
         Transforms transformManager;
@@ -81,8 +78,13 @@ void GUI_menuBar::MenuBar_menus(){
         sceneManager->update_CloudPosition(mesh);
       }
     }
-    if(ImGui::MenuItem("Reset","r")){
+    if(ImGui::MenuItem("Reset scene","r")){
       opeManager->reset();
+    }
+
+    ImGui::Separator();
+    if (ImGui::MenuItem("Quit")){
+      engineManager->Exit();
     }
 
     ImGui::EndMenu();
@@ -96,21 +98,6 @@ void GUI_menuBar::MenuBar_menus(){
   }
   if (ImGui::BeginMenu("Operation")){
     this->MenuBar_Operations();
-    ImGui::EndMenu();
-  }
-  if(ImGui::BeginMenu("Modules")){
-    //Radiometric correction
-    bool* module_corr =  gui_leftPanelManager->get_module_correction();
-    ImGui::Checkbox("Radio correction", module_corr);
-
-    //Radiometric correction
-    bool* module_match =  gui_leftPanelManager->get_module_matching();
-    ImGui::Checkbox("Matching", module_match);
-
-    //Radiometric correction
-    bool* module_regis =  gui_leftPanelManager->get_module_registration();
-    ImGui::Checkbox("Registration", module_regis);
-
     ImGui::EndMenu();
   }
   if(ImGui::BeginMenu("Init")){
@@ -146,7 +133,6 @@ void GUI_menuBar::MenuBar_icons(){
     if(sceneManager->is_atLeastOneMesh()){
       //Apply heatmap
       Mesh* mesh = sceneManager->get_selectedMesh();
-      heatmapManager->set_normalized(false);
       heatmapManager->set_HeatMap(mesh);
 
       //Heatmap window
@@ -175,63 +161,17 @@ void GUI_menuBar::MenuBar_icons(){
 void GUI_menuBar::MenuBar_fastScene(){
   //---------------------------
 
-  //Simple clouds
+  //Two Buddha point cloud to register
   if(ImGui::Button("Buddha", ImVec2(100,0))){
     opeManager->fastScene(0);
   }
-  ImGui::SameLine();
+  //Two Torus point cloud to register
   if(ImGui::Button("Torus", ImVec2(100,0))){
     opeManager->fastScene(1);
   }
-
-  //AB clouds
-  if(ImGui::Button("AB sparse", ImVec2(100,0))){
-    opeManager->fastScene(2);
-  }
-  ImGui::SameLine();
-  if(ImGui::Button("AB dense", ImVec2(100,0))){
-    opeManager->fastScene(3);
-  }
-
-  //Sphere calibration targets
-  if(ImGui::Button("Spheres S3-80°", ImVec2(100,0))){
-    opeManager->fastScene(4);
-  }
-  ImGui::SameLine();
-  if(ImGui::Button("Spheres+add-80°", ImVec2(100,0))){
-    opeManager->fastScene(5);
-  }
-
-  //Spectralon calibration targets
-  if(ImGui::Button("Spect. distance", ImVec2(100,0))){
-    opeManager->fastScene(6);
-  }
-  ImGui::SameLine();
-  if(ImGui::Button("Spect. angle", ImVec2(100,0))){
-    opeManager->fastScene(7);
-  }
-  if(ImGui::Button("Spect. complete", ImVec2(100,0))){
-    opeManager->fastScene(8);
-  }
-  ImGui::SameLine();
+  //A Spectralon point cloud to test radiometric correction
   if(ImGui::Button("Spectralon 5m", ImVec2(100,0))){
-    opeManager->fastScene(9);
-  }
-
-  //Test clouds for keypoint matching
-  if(ImGui::Button("Keyp AB_12", ImVec2(100,0))){
-    opeManager->fastScene(13);
-  }
-  ImGui::SameLine();
-  if(ImGui::Button("Keyp AB_11", ImVec2(100,0))){
-    opeManager->fastScene(14);
-  }
-  if(ImGui::Button("Chapelle 01-03", ImVec2(100,0))){
-    opeManager->fastScene(16);
-  }
-  ImGui::SameLine();
-  if(ImGui::Button("Tableau 01-03", ImVec2(100,0))){
-    opeManager->fastScene(17);
+    opeManager->fastScene(2);
   }
 
   //---------------------------
@@ -240,34 +180,9 @@ void GUI_menuBar::MenuBar_Operations(){
   Mesh* mesh = sceneManager->get_selectedMesh();
   //---------------------------
 
-  if(ImGui::Button("File treatment", ImVec2(150,0))){
-    bool* bool_ptr = gui_winManager->get_show_fileTreatment();
-    *bool_ptr = !*bool_ptr;
-  }
-  if(ImGui::Button("Extract cloud", ImVec2(150,0))){
-    bool* bool_ptr = gui_winManager->get_show_extractCloud();
-    *bool_ptr = !*bool_ptr;
-  }
-  if(ImGui::Button("Cut cloud", ImVec2(150,0))){
-    bool* bool_ptr = gui_winManager->get_show_cutCloud();
-    *bool_ptr = !*bool_ptr;
-  }
-  if(ImGui::Button("Selection", ImVec2(150,0))){
-    bool* bool_ptr = gui_winManager->get_show_selection();
-    *bool_ptr = !*bool_ptr;
-  }
+  //Functions
   if(ImGui::Button("Filter", ImVec2(150,0))){
     bool* bool_ptr = gui_winManager->get_show_filtering();
-    *bool_ptr = !*bool_ptr;
-  }
-  if(ImGui::Button("Merge clouds", ImVec2(150,0))){
-    if(sceneManager->get_listMeshSize() >= 2){
-      Mesh* mesh_2 = sceneManager->get_otherMesh();
-      extractionManager->fct_merging_newCloud(mesh, mesh_2);
-    }
-  }
-  if(ImGui::Button("Normal", ImVec2(150,0))){
-    bool* bool_ptr = gui_winManager->get_show_normal();
     *bool_ptr = !*bool_ptr;
   }
   if(ImGui::Button("Intensity", ImVec2(150,0))){
@@ -278,17 +193,48 @@ void GUI_menuBar::MenuBar_Operations(){
     bool* bool_ptr = gui_winManager->get_show_color();
     *bool_ptr = !*bool_ptr;
   }
-  if(ImGui::Button("Data", ImVec2(150,0))){
-    bool* bool_ptr = gui_winManager->get_show_dataOpe();
+  if(ImGui::Button("Normal", ImVec2(150,0))){
+    bool* bool_ptr = gui_winManager->get_show_normal();
     *bool_ptr = !*bool_ptr;
   }
-  if(ImGui::Button("Fitting", ImVec2(150,0))){
-    bool* bool_ptr = gui_winManager->get_show_fitting();
+  if(ImGui::Button("Extract cloud", ImVec2(150,0))){
+    bool* bool_ptr = gui_winManager->get_show_extractCloud();
+    *bool_ptr = !*bool_ptr;
+  }
+  if(ImGui::Button("Cut cloud", ImVec2(150,0))){
+    bool* bool_ptr = gui_winManager->get_show_cutCloud();
     *bool_ptr = !*bool_ptr;
   }
   if(ImGui::Button("Transformation", ImVec2(150,0))){
     bool* bool_ptr = gui_winManager->get_show_transformation();
     *bool_ptr = !*bool_ptr;
+  }
+
+  /*if(ImGui::Button("Selection", ImVec2(150,0))){
+    bool* bool_ptr = gui_winManager->get_show_selection();
+    *bool_ptr = !*bool_ptr;
+  }*/
+  /*if(ImGui::Button("Data", ImVec2(150,0))){
+    bool* bool_ptr = gui_winManager->get_show_dataOpe();
+    *bool_ptr = !*bool_ptr;
+  }*/
+  /*if(ImGui::Button("Fitting", ImVec2(150,0))){
+    bool* bool_ptr = gui_winManager->get_show_fitting();
+    *bool_ptr = !*bool_ptr;
+  }*/
+
+  if(ImGui::CollapsingHeader("Modules")){
+    //Radiometric correction
+    bool* module_corr =  gui_leftPanelManager->get_module_correction();
+    ImGui::Checkbox("Radio correction", module_corr);
+
+    //Radiometric correction
+    bool* module_match =  gui_leftPanelManager->get_module_matching();
+    ImGui::Checkbox("Matching", module_match);
+
+    //Radiometric correction
+    bool* module_regis =  gui_leftPanelManager->get_module_registration();
+    ImGui::Checkbox("Registration", module_regis);
   }
 
   //---------------------------

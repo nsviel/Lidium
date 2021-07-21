@@ -14,13 +14,13 @@ public:
   ~Filter();
 
 public:
-  void randSampling(Mesh* mesh);
-  void outlierRemoval(Mesh* mesh);
-  void statisticalRemoval(Mesh* mesh);
-  void spaceSampling_PCL(Mesh* mesh);
-  void spaceSampling(Mesh* mesh, float resolution);
-  void filterByAngle(Mesh* mesh, float sampleAngle);
-  void sphereCleaning_all();
+  void sampling_random(Mesh* mesh);
+  void sampling_outlier(Mesh* mesh);
+  void sampling_statistical(Mesh* mesh);
+  void sampling_spaceRadius_PCL(Mesh* mesh);
+  void sampling_spaceRadius(Mesh* mesh, float resolution);
+  void filter_maxAngle(Mesh* mesh, float sampleAngle);
+  void filter_sphereCleaning();
 
   //Setters / Getters
   inline void set_sampling(int value){this->samplingPercent = value;}

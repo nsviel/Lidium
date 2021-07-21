@@ -346,7 +346,7 @@ void Attribut::set_enhancedColor(Mesh* mesh){
   //---------------------------
   sceneManager->update_CloudColor(mesh);
 }
-void Attribut::set_pointsRandomColor(Mesh* mesh){
+void Attribut::set_randomizeAllPointsColor(Mesh* mesh){
   vector<vec4>& RGB = mesh->color.OBJ;
   //---------------------------
 
@@ -360,7 +360,6 @@ void Attribut::set_pointsRandomColor(Mesh* mesh){
   }
 
   //---------------------------
-  mesh->color.Initial = RGB;
 }
 void Attribut::set_restoreInitialColor(Mesh* mesh){
   vector<vec4>& RGB_o = mesh->color.OBJ;
@@ -379,16 +378,16 @@ void Attribut::compute_normals(Mesh* mesh){
   //---------------------------
 
   if(mesh->Name.find("Sphere") != std::string::npos || mesh->Name.find("sphere") != std::string::npos){
-    this->compute_sphereNormals(mesh);
+    this->compute_normals_sphere(mesh);
   }else if(mesh->Name.find("Spectralon") != std::string::npos || mesh->Name.find("spectralon") != std::string::npos){
-    this->compute_planeNormals_fitting(mesh);
+    this->compute_normals_planFitting(mesh);
   }else{
-    this->compute_normalPCL(mesh);
+    this->compute_normals_PCL(mesh);
   }
 
   //---------------------------
 }
-void Attribut::compute_normalPCL(Mesh* mesh){
+void Attribut::compute_normals_PCL(Mesh* mesh){
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud = glm_to_pcl_XYZ(mesh);
   tic();
   //---------------------------
@@ -425,9 +424,58 @@ void Attribut::compute_normalPCL(Mesh* mesh){
 
   //---------------------------
   float duration = toc();
-  console.AddLog("Normal for %s computed in %.2f s", mesh->Name.c_str(), duration);
+  console.AddLog("Normal for %s computed in %.2f ms", mesh->Name.c_str(), duration);
 }
-void Attribut::compute_sphereNormals(Mesh* mesh){
+void Attribut::compute_normals_Hough(Mesh* mesh){
+  vector<vec3>& XYZ = mesh->location.OBJ;
+  vector<vec3>& Nxyz = mesh->normal.OBJ;
+
+  int K = 100;
+  int T = 1000;
+  int n_phi = 15;
+  int n_rot = 5;
+  bool ua = false;
+  float tol_angle_rad = 0.79;
+  int k_density = 5;
+
+  tic();
+  //-------------------------
+
+  //Convert to Eigen cloud
+  Eigen::MatrixX3d pc = Eigen::MatrixX3d::Zero(XYZ.size(),3);
+  Eigen::MatrixX3d normals = Eigen::MatrixX3d::Zero(XYZ.size(),3);
+  for(int i=0; i<XYZ.size(); i++){
+    for(int j=0; j<3; j++){
+      pc(i,j) = XYZ[i][j];
+      normals(i,j) = Nxyz[i][j];
+    }
+  }
+
+  //Compute normals
+  Eigen_Normal_Estimator ne(pc,normals);
+  ne.set_K(K);
+  ne.set_T(T);
+  ne.set_density_sensitive(ua);
+  ne.set_n_phi(n_phi);
+  ne.set_n_rot(n_rot);
+  ne.set_tol_angle_rad(tol_angle_rad);
+  ne.set_K_density(k_density);
+  ne.estimate_normals();
+
+  //Convert to glm cloud
+  Nxyz.clear();
+  for(int i=0; i<XYZ.size(); i++){
+    Nxyz.push_back(vec3(normals(i,0), normals(i,1), normals(i,2)));
+  }
+
+  //---------------------------
+  mesh->normal.Initial = Nxyz;
+  mesh->normal.hasData = true;
+
+  float duration = toc();
+  console.AddLog("Normal for %s computed in %.2f ms", mesh->Name.c_str(), duration);
+}
+void Attribut::compute_normals_sphere(Mesh* mesh){
   vector<vec3>& XYZ = mesh->location.OBJ;
   vector<float>& dist = mesh->attribut.dist;
   tic();
@@ -465,9 +513,9 @@ void Attribut::compute_sphereNormals(Mesh* mesh){
 
   //---------------------------
   float duration = toc();
-  console.AddLog("Normal for %s computed in %.2f s", mesh->Name.c_str(), duration);
+  console.AddLog("Normal for %s computed in %.2f ms", mesh->Name.c_str(), duration);
 }
-void Attribut::compute_planeNormals_Xaxis(Mesh* mesh){
+void Attribut::compute_normals_planXaxis(Mesh* mesh){
   vector<vec3>& XYZ = mesh->location.OBJ;
   vector<vec3>& Nxyz = mesh->normal.OBJ;
   vec3 norm, Point;
@@ -489,7 +537,7 @@ void Attribut::compute_planeNormals_Xaxis(Mesh* mesh){
   mesh->normal.Initial = Nxyz;
   mesh->normal.hasData = true;
 }
-void Attribut::compute_planeNormals_Yaxis(Mesh* mesh){
+void Attribut::compute_normals_planYaxis(Mesh* mesh){
   vector<vec3>& XYZ = mesh->location.OBJ;
   vector<vec3>& Nxyz = mesh->normal.OBJ;
   vec3 norm, Point;
@@ -511,7 +559,7 @@ void Attribut::compute_planeNormals_Yaxis(Mesh* mesh){
   mesh->normal.Initial = Nxyz;
   mesh->normal.hasData = true;
 }
-void Attribut::compute_planeNormals_Zaxis(Mesh* mesh){
+void Attribut::compute_normals_planZaxis(Mesh* mesh){
   vector<vec3>& XYZ = mesh->location.OBJ;
   vector<vec3>& Nxyz = mesh->normal.OBJ;
   vec3 norm, Point;
@@ -533,7 +581,7 @@ void Attribut::compute_planeNormals_Zaxis(Mesh* mesh){
   mesh->normal.Initial = Nxyz;
   mesh->normal.hasData = true;
 }
-void Attribut::compute_planeNormals_fitting(Mesh* mesh){
+void Attribut::compute_normals_planFitting(Mesh* mesh){
   vector<vec3>& XYZ = mesh->location.OBJ;
   vector<vec3>& Nxyz = mesh->normal.OBJ;
   tic();
@@ -567,13 +615,13 @@ void Attribut::compute_planeNormals_fitting(Mesh* mesh){
   mesh->normal.hasData = true;
 
   //Reoriente normal in the origin direction
-  this->compute_normalReorientation(mesh);
+  this->compute_normals_reorientToOrigin(mesh);
 
   //---------------------------
   float duration = toc();
-  console.AddLog("Normal for %s computed in %.2f s", mesh->Name.c_str(), duration);
+  console.AddLog("Normal for %s computed in %.2f ms", mesh->Name.c_str(), duration);
 }
-void Attribut::compute_normalInversion(){
+void Attribut::compute_normals_invert(){
   if(sceneManager->is_atLeastOneMesh()){
     Mesh* mesh = sceneManager->get_selectedMesh();
     vector<vec3>& normals = mesh->normal.OBJ;
@@ -589,61 +637,10 @@ void Attribut::compute_normalInversion(){
     //---------------------------
   }
 }
-void Attribut::compute_normalsHough(Mesh* mesh){
+void Attribut::compute_normals_reorientToOrigin(Mesh* mesh){
   vector<vec3>& XYZ = mesh->location.OBJ;
   vector<vec3>& Nxyz = mesh->normal.OBJ;
-  //---------------------------
-
-  int K = 100;
-  int T = 1000;
-  int n_phi = 15;
-  int n_rot = 5;
-  bool ua = false;
-  float tol_angle_rad = 0.79;
-  int k_density = 5;
-
-  cout<<"Normals computation start ..."<<endl;
-  double time_nrl;
-  glfwSetTime(time_nrl);
-  //-------------------------
-
-  //Convert to Eigen cloud
-  Eigen::MatrixX3d pc = Eigen::MatrixX3d::Zero(XYZ.size(),3);
-  Eigen::MatrixX3d normals = Eigen::MatrixX3d::Zero(XYZ.size(),3);
-  for(int i=0; i<XYZ.size(); i++){
-    for(int j=0; j<3; j++){
-      pc(i,j) = XYZ[i][j];
-      normals(i,j) = Nxyz[i][j];
-    }
-  }
-
-  //Compute normals
-  Eigen_Normal_Estimator ne(pc,normals);
-  ne.set_K(K);
-  ne.set_T(T);
-  ne.set_density_sensitive(ua);
-  ne.set_n_phi(n_phi);
-  ne.set_n_rot(n_rot);
-  ne.set_tol_angle_rad(tol_angle_rad);
-  ne.set_K_density(k_density);
-  ne.estimate_normals();
-
-  //Convert to glm cloud
-  Nxyz.clear();
-  for(int i=0; i<XYZ.size(); i++){
-    Nxyz.push_back(vec3(normals(i,0), normals(i,1), normals(i,2)));
-  }
-
-  //---------------------------
-  mesh->normal.Initial = Nxyz;
-  mesh->normal.hasData = true;
-  time_nrl = glfwGetTime();
-  cout<<"Normals computation stop in "<<time_nrl<<" s"<<endl;
-}
-void Attribut::compute_normalReorientation(Mesh* mesh){
-  vector<vec3>& XYZ = mesh->location.OBJ;
-  vector<vec3>& Nxyz = mesh->normal.OBJ;
-  //---------------------------
+  //---------------------------5
 
   float dist_XYZ, dist_Nxyz;
   for(int i=0; i<XYZ.size(); i++){

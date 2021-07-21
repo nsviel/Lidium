@@ -650,7 +650,7 @@ void Selection::Spectralon_computeAttibutes(Mesh* mesh){
   this->Spectralon_ABpoints(mesh);
   float angle = transformManager->make_alignAxisY_AB(mesh, A, B);
   sceneManager->update_CloudPosition(mesh);
-  attribManager->compute_planeNormals_Xaxis(mesh);
+  attribManager->compute_normals_planXaxis(mesh);
 
   vec3 rotation = vec3(0, 0, -angle);
   transformManager->make_rotation(mesh, mesh->location.COM, rotation);

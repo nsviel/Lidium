@@ -27,7 +27,7 @@ public:
   //Color
   void set_pointCloudColor(Mesh* mesh, vec4 RGBA);
   void set_enhancedColor(Mesh* mesh);
-  void set_pointsRandomColor(Mesh* mesh);
+  void set_randomizeAllPointsColor(Mesh* mesh);
   void set_restoreInitialColor(Mesh* mesh);
   void set_colorRGB_all();
   void set_colorRGB(Mesh* mesh);
@@ -36,15 +36,16 @@ public:
 
   //Normal
   void compute_normals(Mesh* mesh);
-  void compute_normalPCL(Mesh* mesh);
-  void compute_sphereNormals(Mesh* mesh);
-  void compute_normalInversion();
-  void compute_planeNormals_Xaxis(Mesh* mesh);
-  void compute_planeNormals_Yaxis(Mesh* mesh);
-  void compute_planeNormals_Zaxis(Mesh* mesh);
-  void compute_planeNormals_fitting(Mesh* mesh);
-  void compute_normalsHough(Mesh* mesh);
-  void compute_normalReorientation(Mesh* mesh);
+  void compute_normals_PCL(Mesh* mesh);
+  void compute_normals_Hough(Mesh* mesh);
+  void compute_normals_sphere(Mesh* mesh);
+  void compute_normals_invert();
+  void compute_normals_reorientToOrigin(Mesh* mesh);
+  void compute_normals_planXaxis(Mesh* mesh);
+  void compute_normals_planYaxis(Mesh* mesh);
+  void compute_normals_planZaxis(Mesh* mesh);
+  void compute_normals_planFitting(Mesh* mesh);
+
   void compute_cosIt(Mesh* mesh);
   void compute_checkForNan(Mesh* mesh);
 

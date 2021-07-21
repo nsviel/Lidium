@@ -49,7 +49,6 @@ public:
   void window_normal();
   void window_intensity();
   void window_color();
-  void window_fileTreatment();
   void window_dataOpe();
   void window_heatmap();
 
@@ -75,7 +74,6 @@ public:
   inline bool* get_show_normal(){return &show_normal;}
   inline bool* get_show_intensity(){return &show_intensity;}
   inline bool* get_show_color(){return &show_color;}
-  inline bool* get_show_fileTreatment(){return &show_fileTreatment;}
   inline bool* get_show_dataOpe(){return &show_dataOpe;}
   inline bool* get_cloud_movement(){return &cloud_movement;}
 
@@ -94,6 +92,7 @@ private:
   Plotting* plotManager;
   Fitting* fitManager;
   Operation* opeManager;
+  Extraction* extractionManager;
   Transforms transformManager;
 
   bool show_asciiData;
@@ -111,7 +110,6 @@ private:
   bool show_normal;
   bool show_intensity;
   bool show_color;
-  bool show_fileTreatment;
   bool show_dataOpe;
   bool cloud_movement;
 };

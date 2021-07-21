@@ -44,7 +44,7 @@ void Plotting::Clear(){
 
 //Curves
 void Plotting::plot_Curve(vector<float>& Xd, vector<float>& Yd){
-  Gnuplot gp("tee '../data/graphs/" + namePlot + ".gp' | gnuplot -persist");
+  Gnuplot gp("tee '../media/data/graphs/" + namePlot + ".gp' | gnuplot -persist");
   //---------------------------
 
   gp << "set terminal wxt\n";
@@ -69,7 +69,7 @@ void Plotting::plot_Curve(vector<float>& Xd, vector<float>& Yd){
   this->Clear();
 }
 void Plotting::plot_Curve_discret(vector<int>& Xd, vector<float>& Yd){
-  Gnuplot gp("tee '../data/graphs/" + namePlot + ".gp' | gnuplot -persist");
+  Gnuplot gp("tee '../media/data/graphs/" + namePlot + ".gp' | gnuplot -persist");
   //---------------------------
 
   gp << "set terminal wxt\n";
@@ -94,7 +94,7 @@ void Plotting::plot_Curve_discret(vector<int>& Xd, vector<float>& Yd){
   this->Clear();
 }
 void Plotting::plot_CurveError(vector<float>& Xd, vector<float>& Yd, vector<float>& err){
-  Gnuplot gp("tee '../data/graphs/" + namePlot + ".gp' | gnuplot -persist");
+  Gnuplot gp("tee '../media/data/graphs/" + namePlot + ".gp' | gnuplot -persist");
   //---------------------------
 
   gp << "set term wxt enhanced font ',10'\n";
@@ -119,7 +119,7 @@ void Plotting::plot_CurveError(vector<float>& Xd, vector<float>& Yd, vector<floa
   this->Clear();
 }
 void Plotting::plot_CurveError_cross(vector<float>& Xd, vector<float>& Yd, vector<float>& err_v, vector<float>& err_h){
-  Gnuplot gp("tee '../data/graphs/" + namePlot + ".gp' | gnuplot -persist");
+  Gnuplot gp("tee '../media/data/graphs/" + namePlot + ".gp' | gnuplot -persist");
   //---------------------------
 
   gp << "set grid\n"; //Grid
@@ -143,7 +143,7 @@ void Plotting::plot_CurveError_cross(vector<float>& Xd, vector<float>& Yd, vecto
   this->Clear();
 }
 void Plotting::plot_CurveErrorLine(vector<float>& Xd, vector<float>& Yd, vector<float>& err){
-  Gnuplot gp("tee '../data/graphs/" + namePlot + ".gp' | gnuplot -persist");
+  Gnuplot gp("tee '../media/data/graphs/" + namePlot + ".gp' | gnuplot -persist");
   //--------------------------
 
   gp << "set grid\n"; //Grid
@@ -169,7 +169,7 @@ void Plotting::plot_CurveErrorLine(vector<float>& Xd, vector<float>& Yd, vector<
   this->Clear();
 }
 void Plotting::plot_2Curves(vector<float>& X1d, vector<float>& Y1d, vector<float>& X2d, vector<float>& Y2d){
-  Gnuplot gp("tee '../data/graphs/" + namePlot + ".gp' | gnuplot -persist");
+  Gnuplot gp("tee '../media/data/graphs/" + namePlot + ".gp' | gnuplot -persist");
   //---------------------------
 
   gp << "set grid\n"; //Grid
@@ -198,7 +198,7 @@ void Plotting::plot_2Curves(vector<float>& X1d, vector<float>& Y1d, vector<float
   this->Clear();
 }
 void Plotting::plot_2CurvesError(vector<float>& X1d, vector<float>& Y1d, vector<float>& err, vector<float>& X2d, vector<float>& Y2d){
-  Gnuplot gp("tee '../data/graphs/" + namePlot + ".gp' | gnuplot -persist");
+  Gnuplot gp("tee '../media/data/graphs/" + namePlot + ".gp' | gnuplot -persist");
   //---------------------------
 
   gp << "set grid\n"; //Grid
@@ -227,7 +227,7 @@ void Plotting::plot_2CurvesError(vector<float>& X1d, vector<float>& Y1d, vector<
   this->Clear();
 }
 void Plotting::plot_Curve_Multi(vector<vector<float>>& Xd, vector<vector<float>>& Yd){
-  Gnuplot gp("tee '../data/graphs/" + namePlot + ".gp' | gnuplot -persist");
+  Gnuplot gp("tee '../media/data/graphs/" + namePlot + ".gp' | gnuplot -persist");
   //---------------------------
 
   gp << "set grid\n";
@@ -262,7 +262,7 @@ void Plotting::plot_Curve_Multi(vector<vector<float>>& Xd, vector<vector<float>>
 }
 void Plotting::plot_Curve_Multi_crossErr(vector<vector<float>>& Xd,
   vector<vector<float>>& Yd, vector<vector<float>>& err_v, vector<vector<float>>& err_h){
-  Gnuplot gp("tee '../data/graphs/" + namePlot + ".gp' | gnuplot -persist");
+  Gnuplot gp("tee '../media/data/graphs/" + namePlot + ".gp' | gnuplot -persist");
   //---------------------------
 
   gp << "set grid\n";
@@ -296,7 +296,7 @@ void Plotting::plot_Curve_Multi_crossErr(vector<vector<float>>& Xd,
   this->Clear();
 }
 void Plotting::plot_Curve_Multi_Err(vector<vector<float>>& Xd, vector<vector<float>>& Yd, vector<vector<float>>& err){
-  Gnuplot gp("tee '../data/graphs/" + namePlot + ".gp' | gnuplot -persist");
+  Gnuplot gp("tee '../media/data/graphs/" + namePlot + ".gp' | gnuplot -persist");
   //---------------------------
 
   gp << "set terminal wxt\n";
@@ -331,7 +331,7 @@ void Plotting::plot_Curve_Multi_Err(vector<vector<float>>& Xd, vector<vector<flo
   this->Clear();
 }
 void Plotting::plot_Curve_lin(vector<float>& Xd, vector<float>& Yd){
-  Gnuplot gp("tee '../data/graphs/" + namePlot + ".gp' | gnuplot -persist");
+  Gnuplot gp("tee '../media/data/graphs/" + namePlot + ".gp' | gnuplot -persist");
   //---------------------------
 
   gp << "set grid\n"; //Grid
@@ -354,7 +354,7 @@ void Plotting::plot_Curve_lin(vector<float>& Xd, vector<float>& Yd){
 
 //Regression
 void Plotting::plot_Regression(vector<float>& Xd, vector<float>& Y1d, vector<float>& Y2d){
-  Gnuplot gp("tee '../data/graphs/" + namePlot + ".gp' | gnuplot -persist");
+  Gnuplot gp("tee '../media/data/graphs/" + namePlot + ".gp' | gnuplot -persist");
   //---------------------------
 
   gp << "set grid\n"; //Grid
@@ -380,7 +380,7 @@ void Plotting::plot_Regression(vector<float>& Xd, vector<float>& Y1d, vector<flo
   this->Clear();
 }
 void Plotting::plot_2Regression(vector<float>& Xd, vector<float>& Y1d1, vector<float>& Y2d1,vector<float>& Y1d2, vector<float>& Y2d2){
-  Gnuplot gp("tee '../data/graphs/" + namePlot + ".gp' | gnuplot -persist");
+  Gnuplot gp("tee '../media/data/graphs/" + namePlot + ".gp' | gnuplot -persist");
   //---------------------------
 
   gp << "set grid\n"; //Grid
@@ -414,7 +414,7 @@ void Plotting::plot_2Regression(vector<float>& Xd, vector<float>& Y1d1, vector<f
   this->Clear();
 }
 void Plotting::plot_MultipleCurveRegression(vector<float>& Xd, vector<float>& Y1d, vector<float>& Y2d, vector<float>& Y3d, vector<float>& Y4d, vector<float>& regr){
-  Gnuplot gp("tee '../data/graphs/" + namePlot + ".gp' | gnuplot -persist");
+  Gnuplot gp("tee '../media/data/graphs/" + namePlot + ".gp' | gnuplot -persist");
   //---------------------------
 
   gp << "set grid\n"; //Grid
@@ -446,7 +446,7 @@ void Plotting::plot_MultipleCurveRegression(vector<float>& Xd, vector<float>& Y1
   this->Clear();
 }
 void Plotting::plot_MultipleCurveRegression_tot(vector<float>& Xd, vector<float>& Y1d, vector<float>& Y2d, vector<float>& Y3d, vector<float>& Y4d, vector<float>& Reg1, vector<float>& Reg2, vector<float>& Reg3, vector<float>& Reg4){
-  Gnuplot gp("tee '../data/graphs/" + namePlot + ".gp' | gnuplot -persist");
+  Gnuplot gp("tee '../media/data/graphs/" + namePlot + ".gp' | gnuplot -persist");
   //---------------------------
 
   gp << "set grid\n"; //Grid
@@ -484,7 +484,7 @@ void Plotting::plot_MultipleCurveRegression_tot(vector<float>& Xd, vector<float>
   this->Clear();
 }
 void Plotting::plot_CurveErrorRegression(vector<float>& Xd, vector<float>& Y1d, vector<float>& Y2d, vector<float>& err){
-  Gnuplot gp("tee '../data/graphs/" + namePlot + ".gp' | gnuplot -persist");
+  Gnuplot gp("tee '../media/data/graphs/" + namePlot + ".gp' | gnuplot -persist");
   //---------------------------
 
   gp << "set grid\n"; //Grid
@@ -512,7 +512,7 @@ void Plotting::plot_CurveErrorRegression(vector<float>& Xd, vector<float>& Y1d, 
 
 //Histograms
 void Plotting::plot_histogram(vector<float>& Xd){
-  Gnuplot gp("tee '../data/graphs/" + namePlot + ".gp' | gnuplot -persist");
+  Gnuplot gp("tee '../media/data/graphs/" + namePlot + ".gp' | gnuplot -persist");
   //---------------------------
 
   gp << "set grid\n"; //Grid
@@ -544,7 +544,7 @@ void Plotting::plot_histogram(vector<float>& Xd){
   this->Clear();
 }
 void Plotting::plot_2histograms(vector<float>& X1d, vector<float>& X2d){
-  Gnuplot gp("tee '../data/graphs/" + namePlot + ".gp' | gnuplot -persist");
+  Gnuplot gp("tee '../media/data/graphs/" + namePlot + ".gp' | gnuplot -persist");
   //---------------------------
 
   gp << "set grid\n"; //Grid
@@ -658,7 +658,7 @@ void Plotting::plot_3Dmap_vec3(vector<vec3> vec_in){
   this->Clear();
 }
 void Plotting::plot_3Dmap(vector<vector<float>>& Xd, vector<vector<float>>& Yd, vector<vector<float>>& Zd){
-  Gnuplot gp("tee '../data/graphs/" + namePlot + ".gp' | gnuplot -persist");
+  Gnuplot gp("tee '../media/data/graphs/" + namePlot + ".gp' | gnuplot -persist");
   //---------------------------
 
   gp << "set grid\n"; //Grid
@@ -855,7 +855,7 @@ void Plotting::plot_3DmapSpaceParameter(vector<float>& Xd, vector<float>& Yd, ve
   this->Clear();
 }
 void Plotting::plot_3DmapRegression_mat(MatrixXf& mat){
-  Gnuplot gp("tee '../data/graphs/" + namePlot + ".gp' | gnuplot -persist");
+  Gnuplot gp("tee '../media/data/graphs/" + namePlot + ".gp' | gnuplot -persist");
   //---------------------------
 
   //Create file data
@@ -884,7 +884,7 @@ void Plotting::plot_3DmapRegression_mat(MatrixXf& mat){
   this->Clear();
 }
 void Plotting::plot_3DmapOnlyRegression(vector<float>& Xd, vector<float>& Yd, vector<float>& Zd_su){
-  Gnuplot gp("tee '../data/graphs/" + namePlot + ".gp' | gnuplot -persist");
+  Gnuplot gp("tee '../media/data/graphs/" + namePlot + ".gp' | gnuplot -persist");
   //---------------------------
 
   gp << "set terminal wxt\n";

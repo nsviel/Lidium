@@ -1,26 +1,25 @@
-# LidarSoft
-**Open source 3D OpenGL based point cloud vizualizer and processing.**
+# Lidium
+**Open source 3D point cloud processing.**
 
 ## file format
 
-Read .PTS, .PTX, .PLY, .OBJ.
-
-Export in .PTS.
+Import: .PTS, .PTX, .PLY, .OBJ
+Export: .PTS
  
 ## External libraries :
-- Eigen : some maths
-- Gnuplot : data visualization
-- ImGui : GUI
-- FLANN : neirest neighbor search
-- PCL : point cloud processing
-- OpenMP : threading
-- Icons : FontAwesome
+- Eigen: Some maths
+- Gnuplot: Data visualization
+- ImGui: Graphical user interface
+- FLANN: Nearest neighbor search
+- PCL: point cloud processing
+- OpenMP: threading
+- FontAwesome: Icons
 
 ## Installation : 
 
 Simply run the script file 
 ```
-cd /Dunesand
+cd /Lidium
 ./install.sh
 ```
 

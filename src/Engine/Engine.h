@@ -41,6 +41,7 @@ public:
   //Program functions
   void init();
   void loop();
+  void Exit();
 
   //Subfunctions
   void draw_things();

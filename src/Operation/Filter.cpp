@@ -27,13 +27,14 @@ Filter::Filter(Scene* scene){
 Filter::~Filter(){}
 
 //Functions
-void Filter::randSampling(Mesh* mesh){
+void Filter::sampling_random(Mesh* mesh){
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud = glm_to_pcl_XYZ(mesh);
-  int size = mesh->NbPoints;
+  int size_before = mesh->NbPoints;
+  tic();
   //---------------------------
 
   //Retrieve left number of points
-  float leftPts = size * (float(samplingPercent)/100);
+  float leftPts = size_before * (float(samplingPercent)/100);
 
   //Sampling
   pcl::RandomSample<pcl::PointXYZ> RS(true);
@@ -46,10 +47,14 @@ void Filter::randSampling(Mesh* mesh){
   //---------------------------
   attribManager->make_supressPoints(mesh, indices);
   sceneManager->update_allCloudData(mesh);
-  cout<<"Sampling : "<<size<<" -> "<<mesh->location.OBJ.size()<<endl;
+
+  float duration = toc();
+  int size_filtered = mesh->location.OBJ.size();
+  console.AddLog("Random sampling %s : %i -> %i points (%.2f ms)", mesh->Name.c_str(), size_before, size_filtered, duration);
 }
-void Filter::spaceSampling_PCL(Mesh* mesh){
-  int size = mesh->NbPoints;
+void Filter::sampling_spaceRadius_PCL(Mesh* mesh){
+  int size_before = mesh->NbPoints;
+  tic();
   //---------------------------
 
   //Filtering
@@ -70,11 +75,14 @@ void Filter::spaceSampling_PCL(Mesh* mesh){
   sceneManager->update_allCloudData(mesh);
 
   //---------------------------
-  cout<<"Filtering outliers : "<<size<<" -> "<<mesh->location.OBJ.size()<<endl;
+  float duration = toc();
+  int size_filtered = mesh->location.OBJ.size();
+  console.AddLog("Space sampling %s : %i -> %i points (%.2f ms)", mesh->Name.c_str(), size_before, size_filtered, duration);
 }
-void Filter::outlierRemoval(Mesh* mesh){
+void Filter::sampling_outlier(Mesh* mesh){
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud = glm_to_pcl_XYZ(mesh);
-  int size = mesh->NbPoints;
+  int size_before = mesh->NbPoints;
+  tic();
   //---------------------------
 
   //Filtering
@@ -90,12 +98,16 @@ void Filter::outlierRemoval(Mesh* mesh){
   //---------------------------
   attribManager->make_supressPoints(mesh, indices);
   sceneManager->update_allCloudData(mesh);
-  cout<<"Filtering outliers : "<<size<<" -> "<<mesh->location.OBJ.size()<<endl;
+
+  float duration = toc();
+  int size_filtered = mesh->location.OBJ.size();
+  console.AddLog("Filter outliers %s : %i -> %i points (%.2f ms)", mesh->Name.c_str(), size_before, size_filtered, duration);
 }
-void Filter::statisticalRemoval(Mesh* mesh){
+void Filter::sampling_statistical(Mesh* mesh){
   //http://pointclouds.org/documentation/tutorials/statistical_outlier.php
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud = glm_to_pcl_XYZ(mesh);
-  int size = mesh->NbPoints;
+  int size_before = mesh->NbPoints;
+  tic();
   //---------------------------
 
   //Filtering
@@ -109,13 +121,18 @@ void Filter::statisticalRemoval(Mesh* mesh){
   //---------------------------
   attribManager->make_supressPoints(mesh, indices);
   sceneManager->update_allCloudData(mesh);
-  cout<<"Filtering outliers : "<<size<<" -> "<<mesh->location.OBJ.size()<<endl;
+
+  float duration = toc();
+  int size_filtered = mesh->location.OBJ.size();
+  console.AddLog("Statistical sampling %s : %i -> %i points (%.2f ms)", mesh->Name.c_str(), size_before, size_filtered, duration);
 }
-void Filter::spaceSampling(Mesh* mesh, float radius){
+void Filter::sampling_spaceRadius(Mesh* mesh, float radius){
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud = glm_to_pcl_XYZ(mesh);
   vector<vec3>& XYZ = mesh->location.OBJ;
   vec3 min = mesh->location.Min;
   vec3 max = mesh->location.Max;
+  int size_before = mesh->NbPoints;
+  tic();
   //---------------------------
 
   pcl::octree::OctreePointCloudSearch<pcl::PointXYZ> octree(radius);
@@ -158,11 +175,16 @@ void Filter::spaceSampling(Mesh* mesh, float radius){
   sort(id_supp.begin(), id_supp.end());
   attribManager->make_supressPoints(mesh, id_supp);
   sceneManager->update_allCloudData(mesh);
+
+  float duration = toc();
+  int size_filtered = mesh->location.OBJ.size();
+  console.AddLog("Space sampling (%.2f°) %s : %i -> %i points (%.2f ms)", radius, mesh->Name.c_str(), size_before, size_filtered, duration);
 }
-void Filter::filterByAngle(Mesh* mesh, float angleMax){
+void Filter::filter_maxAngle(Mesh* mesh, float angleMax){
   attribManager->compute_meshAttributs(mesh);
   vector<float>& It = mesh->attribut.It;
-  cout<<"Filtering by angle ("<< angleMax <<"° max) "<<mesh->Name<<" : "<<mesh->NbPoints<<flush;
+  int size_before = mesh->NbPoints;
+  tic();
   //---------------------------
 
   vector<int> idx;
@@ -172,11 +194,15 @@ void Filter::filterByAngle(Mesh* mesh, float angleMax){
     }
   }
 
-  //---------------------------
+  //Supress points with angle superior to the limit
   attribManager->make_supressPoints(mesh, idx);
-  cout<<" -> "<<mesh->NbPoints<<endl;
+
+  //---------------------------
+  float duration = toc();
+  int size_filtered = mesh->location.OBJ.size();
+  console.AddLog("Filter by angle (%.2f°) %s : %i -> %i points (%.2f ms)", angleMax, mesh->Name.c_str(), size_before, size_filtered, duration);
 }
-void Filter::sphereCleaning_all(){
+void Filter::filter_sphereCleaning(){
   list<Mesh*>* list_Mesh = sceneManager->get_listMesh();
   float r = sphereDiameter/2;
   float err = r/20;

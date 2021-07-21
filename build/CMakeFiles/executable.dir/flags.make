@@ -6,5 +6,5 @@ CXX_FLAGS =   -O3 -DNDEBUG   -fopenmp -msse4.2 -mfpmath=sse -std=gnu++17
 
 CXX_DEFINES = -DDISABLE_LIBUSB -DDISABLE_PCAP -DDISABLE_PNG -Dqh_QHpointer -DvtkRenderingCore_AUTOINIT="3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)"
 
-CXX_INCLUDES = -I/home/ns/Desktop/DUNE/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11 
+CXX_INCLUDES = -I/home/ns/Desktop/Lidium/../extern -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11 
 

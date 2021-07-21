@@ -132,8 +132,13 @@ void Extraction::fct_cutCloud(Mesh* mesh){
     }
   }
 
-  //---------------------------
+  //Supress non selected points
   attribManager->make_supressPoints(mesh, idx);
+
+  //Reorder data
+  mesh->color.Buffer =mesh->color.OBJ;
+
+  //---------------------------
   sceneManager->update_allCloudData(mesh);
 }
 void Extraction::fct_cutCloud_all(){
@@ -151,16 +156,19 @@ void Extraction::fct_cutCloud_all(){
     vector<int> idx;
 
     //Take values between sliceMin and sliceMax
-    for (int i=0; i<XYZ.size(); i++)
+    for (int i=0; i<XYZ.size(); i++){
       if(XYZ[i].x < min.x || XYZ[i].x > max.x ||
         XYZ[i].y < min.y || XYZ[i].y > max.y ||
-        XYZ[i].z < min.z || XYZ[i].z > max.z)
-      {
+        XYZ[i].z < min.z || XYZ[i].z > max.z){
         idx.push_back(i);
       }
+    }
 
+    //Supress non selected points
     attribManager->make_supressPoints(mesh, idx);
-    sceneManager->update_allCloudData(mesh);
+
+    //Reorder data
+    mesh->color.Buffer =mesh->color.OBJ;
   }
 
   //---------------------------
@@ -170,7 +178,7 @@ void Extraction::fct_highlighting(Mesh* mesh){
   vec3 min = mesh->location.Min;
   vector<vec3>& pos = mesh->location.OBJ;
   vector<vec4>& color = mesh->color.OBJ;
-  const vector<vec4>& RGB = mesh->color.Initial;
+  vector<vec4>& RGB = mesh->color.Buffer;
   //---------------------------
 
   if(highlightON == true){
@@ -180,13 +188,11 @@ void Extraction::fct_highlighting(Mesh* mesh){
         pos[i].z >= min.z &&
         pos[i].x <= max.x &&
         pos[i].y <= max.y &&
-        pos[i].z <= max.z)
-      {
+        pos[i].z <= max.z){
         //Qualify color according to previous unlighting color
         color[i] = vec4(1,color[i].y,color[i].z,1);
       }
-      else
-      {
+      else{
         //Restaure original color
         color[i] = RGB[i];
       }
@@ -401,8 +407,7 @@ void Extraction::set_AABB_max(vec3 max_in){
   vec3 diff = max - min;
   vec3 max_out;
 
-  for(int i=0; i<3; i++)
-  {
+  for(int i=0; i<3; i++){
     if(max_in[i] > 100) max_in[i] = 100;
     if(max_in[i] <= 0) diff[i] = 0;
     else diff[i] = diff[i] * max_in[i]/100;

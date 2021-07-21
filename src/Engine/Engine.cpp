@@ -77,6 +77,10 @@ void Engine::loop(){
 
   //---------------------------
 }
+void Engine::Exit(){
+  GLFWwindow* window = dimManager->get_window();
+  glfwSetWindowShouldClose(window, true);
+}
 
 //Subfunctions
 void Engine::draw_things(){

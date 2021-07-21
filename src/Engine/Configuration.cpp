@@ -39,7 +39,7 @@ void Configuration::initialize_configStruct(){
   //---------------------------
 
   //Windows
-  strcpy(configuration.WINDOW_Title, "LIDWARE");
+  strcpy(configuration.WINDOW_Title, "LIDIUM");
   configuration.WINDOW_InitResWidth = 1024;
   configuration.WINDOW_InitResHeight = 600;
   configuration.WINDOW_Resolution = 4.0f/3.0f;
