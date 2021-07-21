@@ -24,21 +24,16 @@ LiDAR (Light Detection and Ranging) sensors give huge amount of data, which gene
 
 # Statement of need
 
-`Lidium` is designed as a laboratory software to be used by both LiDAR researchers and by geomatic students for the manipulation and algorithm prototyping applied to point cloud data. This software is distinguished of the other open source solutions as CloudCompare (http://www.cloudcompare.org/) or Meshlab (https://www.meshlab.net/) by provinding aa lightweight and hackable framework to LiDAR data visualization and processing, with a focus on the point cloud registration step and the radiometric correction of the intensity information. 
+`Lidium` is designed as a laboratory software to be used by both LiDAR researchers and by geomatic students for the manipulation and algorithm prototyping applied to point cloud data. This software is distinguished of the other open source solutions as CloudCompare (http://www.cloudcompare.org/) or Meshlab (https://www.meshlab.net/) by provinding a lightweight and hackable framework to LiDAR data visualization and processing, with a focus on the point cloud registration step and the radiometric correction of the intensity information. This software aim to make 3D numerisation a way more accessible, as an alternative solution from proprietary software.
 
-by incorporate reasearch algorithms to radiometric correction the intenisty measured by LiDAR scanner. However, the intensity is scanner-dependant and measure are to be taken with the user specific LiDAR with calirbation targets in order to get advantage from the present algorithms. A corrected intensity could be usefull in a large field of application : autonomous car for obstacle detection, clustering/segmentation, material or structure detection and recognition. The algorithms are described by @sanchiz_2021.
+The main difficulty of the three-dimensional reconstruction from the acquired point clouds, is the registration step. This one consists in the identification of the proper geometrical transformations allowing to regroup the point clouds in a common coordinate system. To do this, it is necessary to identify correspondences between the common areas of the clouds. This difficult problem concentrates the efforts of the research community. We use here an additional information acquired by the LiDAR, the intensity, as a discriminant element. This information is, by nature, insensible at external illuminations and related to the reflectance of the scanned material. However, the intensity is not widely used practically. Some effects induced by measure geometrical parameters and internal scanner treatments, make it strongly dependent to the viewpoint of the measure [@Kashani_2015]. 
 
-The critical step of the point cloud registration problem is the matching step, wich consist in the identification of correspondences between two point clouds. The corrected intensity, used with keypoint algorithms (SIFT, SHOT, RANSAC) give good results to resolve this problematic stage. An implementation of an ICP based registration pipeline is provided and separated from the matching step. These algorithms are fully adjustable to test parameters and methods. As an alternative solution from proprietary software, we aim to make 3D numerisation a way more accessible.
+We propose several approaches of radiometric correction and calibration, which under certain conditions, allow to make the intensity independent from the viewpoint and to convert it in a linear scale. A corrected intensity could also be usefull in a large field of application : autonomous car for obstacle detection, clustering/segmentation, material or structure detection and recognition. 'Lidium' incorporate some research algorithms to procede with the radiometric correction and calibration of this intensity. However, the intensity is scanner-dependant and the dataset used for the correction have to be made with the LiDAR of the user to get advantage of the present algorithms. The methodology and some algorithms are described in @sanchiz_2021.
 
-All of the code is written in C++, for performance purpose. The incorporated external libraries come from the open source world:
--OpenGL (https://www.opengl.org): Data visualization
--ImGui (https://github.com/ocornut/imgui): Graphical user interface
--PCL (https://pointclouds.org/): a set of processing algorithms
--Eigen (https://eigen.tuxfamily.org/): Some linear algebra
--FLANN (https://github.com/flann-lib/flann) & Nanoflann (https://github.com/jlblancoc/nanoflann) : to improve the nearest neighbor search speed
--Gnuplot (http://www.gnuplot.info/): Graphical data visualization
--OptimLib (https://www.kthohr.com/optimlib.html): Numerical optimization methods
--normals_Hough (https://github.com/aboulch/normals_Hough): Method for normal estimation
+The use of this corrected or calibrated intensity in a registration pipeline show an increasing number of identified correspondences between two point clouds with the corrected or calibrated intensity. The corrected intensity, used with keypoint algorithms (SIFT, SHOT, RANSAC) give significant results to resolve this problematic stage. An implementation of an ICP based registration pipeline is provided with a separated matching step. These algorithms are fully adjustable to test parameters and methods adjustement. 
+
+All the code is made in C++, for performance purpose. The point cloud visualization is made with OpenGL and the data graphic generater is made with Gnuplot [@Gnuplot_2013]. Also, some external librairies as PCL [@Pcl_2011], FLANN [@flann_2009] and Eigen [@Eigen_2010] are diversely used for specific treatments.
+
 
 # Acknowledgements
 

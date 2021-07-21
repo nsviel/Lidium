@@ -18,8 +18,8 @@ All of the code is written in C++, for performance purpose. The incorporated ext
 - Gnuplot (http://www.gnuplot.info/): Graphical data visualization
 - OptimLib (https://www.kthohr.com/optimlib.html): Numerical optimization methods
 - normals_Hough (https://github.com/aboulch/normals_Hough): Method for normal estimation
-- OpenMP: threading
-- FontAwesome: Icons
+- OpenMP (https://www.openmp.org/): Multithreading
+- FontAwesome (https://fontawesome.com/): Icons
 
 
 ## Installation : 
