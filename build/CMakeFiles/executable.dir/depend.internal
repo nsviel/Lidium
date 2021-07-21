@@ -312,7 +312,6 @@ CMakeFiles/executable.dir/src/Engine/Configuration.cpp.o
 CMakeFiles/executable.dir/src/Engine/Dimension.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -344,7 +343,6 @@ CMakeFiles/executable.dir/src/Engine/Dimension.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Dimension.cpp
  /home/ns/Desktop/Lidium/src/Engine/Dimension.h
  /home/ns/Desktop/Lidium/src/Parameters.h
@@ -586,7 +584,6 @@ CMakeFiles/executable.dir/src/Engine/Dimension.cpp.o
 CMakeFiles/executable.dir/src/Engine/Engine.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -618,7 +615,6 @@ CMakeFiles/executable.dir/src/Engine/Engine.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Configuration.h
  /home/ns/Desktop/Lidium/src/Engine/Dimension.h
  /home/ns/Desktop/Lidium/src/Engine/Engine.cpp
@@ -884,7 +880,6 @@ CMakeFiles/executable.dir/src/Engine/Engine.cpp.o
 CMakeFiles/executable.dir/src/Engine/Glyphs.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -916,7 +911,6 @@ CMakeFiles/executable.dir/src/Engine/Glyphs.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Glyphs.cpp
  /home/ns/Desktop/Lidium/src/Engine/Glyphs.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PCD.h
@@ -1165,7 +1159,6 @@ CMakeFiles/executable.dir/src/Engine/Glyphs.cpp.o
 CMakeFiles/executable.dir/src/Engine/OpenGL/Camera.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -1197,7 +1190,6 @@ CMakeFiles/executable.dir/src/Engine/OpenGL/Camera.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Dimension.h
  /home/ns/Desktop/Lidium/src/Engine/OpenGL/Camera.cpp
  /home/ns/Desktop/Lidium/src/Engine/OpenGL/Camera.h
@@ -1440,7 +1432,6 @@ CMakeFiles/executable.dir/src/Engine/OpenGL/Camera.cpp.o
 CMakeFiles/executable.dir/src/Engine/OpenGL/CoreGLengine.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -1472,7 +1463,6 @@ CMakeFiles/executable.dir/src/Engine/OpenGL/CoreGLengine.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Configuration.h
  /home/ns/Desktop/Lidium/src/Engine/Dimension.h
  /home/ns/Desktop/Lidium/src/Engine/Engine.h
@@ -1720,7 +1710,6 @@ CMakeFiles/executable.dir/src/Engine/OpenGL/CoreGLengine.cpp.o
 CMakeFiles/executable.dir/src/Engine/OpenGL/FrameBuffer.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -1752,7 +1741,6 @@ CMakeFiles/executable.dir/src/Engine/OpenGL/FrameBuffer.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/OpenGL/FrameBuffer.cpp
  /home/ns/Desktop/Lidium/src/Engine/OpenGL/FrameBuffer.h
  /home/ns/Desktop/Lidium/src/Parameters.h
@@ -1994,7 +1982,6 @@ CMakeFiles/executable.dir/src/Engine/OpenGL/FrameBuffer.cpp.o
 CMakeFiles/executable.dir/src/Engine/OpenGL/Shader.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -2026,7 +2013,6 @@ CMakeFiles/executable.dir/src/Engine/OpenGL/Shader.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/OpenGL/Shader.cpp
  /home/ns/Desktop/Lidium/src/Engine/OpenGL/Shader.h
  /home/ns/Desktop/Lidium/src/Parameters.h
@@ -2268,7 +2254,6 @@ CMakeFiles/executable.dir/src/Engine/OpenGL/Shader.cpp.o
 CMakeFiles/executable.dir/src/Engine/OpenGL/Textures.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -2300,7 +2285,6 @@ CMakeFiles/executable.dir/src/Engine/OpenGL/Textures.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/extern/std_image.h
  /home/ns/Desktop/Lidium/src/Engine/OpenGL/Textures.cpp
  /home/ns/Desktop/Lidium/src/Engine/OpenGL/Textures.h
@@ -2543,7 +2527,6 @@ CMakeFiles/executable.dir/src/Engine/OpenGL/Textures.cpp.o
 CMakeFiles/executable.dir/src/Engine/Scene.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -2575,7 +2558,6 @@ CMakeFiles/executable.dir/src/Engine/Scene.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Glyphs.h
  /home/ns/Desktop/Lidium/src/Engine/Scene.cpp
  /home/ns/Desktop/Lidium/src/Engine/Scene.h
@@ -2825,7 +2807,6 @@ CMakeFiles/executable.dir/src/Engine/Scene.cpp.o
 CMakeFiles/executable.dir/src/GUI/GUI.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -2857,7 +2838,6 @@ CMakeFiles/executable.dir/src/GUI/GUI.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Dimension.h
  /home/ns/Desktop/Lidium/src/Engine/Engine.h
  /home/ns/Desktop/Lidium/src/Engine/OpenGL/Camera.h
@@ -3115,7 +3095,6 @@ CMakeFiles/executable.dir/src/GUI/GUI.cpp.o
 CMakeFiles/executable.dir/src/GUI/GUI_Consol.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -3147,7 +3126,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Consol.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Dimension.h
  /home/ns/Desktop/Lidium/src/Engine/Engine.h
  /home/ns/Desktop/Lidium/src/GUI/GUI_Consol.cpp
@@ -3391,7 +3369,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Consol.cpp.o
 CMakeFiles/executable.dir/src/GUI/GUI_Control.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -3423,7 +3400,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Control.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Dimension.h
  /home/ns/Desktop/Lidium/src/Engine/Engine.h
  /home/ns/Desktop/Lidium/src/Engine/Glyphs.h
@@ -3688,7 +3664,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Control.cpp.o
 CMakeFiles/executable.dir/src/GUI/GUI_LeftPanel.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -3720,7 +3695,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_LeftPanel.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Dimension.h
  /home/ns/Desktop/Lidium/src/Engine/Engine.h
  /home/ns/Desktop/Lidium/src/Engine/Scene.h
@@ -3976,7 +3950,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_LeftPanel.cpp.o
 CMakeFiles/executable.dir/src/GUI/GUI_Matching.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -4008,7 +3981,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Matching.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Engine.h
  /home/ns/Desktop/Lidium/src/Engine/Glyphs.h
  /home/ns/Desktop/Lidium/src/Engine/Scene.h
@@ -4270,7 +4242,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Matching.cpp.o
 CMakeFiles/executable.dir/src/GUI/GUI_MenuBar.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -4302,7 +4273,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_MenuBar.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Engine.h
  /home/ns/Desktop/Lidium/src/Engine/OpenGL/Textures.h
  /home/ns/Desktop/Lidium/src/Engine/Scene.h
@@ -4560,7 +4530,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_MenuBar.cpp.o
 CMakeFiles/executable.dir/src/GUI/GUI_Option.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -4592,7 +4561,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Option.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Engine.h
  /home/ns/Desktop/Lidium/src/Engine/Glyphs.h
  /home/ns/Desktop/Lidium/src/Engine/Scene.h
@@ -4848,7 +4816,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Option.cpp.o
 CMakeFiles/executable.dir/src/GUI/GUI_Radiometry.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -4880,7 +4847,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Radiometry.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Engine.h
  /home/ns/Desktop/Lidium/src/Engine/Scene.h
  /home/ns/Desktop/Lidium/src/GUI/GUI_Radiometry.cpp
@@ -5145,7 +5111,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Radiometry.cpp.o
 CMakeFiles/executable.dir/src/GUI/GUI_Registration.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -5177,7 +5142,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Registration.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Engine.h
  /home/ns/Desktop/Lidium/src/Engine/Glyphs.h
  /home/ns/Desktop/Lidium/src/Engine/Scene.h
@@ -5433,7 +5397,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Registration.cpp.o
 CMakeFiles/executable.dir/src/GUI/GUI_windows.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -5465,7 +5428,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_windows.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Engine.h
  /home/ns/Desktop/Lidium/src/Engine/Glyphs.h
  /home/ns/Desktop/Lidium/src/Engine/OpenGL/Camera.h
@@ -5728,7 +5690,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_windows.cpp.o
 CMakeFiles/executable.dir/src/Load/Format/file_PCD.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -5760,7 +5721,6 @@ CMakeFiles/executable.dir/src/Load/Format/file_PCD.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Load/Format/file_PCD.cpp
  /home/ns/Desktop/Lidium/src/Load/Format/file_PCD.h
  /home/ns/Desktop/Lidium/src/Parameters.h
@@ -6019,7 +5979,6 @@ CMakeFiles/executable.dir/src/Load/Format/file_PCD.cpp.o
 CMakeFiles/executable.dir/src/Load/Format/file_PLY.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -6051,7 +6010,6 @@ CMakeFiles/executable.dir/src/Load/Format/file_PLY.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Load/Format/file_PLY.cpp
  /home/ns/Desktop/Lidium/src/Load/Format/file_PLY.h
  /home/ns/Desktop/Lidium/src/Parameters.h
@@ -6293,7 +6251,6 @@ CMakeFiles/executable.dir/src/Load/Format/file_PLY.cpp.o
 CMakeFiles/executable.dir/src/Load/Format/file_PTS.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -6325,7 +6282,6 @@ CMakeFiles/executable.dir/src/Load/Format/file_PTS.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Load/Format/file_PTS.cpp
  /home/ns/Desktop/Lidium/src/Load/Format/file_PTS.h
  /home/ns/Desktop/Lidium/src/Parameters.h
@@ -6567,7 +6523,6 @@ CMakeFiles/executable.dir/src/Load/Format/file_PTS.cpp.o
 CMakeFiles/executable.dir/src/Load/Format/file_PTX.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -6599,7 +6554,6 @@ CMakeFiles/executable.dir/src/Load/Format/file_PTX.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Load/Format/file_PTX.cpp
  /home/ns/Desktop/Lidium/src/Load/Format/file_PTX.h
  /home/ns/Desktop/Lidium/src/Parameters.h
@@ -6841,7 +6795,6 @@ CMakeFiles/executable.dir/src/Load/Format/file_PTX.cpp.o
 CMakeFiles/executable.dir/src/Load/Loader.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -6873,7 +6826,6 @@ CMakeFiles/executable.dir/src/Load/Loader.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Load/Format/file_PCD.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PLY.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PTS.h
@@ -7137,7 +7089,6 @@ CMakeFiles/executable.dir/src/Load/Loader.cpp.o
 CMakeFiles/executable.dir/src/Load/dataExtraction.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -7169,7 +7120,6 @@ CMakeFiles/executable.dir/src/Load/dataExtraction.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Load/dataExtraction.cpp
  /home/ns/Desktop/Lidium/src/Load/dataExtraction.h
  /home/ns/Desktop/Lidium/src/Parameters.h
@@ -7411,7 +7361,6 @@ CMakeFiles/executable.dir/src/Load/dataExtraction.cpp.o
 CMakeFiles/executable.dir/src/Operation/Attribut.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -7443,7 +7392,6 @@ CMakeFiles/executable.dir/src/Operation/Attribut.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Scene.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PCD.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PLY.h
@@ -7731,7 +7679,6 @@ CMakeFiles/executable.dir/src/Operation/Attribut.cpp.o
 CMakeFiles/executable.dir/src/Operation/Filter.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -7763,7 +7710,6 @@ CMakeFiles/executable.dir/src/Operation/Filter.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Scene.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PCD.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PLY.h
@@ -8089,7 +8035,6 @@ CMakeFiles/executable.dir/src/Operation/Filter.cpp.o
 CMakeFiles/executable.dir/src/Operation/Functions/BundleByClass.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -8121,7 +8066,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/BundleByClass.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Operation/Functions/BundleByClass.cpp
  /home/ns/Desktop/Lidium/src/Operation/Functions/BundleByClass.h
  /home/ns/Desktop/Lidium/src/Parameters.h
@@ -8363,7 +8307,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/BundleByClass.cpp.o
 CMakeFiles/executable.dir/src/Operation/Functions/CoordTransform.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -8395,7 +8338,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/CoordTransform.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Dimension.h
  /home/ns/Desktop/Lidium/src/Engine/OpenGL/Camera.h
  /home/ns/Desktop/Lidium/src/Operation/Functions/CoordTransform.cpp
@@ -8639,7 +8581,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/CoordTransform.cpp.o
 CMakeFiles/executable.dir/src/Operation/Functions/Extraction.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -8671,7 +8612,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/Extraction.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Scene.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PCD.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PLY.h
@@ -8921,7 +8861,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/Extraction.cpp.o
 CMakeFiles/executable.dir/src/Operation/Functions/Heatmap.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -8953,7 +8892,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/Heatmap.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Scene.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PCD.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PLY.h
@@ -9203,7 +9141,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/Heatmap.cpp.o
 CMakeFiles/executable.dir/src/Operation/Functions/NearestNeighbors.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -9235,7 +9172,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/NearestNeighbors.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Operation/Functions/NearestNeighbors.cpp
  /home/ns/Desktop/Lidium/src/Operation/Functions/NearestNeighbors.h
  /home/ns/Desktop/Lidium/src/Parameters.h
@@ -9477,7 +9413,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/NearestNeighbors.cpp.o
 CMakeFiles/executable.dir/src/Operation/Functions/RegionGrowing.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -9509,7 +9444,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/RegionGrowing.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Scene.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PCD.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PLY.h
@@ -9780,7 +9714,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/RegionGrowing.cpp.o
 CMakeFiles/executable.dir/src/Operation/Functions/Segmentation.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -9812,7 +9745,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/Segmentation.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Operation/Functions/Segmentation.cpp
  /home/ns/Desktop/Lidium/src/Operation/Functions/Segmentation.h
  /home/ns/Desktop/Lidium/src/Parameters.h
@@ -10171,7 +10103,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/Segmentation.cpp.o
 CMakeFiles/executable.dir/src/Operation/Functions/Selection.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -10203,7 +10134,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/Selection.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Dimension.h
  /home/ns/Desktop/Lidium/src/Engine/Glyphs.h
  /home/ns/Desktop/Lidium/src/Engine/OpenGL/Camera.h
@@ -10458,7 +10388,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/Selection.cpp.o
 CMakeFiles/executable.dir/src/Operation/Operation.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -10490,7 +10419,6 @@ CMakeFiles/executable.dir/src/Operation/Operation.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Glyphs.h
  /home/ns/Desktop/Lidium/src/Engine/Scene.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PCD.h
@@ -10785,7 +10713,6 @@ CMakeFiles/executable.dir/src/Operation/Operation.cpp.o
 CMakeFiles/executable.dir/src/Operation/Optimization/Fitting.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -10817,7 +10744,6 @@ CMakeFiles/executable.dir/src/Operation/Optimization/Fitting.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Glyphs.h
  /home/ns/Desktop/Lidium/src/Engine/Scene.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PCD.h
@@ -11155,7 +11081,6 @@ CMakeFiles/executable.dir/src/Operation/Optimization/Fitting.cpp.o
 CMakeFiles/executable.dir/src/Operation/Optimization/Newton.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -11187,7 +11112,6 @@ CMakeFiles/executable.dir/src/Operation/Optimization/Newton.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Operation/Optimization/Newton.cpp
  /home/ns/Desktop/Lidium/src/Operation/Optimization/Newton.h
  /home/ns/Desktop/Lidium/src/Operation/Optimization/SpeudoInverse.h
@@ -11430,7 +11354,6 @@ CMakeFiles/executable.dir/src/Operation/Optimization/Newton.cpp.o
 CMakeFiles/executable.dir/src/Operation/Optimization/SVD.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -11462,7 +11385,6 @@ CMakeFiles/executable.dir/src/Operation/Optimization/SVD.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Operation/Optimization/SVD.cpp
  /home/ns/Desktop/Lidium/src/Operation/Optimization/SVD.h
  /home/ns/Desktop/Lidium/src/Parameters.h
@@ -11704,7 +11626,6 @@ CMakeFiles/executable.dir/src/Operation/Optimization/SVD.cpp.o
 CMakeFiles/executable.dir/src/Operation/Optimization/SpeudoInverse.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -11736,7 +11657,6 @@ CMakeFiles/executable.dir/src/Operation/Optimization/SpeudoInverse.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Operation/Optimization/SpeudoInverse.cpp
  /home/ns/Desktop/Lidium/src/Operation/Optimization/SpeudoInverse.h
  /home/ns/Desktop/Lidium/src/Parameters.h
@@ -11978,7 +11898,6 @@ CMakeFiles/executable.dir/src/Operation/Optimization/SpeudoInverse.cpp.o
 CMakeFiles/executable.dir/src/Operation/Plotting.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -12010,7 +11929,6 @@ CMakeFiles/executable.dir/src/Operation/Plotting.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Operation/Plotting.cpp
  /home/ns/Desktop/Lidium/src/Operation/Plotting.h
  /home/ns/Desktop/Lidium/src/Parameters.h
@@ -12252,7 +12170,6 @@ CMakeFiles/executable.dir/src/Operation/Plotting.cpp.o
 CMakeFiles/executable.dir/src/Operation/Transforms.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -12284,7 +12201,6 @@ CMakeFiles/executable.dir/src/Operation/Transforms.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Operation/Transforms.cpp
  /home/ns/Desktop/Lidium/src/Operation/Transforms.h
  /home/ns/Desktop/Lidium/src/Parameters.h
@@ -12526,7 +12442,6 @@ CMakeFiles/executable.dir/src/Operation/Transforms.cpp.o
 CMakeFiles/executable.dir/src/Radiometry/Correction/RadarEquation.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -12558,7 +12473,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/RadarEquation.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Operation/Plotting.h
  /home/ns/Desktop/Lidium/src/Parameters.h
  /home/ns/Desktop/Lidium/src/Radiometry/Correction/RadarEquation.cpp
@@ -12801,7 +12715,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/RadarEquation.cpp.o
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_global.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -12833,7 +12746,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_global.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Operation/Functions/BundleByClass.h
  /home/ns/Desktop/Lidium/src/Operation/Optimization/Polyfit.h
  /home/ns/Desktop/Lidium/src/Operation/Plotting.h
@@ -13080,7 +12992,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_global.cpp.o
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_local.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -13112,7 +13023,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_local.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Operation/Functions/BundleByClass.h
  /home/ns/Desktop/Lidium/src/Operation/Optimization/SpeudoInverse.h
  /home/ns/Desktop/Lidium/src/Operation/Plotting.h
@@ -13358,7 +13268,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_local.cpp.o
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_globalPiecewise.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -13390,7 +13299,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_globalPiecewise.cpp
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Operation/Functions/BundleByClass.h
  /home/ns/Desktop/Lidium/src/Operation/Plotting.h
  /home/ns/Desktop/Lidium/src/Parameters.h
@@ -13635,7 +13543,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_globalPiecewise.cpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_local.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -13667,7 +13574,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_local.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Operation/Functions/BundleByClass.h
  /home/ns/Desktop/Lidium/src/Operation/Optimization/SpeudoInverse.h
  /home/ns/Desktop/Lidium/src/Operation/Plotting.h
@@ -13913,7 +13819,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_local.cpp.o
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_segmented.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -13945,7 +13850,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_segmented.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Operation/Functions/BundleByClass.h
  /home/ns/Desktop/Lidium/src/Operation/Optimization/SpeudoInverse.h
  /home/ns/Desktop/Lidium/src/Operation/Plotting.h
@@ -14206,7 +14110,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_segmented.cpp.o
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_simplified.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -14238,7 +14141,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_simplified.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Operation/Functions/BundleByClass.h
  /home/ns/Desktop/Lidium/src/Operation/Optimization/Polyfit.h
  /home/ns/Desktop/Lidium/src/Operation/Plotting.h
@@ -14484,7 +14386,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_simplified.cpp.o
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_targeted.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -14516,7 +14417,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_targeted.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Operation/Functions/BundleByClass.h
  /home/ns/Desktop/Lidium/src/Operation/Optimization/SpeudoInverse.h
  /home/ns/Desktop/Lidium/src/Operation/Plotting.h
@@ -14762,7 +14662,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_targeted.cpp.o
 CMakeFiles/executable.dir/src/Radiometry/Linearization.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -14794,7 +14693,6 @@ CMakeFiles/executable.dir/src/Radiometry/Linearization.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Scene.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PCD.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PLY.h
@@ -15047,7 +14945,6 @@ CMakeFiles/executable.dir/src/Radiometry/Linearization.cpp.o
 CMakeFiles/executable.dir/src/Radiometry/Radiometry.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -15079,7 +14976,6 @@ CMakeFiles/executable.dir/src/Radiometry/Radiometry.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Scene.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PCD.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PLY.h
@@ -15341,7 +15237,6 @@ CMakeFiles/executable.dir/src/Radiometry/Radiometry.cpp.o
 CMakeFiles/executable.dir/src/Radiometry/Radiometry_plotting.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -15373,7 +15268,6 @@ CMakeFiles/executable.dir/src/Radiometry/Radiometry_plotting.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Scene.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PCD.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PLY.h
@@ -15632,7 +15526,6 @@ CMakeFiles/executable.dir/src/Radiometry/Radiometry_plotting.cpp.o
 CMakeFiles/executable.dir/src/Radiometry/Target/Ref_Operation.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -15664,7 +15557,6 @@ CMakeFiles/executable.dir/src/Radiometry/Target/Ref_Operation.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Operation/Functions/BundleByClass.h
  /home/ns/Desktop/Lidium/src/Operation/Optimization/Polyfit.h
  /home/ns/Desktop/Lidium/src/Parameters.h
@@ -15909,7 +15801,6 @@ CMakeFiles/executable.dir/src/Radiometry/Target/Ref_Operation.cpp.o
 CMakeFiles/executable.dir/src/Radiometry/Target/Reference.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -15941,7 +15832,6 @@ CMakeFiles/executable.dir/src/Radiometry/Target/Reference.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Load/Format/file_PCD.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PLY.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PTS.h
@@ -16190,7 +16080,6 @@ CMakeFiles/executable.dir/src/Radiometry/Target/Reference.cpp.o
 CMakeFiles/executable.dir/src/Registration/Algo_PCL.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -16222,7 +16111,6 @@ CMakeFiles/executable.dir/src/Registration/Algo_PCL.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Parameters.h
  /home/ns/Desktop/Lidium/src/Registration/Algo_PCL.cpp
  /home/ns/Desktop/Lidium/src/Registration/Algo_PCL.h
@@ -16573,7 +16461,6 @@ CMakeFiles/executable.dir/src/Registration/Algo_PCL.cpp.o
 CMakeFiles/executable.dir/src/Registration/MutualInformation.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -16605,7 +16492,6 @@ CMakeFiles/executable.dir/src/Registration/MutualInformation.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Parameters.h
  /home/ns/Desktop/Lidium/src/Registration/MutualInformation.cpp
  /home/ns/Desktop/Lidium/src/Registration/MutualInformation.h
@@ -16847,7 +16733,6 @@ CMakeFiles/executable.dir/src/Registration/MutualInformation.cpp.o
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -16879,7 +16764,6 @@ CMakeFiles/executable.dir/src/Registration/Pipeline/ICP.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Glyphs.h
  /home/ns/Desktop/Lidium/src/Operation/Optimization/SpeudoInverse.h
  /home/ns/Desktop/Lidium/src/Operation/Transforms.h
@@ -17129,7 +17013,6 @@ CMakeFiles/executable.dir/src/Registration/Pipeline/ICP.cpp.o
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Matching.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -17161,7 +17044,6 @@ CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Matching.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Parameters.h
  /home/ns/Desktop/Lidium/src/Registration/Pipeline/ICP_Matching.cpp
  /home/ns/Desktop/Lidium/src/Registration/Pipeline/ICP_Matching.h
@@ -17439,7 +17321,6 @@ CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Matching.cpp.o
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Optimization.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -17471,7 +17352,6 @@ CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Optimization.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Operation/Optimization/SpeudoInverse.h
  /home/ns/Desktop/Lidium/src/Parameters.h
  /home/ns/Desktop/Lidium/src/Registration/Pipeline/ICP_Optimization.cpp
@@ -17714,7 +17594,6 @@ CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Optimization.cpp.o
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Rejection.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -17746,7 +17625,6 @@ CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Rejection.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Parameters.h
  /home/ns/Desktop/Lidium/src/Registration/Pipeline/ICP_Rejection.cpp
  /home/ns/Desktop/Lidium/src/Registration/Pipeline/ICP_Rejection.h
@@ -17988,7 +17866,6 @@ CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Rejection.cpp.o
 CMakeFiles/executable.dir/src/Registration/Pipeline/Keypoint.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -18020,7 +17897,6 @@ CMakeFiles/executable.dir/src/Registration/Pipeline/Keypoint.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Glyphs.h
  /home/ns/Desktop/Lidium/src/Parameters.h
  /home/ns/Desktop/Lidium/src/Registration/Pipeline/Keypoint.cpp
@@ -18430,7 +18306,6 @@ CMakeFiles/executable.dir/src/Registration/Pipeline/Keypoint.cpp.o
 CMakeFiles/executable.dir/src/Registration/Registration.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -18462,7 +18337,6 @@ CMakeFiles/executable.dir/src/Registration/Registration.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/Glyphs.h
  /home/ns/Desktop/Lidium/src/Engine/Scene.h
  /home/ns/Desktop/Lidium/src/Load/Format/file_PCD.h
@@ -18720,7 +18594,6 @@ CMakeFiles/executable.dir/src/Registration/Registration.cpp.o
 CMakeFiles/executable.dir/src/main.cpp.o
  /home/ns/Desktop/Lidium/extern/IconsFontAwesome5.h
  /home/ns/Desktop/Lidium/extern/NormalHough/Normals.h
- /home/ns/Desktop/Lidium/extern/NormalHough/nanoflann.h
  /home/ns/Desktop/Lidium/extern/OptimLib/constrained/sumt.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/line_search/more_thuente.hpp
  /home/ns/Desktop/Lidium/extern/OptimLib/misc/determine_bounds_type.hpp
@@ -18752,7 +18625,6 @@ CMakeFiles/executable.dir/src/main.cpp.o
  /home/ns/Desktop/Lidium/extern/imgui/imgui.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_glfw.h
  /home/ns/Desktop/Lidium/extern/imgui/imgui_impl_opengl3.h
- /home/ns/Desktop/Lidium/extern/nanoflann.hpp
  /home/ns/Desktop/Lidium/src/Engine/OpenGL/CoreGLengine.h
  /home/ns/Desktop/Lidium/src/Parameters.h
  /home/ns/Desktop/Lidium/src/Specific/Color.h

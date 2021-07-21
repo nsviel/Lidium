@@ -311,7 +311,6 @@ CMakeFiles/executable.dir/src/Engine/Configuration.cpp.o: /usr/local/include/pcl
 
 CMakeFiles/executable.dir/src/Engine/Dimension.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Engine/Dimension.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Engine/Dimension.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Engine/Dimension.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Engine/Dimension.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Engine/Dimension.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -343,7 +342,6 @@ CMakeFiles/executable.dir/src/Engine/Dimension.cpp.o: ../extern/imgui/imconfig.h
 CMakeFiles/executable.dir/src/Engine/Dimension.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Engine/Dimension.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Engine/Dimension.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Engine/Dimension.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Engine/Dimension.cpp.o: ../src/Engine/Dimension.cpp
 CMakeFiles/executable.dir/src/Engine/Dimension.cpp.o: ../src/Engine/Dimension.h
 CMakeFiles/executable.dir/src/Engine/Dimension.cpp.o: ../src/Parameters.h
@@ -585,7 +583,6 @@ CMakeFiles/executable.dir/src/Engine/Dimension.cpp.o: /usr/local/include/pcl-1.1
 
 CMakeFiles/executable.dir/src/Engine/Engine.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Engine/Engine.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Engine/Engine.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Engine/Engine.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Engine/Engine.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Engine/Engine.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -617,7 +614,6 @@ CMakeFiles/executable.dir/src/Engine/Engine.cpp.o: ../extern/imgui/imconfig.h
 CMakeFiles/executable.dir/src/Engine/Engine.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Engine/Engine.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Engine/Engine.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Engine/Engine.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Engine/Engine.cpp.o: ../src/Engine/Configuration.h
 CMakeFiles/executable.dir/src/Engine/Engine.cpp.o: ../src/Engine/Dimension.h
 CMakeFiles/executable.dir/src/Engine/Engine.cpp.o: ../src/Engine/Engine.cpp
@@ -883,7 +879,6 @@ CMakeFiles/executable.dir/src/Engine/Engine.cpp.o: /usr/local/include/pcl-1.11/p
 
 CMakeFiles/executable.dir/src/Engine/Glyphs.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Engine/Glyphs.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Engine/Glyphs.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Engine/Glyphs.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Engine/Glyphs.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Engine/Glyphs.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -915,7 +910,6 @@ CMakeFiles/executable.dir/src/Engine/Glyphs.cpp.o: ../extern/imgui/imconfig.h
 CMakeFiles/executable.dir/src/Engine/Glyphs.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Engine/Glyphs.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Engine/Glyphs.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Engine/Glyphs.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Engine/Glyphs.cpp.o: ../src/Engine/Glyphs.cpp
 CMakeFiles/executable.dir/src/Engine/Glyphs.cpp.o: ../src/Engine/Glyphs.h
 CMakeFiles/executable.dir/src/Engine/Glyphs.cpp.o: ../src/Load/Format/file_PCD.h
@@ -1164,7 +1158,6 @@ CMakeFiles/executable.dir/src/Engine/Glyphs.cpp.o: /usr/local/include/pcl-1.11/p
 
 CMakeFiles/executable.dir/src/Engine/OpenGL/Camera.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/Camera.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Engine/OpenGL/Camera.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/Camera.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Engine/OpenGL/Camera.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Engine/OpenGL/Camera.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -1196,7 +1189,6 @@ CMakeFiles/executable.dir/src/Engine/OpenGL/Camera.cpp.o: ../extern/imgui/imconf
 CMakeFiles/executable.dir/src/Engine/OpenGL/Camera.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/Camera.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/Camera.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Engine/OpenGL/Camera.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Engine/OpenGL/Camera.cpp.o: ../src/Engine/Dimension.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/Camera.cpp.o: ../src/Engine/OpenGL/Camera.cpp
 CMakeFiles/executable.dir/src/Engine/OpenGL/Camera.cpp.o: ../src/Engine/OpenGL/Camera.h
@@ -1439,7 +1431,6 @@ CMakeFiles/executable.dir/src/Engine/OpenGL/Camera.cpp.o: /usr/local/include/pcl
 
 CMakeFiles/executable.dir/src/Engine/OpenGL/CoreGLengine.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/CoreGLengine.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Engine/OpenGL/CoreGLengine.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/CoreGLengine.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Engine/OpenGL/CoreGLengine.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Engine/OpenGL/CoreGLengine.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -1471,7 +1462,6 @@ CMakeFiles/executable.dir/src/Engine/OpenGL/CoreGLengine.cpp.o: ../extern/imgui/
 CMakeFiles/executable.dir/src/Engine/OpenGL/CoreGLengine.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/CoreGLengine.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/CoreGLengine.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Engine/OpenGL/CoreGLengine.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Engine/OpenGL/CoreGLengine.cpp.o: ../src/Engine/Configuration.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/CoreGLengine.cpp.o: ../src/Engine/Dimension.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/CoreGLengine.cpp.o: ../src/Engine/Engine.h
@@ -1719,7 +1709,6 @@ CMakeFiles/executable.dir/src/Engine/OpenGL/CoreGLengine.cpp.o: /usr/local/inclu
 
 CMakeFiles/executable.dir/src/Engine/OpenGL/FrameBuffer.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/FrameBuffer.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Engine/OpenGL/FrameBuffer.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/FrameBuffer.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Engine/OpenGL/FrameBuffer.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Engine/OpenGL/FrameBuffer.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -1751,7 +1740,6 @@ CMakeFiles/executable.dir/src/Engine/OpenGL/FrameBuffer.cpp.o: ../extern/imgui/i
 CMakeFiles/executable.dir/src/Engine/OpenGL/FrameBuffer.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/FrameBuffer.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/FrameBuffer.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Engine/OpenGL/FrameBuffer.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Engine/OpenGL/FrameBuffer.cpp.o: ../src/Engine/OpenGL/FrameBuffer.cpp
 CMakeFiles/executable.dir/src/Engine/OpenGL/FrameBuffer.cpp.o: ../src/Engine/OpenGL/FrameBuffer.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/FrameBuffer.cpp.o: ../src/Parameters.h
@@ -1993,7 +1981,6 @@ CMakeFiles/executable.dir/src/Engine/OpenGL/FrameBuffer.cpp.o: /usr/local/includ
 
 CMakeFiles/executable.dir/src/Engine/OpenGL/Shader.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/Shader.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Engine/OpenGL/Shader.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/Shader.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Engine/OpenGL/Shader.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Engine/OpenGL/Shader.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -2025,7 +2012,6 @@ CMakeFiles/executable.dir/src/Engine/OpenGL/Shader.cpp.o: ../extern/imgui/imconf
 CMakeFiles/executable.dir/src/Engine/OpenGL/Shader.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/Shader.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/Shader.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Engine/OpenGL/Shader.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Engine/OpenGL/Shader.cpp.o: ../src/Engine/OpenGL/Shader.cpp
 CMakeFiles/executable.dir/src/Engine/OpenGL/Shader.cpp.o: ../src/Engine/OpenGL/Shader.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/Shader.cpp.o: ../src/Parameters.h
@@ -2267,7 +2253,6 @@ CMakeFiles/executable.dir/src/Engine/OpenGL/Shader.cpp.o: /usr/local/include/pcl
 
 CMakeFiles/executable.dir/src/Engine/OpenGL/Textures.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/Textures.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Engine/OpenGL/Textures.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/Textures.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Engine/OpenGL/Textures.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Engine/OpenGL/Textures.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -2299,7 +2284,6 @@ CMakeFiles/executable.dir/src/Engine/OpenGL/Textures.cpp.o: ../extern/imgui/imco
 CMakeFiles/executable.dir/src/Engine/OpenGL/Textures.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/Textures.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/Textures.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Engine/OpenGL/Textures.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Engine/OpenGL/Textures.cpp.o: ../extern/std_image.h
 CMakeFiles/executable.dir/src/Engine/OpenGL/Textures.cpp.o: ../src/Engine/OpenGL/Textures.cpp
 CMakeFiles/executable.dir/src/Engine/OpenGL/Textures.cpp.o: ../src/Engine/OpenGL/Textures.h
@@ -2542,7 +2526,6 @@ CMakeFiles/executable.dir/src/Engine/OpenGL/Textures.cpp.o: /usr/local/include/p
 
 CMakeFiles/executable.dir/src/Engine/Scene.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Engine/Scene.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Engine/Scene.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Engine/Scene.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Engine/Scene.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Engine/Scene.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -2574,7 +2557,6 @@ CMakeFiles/executable.dir/src/Engine/Scene.cpp.o: ../extern/imgui/imconfig.h
 CMakeFiles/executable.dir/src/Engine/Scene.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Engine/Scene.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Engine/Scene.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Engine/Scene.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Engine/Scene.cpp.o: ../src/Engine/Glyphs.h
 CMakeFiles/executable.dir/src/Engine/Scene.cpp.o: ../src/Engine/Scene.cpp
 CMakeFiles/executable.dir/src/Engine/Scene.cpp.o: ../src/Engine/Scene.h
@@ -2824,7 +2806,6 @@ CMakeFiles/executable.dir/src/Engine/Scene.cpp.o: /usr/local/include/pcl-1.11/pc
 
 CMakeFiles/executable.dir/src/GUI/GUI.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/GUI/GUI.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/GUI/GUI.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/GUI/GUI.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/GUI/GUI.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/GUI/GUI.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -2856,7 +2837,6 @@ CMakeFiles/executable.dir/src/GUI/GUI.cpp.o: ../extern/imgui/imconfig.h
 CMakeFiles/executable.dir/src/GUI/GUI.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/GUI/GUI.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/GUI/GUI.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/GUI/GUI.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/GUI/GUI.cpp.o: ../src/Engine/Dimension.h
 CMakeFiles/executable.dir/src/GUI/GUI.cpp.o: ../src/Engine/Engine.h
 CMakeFiles/executable.dir/src/GUI/GUI.cpp.o: ../src/Engine/OpenGL/Camera.h
@@ -3114,7 +3094,6 @@ CMakeFiles/executable.dir/src/GUI/GUI.cpp.o: /usr/local/include/pcl-1.11/pcl/typ
 
 CMakeFiles/executable.dir/src/GUI/GUI_Consol.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/GUI/GUI_Consol.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/GUI/GUI_Consol.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/GUI/GUI_Consol.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_Consol.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_Consol.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -3146,7 +3125,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Consol.cpp.o: ../extern/imgui/imconfig.h
 CMakeFiles/executable.dir/src/GUI/GUI_Consol.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/GUI/GUI_Consol.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/GUI/GUI_Consol.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/GUI/GUI_Consol.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_Consol.cpp.o: ../src/Engine/Dimension.h
 CMakeFiles/executable.dir/src/GUI/GUI_Consol.cpp.o: ../src/Engine/Engine.h
 CMakeFiles/executable.dir/src/GUI/GUI_Consol.cpp.o: ../src/GUI/GUI_Consol.cpp
@@ -3390,7 +3368,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Consol.cpp.o: /usr/local/include/pcl-1.11/
 
 CMakeFiles/executable.dir/src/GUI/GUI_Control.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/GUI/GUI_Control.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/GUI/GUI_Control.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/GUI/GUI_Control.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_Control.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_Control.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -3422,7 +3399,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Control.cpp.o: ../extern/imgui/imconfig.h
 CMakeFiles/executable.dir/src/GUI/GUI_Control.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/GUI/GUI_Control.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/GUI/GUI_Control.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/GUI/GUI_Control.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_Control.cpp.o: ../src/Engine/Dimension.h
 CMakeFiles/executable.dir/src/GUI/GUI_Control.cpp.o: ../src/Engine/Engine.h
 CMakeFiles/executable.dir/src/GUI/GUI_Control.cpp.o: ../src/Engine/Glyphs.h
@@ -3687,7 +3663,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Control.cpp.o: /usr/local/include/pcl-1.11
 
 CMakeFiles/executable.dir/src/GUI/GUI_LeftPanel.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/GUI/GUI_LeftPanel.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/GUI/GUI_LeftPanel.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/GUI/GUI_LeftPanel.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_LeftPanel.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_LeftPanel.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -3719,7 +3694,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_LeftPanel.cpp.o: ../extern/imgui/imconfig.
 CMakeFiles/executable.dir/src/GUI/GUI_LeftPanel.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/GUI/GUI_LeftPanel.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/GUI/GUI_LeftPanel.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/GUI/GUI_LeftPanel.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_LeftPanel.cpp.o: ../src/Engine/Dimension.h
 CMakeFiles/executable.dir/src/GUI/GUI_LeftPanel.cpp.o: ../src/Engine/Engine.h
 CMakeFiles/executable.dir/src/GUI/GUI_LeftPanel.cpp.o: ../src/Engine/Scene.h
@@ -3975,7 +3949,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_LeftPanel.cpp.o: /usr/local/include/pcl-1.
 
 CMakeFiles/executable.dir/src/GUI/GUI_Matching.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/GUI/GUI_Matching.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/GUI/GUI_Matching.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/GUI/GUI_Matching.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_Matching.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_Matching.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -4007,7 +3980,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Matching.cpp.o: ../extern/imgui/imconfig.h
 CMakeFiles/executable.dir/src/GUI/GUI_Matching.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/GUI/GUI_Matching.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/GUI/GUI_Matching.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/GUI/GUI_Matching.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_Matching.cpp.o: ../src/Engine/Engine.h
 CMakeFiles/executable.dir/src/GUI/GUI_Matching.cpp.o: ../src/Engine/Glyphs.h
 CMakeFiles/executable.dir/src/GUI/GUI_Matching.cpp.o: ../src/Engine/Scene.h
@@ -4269,7 +4241,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Matching.cpp.o: /usr/local/include/pcl-1.1
 
 CMakeFiles/executable.dir/src/GUI/GUI_MenuBar.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/GUI/GUI_MenuBar.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/GUI/GUI_MenuBar.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/GUI/GUI_MenuBar.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_MenuBar.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_MenuBar.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -4301,7 +4272,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_MenuBar.cpp.o: ../extern/imgui/imconfig.h
 CMakeFiles/executable.dir/src/GUI/GUI_MenuBar.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/GUI/GUI_MenuBar.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/GUI/GUI_MenuBar.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/GUI/GUI_MenuBar.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_MenuBar.cpp.o: ../src/Engine/Engine.h
 CMakeFiles/executable.dir/src/GUI/GUI_MenuBar.cpp.o: ../src/Engine/OpenGL/Textures.h
 CMakeFiles/executable.dir/src/GUI/GUI_MenuBar.cpp.o: ../src/Engine/Scene.h
@@ -4559,7 +4529,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_MenuBar.cpp.o: /usr/local/include/pcl-1.11
 
 CMakeFiles/executable.dir/src/GUI/GUI_Option.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/GUI/GUI_Option.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/GUI/GUI_Option.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/GUI/GUI_Option.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_Option.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_Option.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -4591,7 +4560,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Option.cpp.o: ../extern/imgui/imconfig.h
 CMakeFiles/executable.dir/src/GUI/GUI_Option.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/GUI/GUI_Option.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/GUI/GUI_Option.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/GUI/GUI_Option.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_Option.cpp.o: ../src/Engine/Engine.h
 CMakeFiles/executable.dir/src/GUI/GUI_Option.cpp.o: ../src/Engine/Glyphs.h
 CMakeFiles/executable.dir/src/GUI/GUI_Option.cpp.o: ../src/Engine/Scene.h
@@ -4847,7 +4815,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Option.cpp.o: /usr/local/include/pcl-1.11/
 
 CMakeFiles/executable.dir/src/GUI/GUI_Radiometry.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/GUI/GUI_Radiometry.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/GUI/GUI_Radiometry.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/GUI/GUI_Radiometry.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_Radiometry.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_Radiometry.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -4879,7 +4846,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Radiometry.cpp.o: ../extern/imgui/imconfig
 CMakeFiles/executable.dir/src/GUI/GUI_Radiometry.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/GUI/GUI_Radiometry.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/GUI/GUI_Radiometry.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/GUI/GUI_Radiometry.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_Radiometry.cpp.o: ../src/Engine/Engine.h
 CMakeFiles/executable.dir/src/GUI/GUI_Radiometry.cpp.o: ../src/Engine/Scene.h
 CMakeFiles/executable.dir/src/GUI/GUI_Radiometry.cpp.o: ../src/GUI/GUI_Radiometry.cpp
@@ -5144,7 +5110,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Radiometry.cpp.o: /usr/local/include/pcl-1
 
 CMakeFiles/executable.dir/src/GUI/GUI_Registration.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/GUI/GUI_Registration.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/GUI/GUI_Registration.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/GUI/GUI_Registration.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_Registration.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_Registration.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -5176,7 +5141,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Registration.cpp.o: ../extern/imgui/imconf
 CMakeFiles/executable.dir/src/GUI/GUI_Registration.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/GUI/GUI_Registration.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/GUI/GUI_Registration.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/GUI/GUI_Registration.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_Registration.cpp.o: ../src/Engine/Engine.h
 CMakeFiles/executable.dir/src/GUI/GUI_Registration.cpp.o: ../src/Engine/Glyphs.h
 CMakeFiles/executable.dir/src/GUI/GUI_Registration.cpp.o: ../src/Engine/Scene.h
@@ -5432,7 +5396,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_Registration.cpp.o: /usr/local/include/pcl
 
 CMakeFiles/executable.dir/src/GUI/GUI_windows.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/GUI/GUI_windows.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/GUI/GUI_windows.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/GUI/GUI_windows.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_windows.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_windows.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -5464,7 +5427,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_windows.cpp.o: ../extern/imgui/imconfig.h
 CMakeFiles/executable.dir/src/GUI/GUI_windows.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/GUI/GUI_windows.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/GUI/GUI_windows.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/GUI/GUI_windows.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/GUI/GUI_windows.cpp.o: ../src/Engine/Engine.h
 CMakeFiles/executable.dir/src/GUI/GUI_windows.cpp.o: ../src/Engine/Glyphs.h
 CMakeFiles/executable.dir/src/GUI/GUI_windows.cpp.o: ../src/Engine/OpenGL/Camera.h
@@ -5727,7 +5689,6 @@ CMakeFiles/executable.dir/src/GUI/GUI_windows.cpp.o: /usr/local/include/pcl-1.11
 
 CMakeFiles/executable.dir/src/Load/Format/file_PCD.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Load/Format/file_PCD.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Load/Format/file_PCD.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Load/Format/file_PCD.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Load/Format/file_PCD.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Load/Format/file_PCD.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -5759,7 +5720,6 @@ CMakeFiles/executable.dir/src/Load/Format/file_PCD.cpp.o: ../extern/imgui/imconf
 CMakeFiles/executable.dir/src/Load/Format/file_PCD.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Load/Format/file_PCD.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Load/Format/file_PCD.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Load/Format/file_PCD.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Load/Format/file_PCD.cpp.o: ../src/Load/Format/file_PCD.cpp
 CMakeFiles/executable.dir/src/Load/Format/file_PCD.cpp.o: ../src/Load/Format/file_PCD.h
 CMakeFiles/executable.dir/src/Load/Format/file_PCD.cpp.o: ../src/Parameters.h
@@ -6018,7 +5978,6 @@ CMakeFiles/executable.dir/src/Load/Format/file_PCD.cpp.o: /usr/local/include/pcl
 
 CMakeFiles/executable.dir/src/Load/Format/file_PLY.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Load/Format/file_PLY.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Load/Format/file_PLY.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Load/Format/file_PLY.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Load/Format/file_PLY.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Load/Format/file_PLY.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -6050,7 +6009,6 @@ CMakeFiles/executable.dir/src/Load/Format/file_PLY.cpp.o: ../extern/imgui/imconf
 CMakeFiles/executable.dir/src/Load/Format/file_PLY.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Load/Format/file_PLY.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Load/Format/file_PLY.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Load/Format/file_PLY.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Load/Format/file_PLY.cpp.o: ../src/Load/Format/file_PLY.cpp
 CMakeFiles/executable.dir/src/Load/Format/file_PLY.cpp.o: ../src/Load/Format/file_PLY.h
 CMakeFiles/executable.dir/src/Load/Format/file_PLY.cpp.o: ../src/Parameters.h
@@ -6292,7 +6250,6 @@ CMakeFiles/executable.dir/src/Load/Format/file_PLY.cpp.o: /usr/local/include/pcl
 
 CMakeFiles/executable.dir/src/Load/Format/file_PTS.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Load/Format/file_PTS.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Load/Format/file_PTS.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Load/Format/file_PTS.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Load/Format/file_PTS.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Load/Format/file_PTS.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -6324,7 +6281,6 @@ CMakeFiles/executable.dir/src/Load/Format/file_PTS.cpp.o: ../extern/imgui/imconf
 CMakeFiles/executable.dir/src/Load/Format/file_PTS.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Load/Format/file_PTS.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Load/Format/file_PTS.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Load/Format/file_PTS.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Load/Format/file_PTS.cpp.o: ../src/Load/Format/file_PTS.cpp
 CMakeFiles/executable.dir/src/Load/Format/file_PTS.cpp.o: ../src/Load/Format/file_PTS.h
 CMakeFiles/executable.dir/src/Load/Format/file_PTS.cpp.o: ../src/Parameters.h
@@ -6566,7 +6522,6 @@ CMakeFiles/executable.dir/src/Load/Format/file_PTS.cpp.o: /usr/local/include/pcl
 
 CMakeFiles/executable.dir/src/Load/Format/file_PTX.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Load/Format/file_PTX.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Load/Format/file_PTX.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Load/Format/file_PTX.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Load/Format/file_PTX.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Load/Format/file_PTX.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -6598,7 +6553,6 @@ CMakeFiles/executable.dir/src/Load/Format/file_PTX.cpp.o: ../extern/imgui/imconf
 CMakeFiles/executable.dir/src/Load/Format/file_PTX.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Load/Format/file_PTX.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Load/Format/file_PTX.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Load/Format/file_PTX.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Load/Format/file_PTX.cpp.o: ../src/Load/Format/file_PTX.cpp
 CMakeFiles/executable.dir/src/Load/Format/file_PTX.cpp.o: ../src/Load/Format/file_PTX.h
 CMakeFiles/executable.dir/src/Load/Format/file_PTX.cpp.o: ../src/Parameters.h
@@ -6840,7 +6794,6 @@ CMakeFiles/executable.dir/src/Load/Format/file_PTX.cpp.o: /usr/local/include/pcl
 
 CMakeFiles/executable.dir/src/Load/Loader.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Load/Loader.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Load/Loader.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Load/Loader.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Load/Loader.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Load/Loader.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -6872,7 +6825,6 @@ CMakeFiles/executable.dir/src/Load/Loader.cpp.o: ../extern/imgui/imconfig.h
 CMakeFiles/executable.dir/src/Load/Loader.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Load/Loader.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Load/Loader.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Load/Loader.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Load/Loader.cpp.o: ../src/Load/Format/file_PCD.h
 CMakeFiles/executable.dir/src/Load/Loader.cpp.o: ../src/Load/Format/file_PLY.h
 CMakeFiles/executable.dir/src/Load/Loader.cpp.o: ../src/Load/Format/file_PTS.h
@@ -7136,7 +7088,6 @@ CMakeFiles/executable.dir/src/Load/Loader.cpp.o: /usr/local/include/pcl-1.11/pcl
 
 CMakeFiles/executable.dir/src/Load/dataExtraction.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Load/dataExtraction.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Load/dataExtraction.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Load/dataExtraction.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Load/dataExtraction.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Load/dataExtraction.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -7168,7 +7119,6 @@ CMakeFiles/executable.dir/src/Load/dataExtraction.cpp.o: ../extern/imgui/imconfi
 CMakeFiles/executable.dir/src/Load/dataExtraction.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Load/dataExtraction.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Load/dataExtraction.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Load/dataExtraction.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Load/dataExtraction.cpp.o: ../src/Load/dataExtraction.cpp
 CMakeFiles/executable.dir/src/Load/dataExtraction.cpp.o: ../src/Load/dataExtraction.h
 CMakeFiles/executable.dir/src/Load/dataExtraction.cpp.o: ../src/Parameters.h
@@ -7410,7 +7360,6 @@ CMakeFiles/executable.dir/src/Load/dataExtraction.cpp.o: /usr/local/include/pcl-
 
 CMakeFiles/executable.dir/src/Operation/Attribut.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Operation/Attribut.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Operation/Attribut.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Operation/Attribut.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Operation/Attribut.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Operation/Attribut.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -7442,7 +7391,6 @@ CMakeFiles/executable.dir/src/Operation/Attribut.cpp.o: ../extern/imgui/imconfig
 CMakeFiles/executable.dir/src/Operation/Attribut.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Operation/Attribut.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Operation/Attribut.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Operation/Attribut.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Operation/Attribut.cpp.o: ../src/Engine/Scene.h
 CMakeFiles/executable.dir/src/Operation/Attribut.cpp.o: ../src/Load/Format/file_PCD.h
 CMakeFiles/executable.dir/src/Operation/Attribut.cpp.o: ../src/Load/Format/file_PLY.h
@@ -7730,7 +7678,6 @@ CMakeFiles/executable.dir/src/Operation/Attribut.cpp.o: /usr/local/include/pcl-1
 
 CMakeFiles/executable.dir/src/Operation/Filter.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Operation/Filter.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Operation/Filter.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Operation/Filter.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Operation/Filter.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Operation/Filter.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -7762,7 +7709,6 @@ CMakeFiles/executable.dir/src/Operation/Filter.cpp.o: ../extern/imgui/imconfig.h
 CMakeFiles/executable.dir/src/Operation/Filter.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Operation/Filter.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Operation/Filter.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Operation/Filter.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Operation/Filter.cpp.o: ../src/Engine/Scene.h
 CMakeFiles/executable.dir/src/Operation/Filter.cpp.o: ../src/Load/Format/file_PCD.h
 CMakeFiles/executable.dir/src/Operation/Filter.cpp.o: ../src/Load/Format/file_PLY.h
@@ -8088,7 +8034,6 @@ CMakeFiles/executable.dir/src/Operation/Filter.cpp.o: /usr/local/include/pcl-1.1
 
 CMakeFiles/executable.dir/src/Operation/Functions/BundleByClass.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Operation/Functions/BundleByClass.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Operation/Functions/BundleByClass.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Operation/Functions/BundleByClass.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/BundleByClass.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/BundleByClass.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -8120,7 +8065,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/BundleByClass.cpp.o: ../extern
 CMakeFiles/executable.dir/src/Operation/Functions/BundleByClass.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Operation/Functions/BundleByClass.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Operation/Functions/BundleByClass.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Operation/Functions/BundleByClass.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/BundleByClass.cpp.o: ../src/Operation/Functions/BundleByClass.cpp
 CMakeFiles/executable.dir/src/Operation/Functions/BundleByClass.cpp.o: ../src/Operation/Functions/BundleByClass.h
 CMakeFiles/executable.dir/src/Operation/Functions/BundleByClass.cpp.o: ../src/Parameters.h
@@ -8362,7 +8306,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/BundleByClass.cpp.o: /usr/loca
 
 CMakeFiles/executable.dir/src/Operation/Functions/CoordTransform.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Operation/Functions/CoordTransform.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Operation/Functions/CoordTransform.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Operation/Functions/CoordTransform.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/CoordTransform.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/CoordTransform.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -8394,7 +8337,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/CoordTransform.cpp.o: ../exter
 CMakeFiles/executable.dir/src/Operation/Functions/CoordTransform.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Operation/Functions/CoordTransform.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Operation/Functions/CoordTransform.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Operation/Functions/CoordTransform.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/CoordTransform.cpp.o: ../src/Engine/Dimension.h
 CMakeFiles/executable.dir/src/Operation/Functions/CoordTransform.cpp.o: ../src/Engine/OpenGL/Camera.h
 CMakeFiles/executable.dir/src/Operation/Functions/CoordTransform.cpp.o: ../src/Operation/Functions/CoordTransform.cpp
@@ -8638,7 +8580,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/CoordTransform.cpp.o: /usr/loc
 
 CMakeFiles/executable.dir/src/Operation/Functions/Extraction.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Operation/Functions/Extraction.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Operation/Functions/Extraction.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Operation/Functions/Extraction.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/Extraction.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/Extraction.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -8670,7 +8611,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/Extraction.cpp.o: ../extern/im
 CMakeFiles/executable.dir/src/Operation/Functions/Extraction.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Operation/Functions/Extraction.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Operation/Functions/Extraction.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Operation/Functions/Extraction.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/Extraction.cpp.o: ../src/Engine/Scene.h
 CMakeFiles/executable.dir/src/Operation/Functions/Extraction.cpp.o: ../src/Load/Format/file_PCD.h
 CMakeFiles/executable.dir/src/Operation/Functions/Extraction.cpp.o: ../src/Load/Format/file_PLY.h
@@ -8920,7 +8860,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/Extraction.cpp.o: /usr/local/i
 
 CMakeFiles/executable.dir/src/Operation/Functions/Heatmap.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Operation/Functions/Heatmap.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Operation/Functions/Heatmap.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Operation/Functions/Heatmap.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/Heatmap.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/Heatmap.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -8952,7 +8891,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/Heatmap.cpp.o: ../extern/imgui
 CMakeFiles/executable.dir/src/Operation/Functions/Heatmap.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Operation/Functions/Heatmap.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Operation/Functions/Heatmap.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Operation/Functions/Heatmap.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/Heatmap.cpp.o: ../src/Engine/Scene.h
 CMakeFiles/executable.dir/src/Operation/Functions/Heatmap.cpp.o: ../src/Load/Format/file_PCD.h
 CMakeFiles/executable.dir/src/Operation/Functions/Heatmap.cpp.o: ../src/Load/Format/file_PLY.h
@@ -9202,7 +9140,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/Heatmap.cpp.o: /usr/local/incl
 
 CMakeFiles/executable.dir/src/Operation/Functions/NearestNeighbors.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Operation/Functions/NearestNeighbors.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Operation/Functions/NearestNeighbors.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Operation/Functions/NearestNeighbors.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/NearestNeighbors.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/NearestNeighbors.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -9234,7 +9171,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/NearestNeighbors.cpp.o: ../ext
 CMakeFiles/executable.dir/src/Operation/Functions/NearestNeighbors.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Operation/Functions/NearestNeighbors.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Operation/Functions/NearestNeighbors.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Operation/Functions/NearestNeighbors.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/NearestNeighbors.cpp.o: ../src/Operation/Functions/NearestNeighbors.cpp
 CMakeFiles/executable.dir/src/Operation/Functions/NearestNeighbors.cpp.o: ../src/Operation/Functions/NearestNeighbors.h
 CMakeFiles/executable.dir/src/Operation/Functions/NearestNeighbors.cpp.o: ../src/Parameters.h
@@ -9476,7 +9412,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/NearestNeighbors.cpp.o: /usr/l
 
 CMakeFiles/executable.dir/src/Operation/Functions/RegionGrowing.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Operation/Functions/RegionGrowing.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Operation/Functions/RegionGrowing.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Operation/Functions/RegionGrowing.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/RegionGrowing.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/RegionGrowing.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -9508,7 +9443,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/RegionGrowing.cpp.o: ../extern
 CMakeFiles/executable.dir/src/Operation/Functions/RegionGrowing.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Operation/Functions/RegionGrowing.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Operation/Functions/RegionGrowing.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Operation/Functions/RegionGrowing.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/RegionGrowing.cpp.o: ../src/Engine/Scene.h
 CMakeFiles/executable.dir/src/Operation/Functions/RegionGrowing.cpp.o: ../src/Load/Format/file_PCD.h
 CMakeFiles/executable.dir/src/Operation/Functions/RegionGrowing.cpp.o: ../src/Load/Format/file_PLY.h
@@ -9779,7 +9713,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/RegionGrowing.cpp.o: /usr/loca
 
 CMakeFiles/executable.dir/src/Operation/Functions/Segmentation.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Operation/Functions/Segmentation.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Operation/Functions/Segmentation.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Operation/Functions/Segmentation.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/Segmentation.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/Segmentation.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -9811,7 +9744,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/Segmentation.cpp.o: ../extern/
 CMakeFiles/executable.dir/src/Operation/Functions/Segmentation.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Operation/Functions/Segmentation.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Operation/Functions/Segmentation.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Operation/Functions/Segmentation.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/Segmentation.cpp.o: ../src/Operation/Functions/Segmentation.cpp
 CMakeFiles/executable.dir/src/Operation/Functions/Segmentation.cpp.o: ../src/Operation/Functions/Segmentation.h
 CMakeFiles/executable.dir/src/Operation/Functions/Segmentation.cpp.o: ../src/Parameters.h
@@ -10170,7 +10102,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/Segmentation.cpp.o: /usr/local
 
 CMakeFiles/executable.dir/src/Operation/Functions/Selection.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Operation/Functions/Selection.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Operation/Functions/Selection.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Operation/Functions/Selection.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/Selection.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/Selection.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -10202,7 +10133,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/Selection.cpp.o: ../extern/img
 CMakeFiles/executable.dir/src/Operation/Functions/Selection.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Operation/Functions/Selection.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Operation/Functions/Selection.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Operation/Functions/Selection.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Operation/Functions/Selection.cpp.o: ../src/Engine/Dimension.h
 CMakeFiles/executable.dir/src/Operation/Functions/Selection.cpp.o: ../src/Engine/Glyphs.h
 CMakeFiles/executable.dir/src/Operation/Functions/Selection.cpp.o: ../src/Engine/OpenGL/Camera.h
@@ -10457,7 +10387,6 @@ CMakeFiles/executable.dir/src/Operation/Functions/Selection.cpp.o: /usr/local/in
 
 CMakeFiles/executable.dir/src/Operation/Operation.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Operation/Operation.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Operation/Operation.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Operation/Operation.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Operation/Operation.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Operation/Operation.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -10489,7 +10418,6 @@ CMakeFiles/executable.dir/src/Operation/Operation.cpp.o: ../extern/imgui/imconfi
 CMakeFiles/executable.dir/src/Operation/Operation.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Operation/Operation.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Operation/Operation.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Operation/Operation.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Operation/Operation.cpp.o: ../src/Engine/Glyphs.h
 CMakeFiles/executable.dir/src/Operation/Operation.cpp.o: ../src/Engine/Scene.h
 CMakeFiles/executable.dir/src/Operation/Operation.cpp.o: ../src/Load/Format/file_PCD.h
@@ -10784,7 +10712,6 @@ CMakeFiles/executable.dir/src/Operation/Operation.cpp.o: /usr/local/include/pcl-
 
 CMakeFiles/executable.dir/src/Operation/Optimization/Fitting.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Operation/Optimization/Fitting.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Operation/Optimization/Fitting.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Operation/Optimization/Fitting.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Operation/Optimization/Fitting.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Operation/Optimization/Fitting.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -10816,7 +10743,6 @@ CMakeFiles/executable.dir/src/Operation/Optimization/Fitting.cpp.o: ../extern/im
 CMakeFiles/executable.dir/src/Operation/Optimization/Fitting.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Operation/Optimization/Fitting.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Operation/Optimization/Fitting.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Operation/Optimization/Fitting.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Operation/Optimization/Fitting.cpp.o: ../src/Engine/Glyphs.h
 CMakeFiles/executable.dir/src/Operation/Optimization/Fitting.cpp.o: ../src/Engine/Scene.h
 CMakeFiles/executable.dir/src/Operation/Optimization/Fitting.cpp.o: ../src/Load/Format/file_PCD.h
@@ -11154,7 +11080,6 @@ CMakeFiles/executable.dir/src/Operation/Optimization/Fitting.cpp.o: /usr/local/i
 
 CMakeFiles/executable.dir/src/Operation/Optimization/Newton.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Operation/Optimization/Newton.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Operation/Optimization/Newton.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Operation/Optimization/Newton.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Operation/Optimization/Newton.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Operation/Optimization/Newton.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -11186,7 +11111,6 @@ CMakeFiles/executable.dir/src/Operation/Optimization/Newton.cpp.o: ../extern/img
 CMakeFiles/executable.dir/src/Operation/Optimization/Newton.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Operation/Optimization/Newton.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Operation/Optimization/Newton.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Operation/Optimization/Newton.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Operation/Optimization/Newton.cpp.o: ../src/Operation/Optimization/Newton.cpp
 CMakeFiles/executable.dir/src/Operation/Optimization/Newton.cpp.o: ../src/Operation/Optimization/Newton.h
 CMakeFiles/executable.dir/src/Operation/Optimization/Newton.cpp.o: ../src/Operation/Optimization/SpeudoInverse.h
@@ -11429,7 +11353,6 @@ CMakeFiles/executable.dir/src/Operation/Optimization/Newton.cpp.o: /usr/local/in
 
 CMakeFiles/executable.dir/src/Operation/Optimization/SVD.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Operation/Optimization/SVD.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Operation/Optimization/SVD.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Operation/Optimization/SVD.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Operation/Optimization/SVD.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Operation/Optimization/SVD.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -11461,7 +11384,6 @@ CMakeFiles/executable.dir/src/Operation/Optimization/SVD.cpp.o: ../extern/imgui/
 CMakeFiles/executable.dir/src/Operation/Optimization/SVD.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Operation/Optimization/SVD.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Operation/Optimization/SVD.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Operation/Optimization/SVD.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Operation/Optimization/SVD.cpp.o: ../src/Operation/Optimization/SVD.cpp
 CMakeFiles/executable.dir/src/Operation/Optimization/SVD.cpp.o: ../src/Operation/Optimization/SVD.h
 CMakeFiles/executable.dir/src/Operation/Optimization/SVD.cpp.o: ../src/Parameters.h
@@ -11703,7 +11625,6 @@ CMakeFiles/executable.dir/src/Operation/Optimization/SVD.cpp.o: /usr/local/inclu
 
 CMakeFiles/executable.dir/src/Operation/Optimization/SpeudoInverse.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Operation/Optimization/SpeudoInverse.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Operation/Optimization/SpeudoInverse.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Operation/Optimization/SpeudoInverse.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Operation/Optimization/SpeudoInverse.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Operation/Optimization/SpeudoInverse.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -11735,7 +11656,6 @@ CMakeFiles/executable.dir/src/Operation/Optimization/SpeudoInverse.cpp.o: ../ext
 CMakeFiles/executable.dir/src/Operation/Optimization/SpeudoInverse.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Operation/Optimization/SpeudoInverse.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Operation/Optimization/SpeudoInverse.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Operation/Optimization/SpeudoInverse.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Operation/Optimization/SpeudoInverse.cpp.o: ../src/Operation/Optimization/SpeudoInverse.cpp
 CMakeFiles/executable.dir/src/Operation/Optimization/SpeudoInverse.cpp.o: ../src/Operation/Optimization/SpeudoInverse.h
 CMakeFiles/executable.dir/src/Operation/Optimization/SpeudoInverse.cpp.o: ../src/Parameters.h
@@ -11977,7 +11897,6 @@ CMakeFiles/executable.dir/src/Operation/Optimization/SpeudoInverse.cpp.o: /usr/l
 
 CMakeFiles/executable.dir/src/Operation/Plotting.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Operation/Plotting.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Operation/Plotting.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Operation/Plotting.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Operation/Plotting.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Operation/Plotting.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -12009,7 +11928,6 @@ CMakeFiles/executable.dir/src/Operation/Plotting.cpp.o: ../extern/imgui/imconfig
 CMakeFiles/executable.dir/src/Operation/Plotting.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Operation/Plotting.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Operation/Plotting.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Operation/Plotting.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Operation/Plotting.cpp.o: ../src/Operation/Plotting.cpp
 CMakeFiles/executable.dir/src/Operation/Plotting.cpp.o: ../src/Operation/Plotting.h
 CMakeFiles/executable.dir/src/Operation/Plotting.cpp.o: ../src/Parameters.h
@@ -12251,7 +12169,6 @@ CMakeFiles/executable.dir/src/Operation/Plotting.cpp.o: /usr/local/include/pcl-1
 
 CMakeFiles/executable.dir/src/Operation/Transforms.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Operation/Transforms.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Operation/Transforms.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Operation/Transforms.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Operation/Transforms.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Operation/Transforms.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -12283,7 +12200,6 @@ CMakeFiles/executable.dir/src/Operation/Transforms.cpp.o: ../extern/imgui/imconf
 CMakeFiles/executable.dir/src/Operation/Transforms.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Operation/Transforms.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Operation/Transforms.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Operation/Transforms.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Operation/Transforms.cpp.o: ../src/Operation/Transforms.cpp
 CMakeFiles/executable.dir/src/Operation/Transforms.cpp.o: ../src/Operation/Transforms.h
 CMakeFiles/executable.dir/src/Operation/Transforms.cpp.o: ../src/Parameters.h
@@ -12525,7 +12441,6 @@ CMakeFiles/executable.dir/src/Operation/Transforms.cpp.o: /usr/local/include/pcl
 
 CMakeFiles/executable.dir/src/Radiometry/Correction/RadarEquation.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/RadarEquation.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Radiometry/Correction/RadarEquation.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/RadarEquation.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/RadarEquation.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/RadarEquation.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -12557,7 +12472,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/RadarEquation.cpp.o: ../exte
 CMakeFiles/executable.dir/src/Radiometry/Correction/RadarEquation.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/RadarEquation.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/RadarEquation.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Radiometry/Correction/RadarEquation.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/RadarEquation.cpp.o: ../src/Operation/Plotting.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/RadarEquation.cpp.o: ../src/Parameters.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/RadarEquation.cpp.o: ../src/Radiometry/Correction/RadarEquation.cpp
@@ -12800,7 +12714,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/RadarEquation.cpp.o: /usr/lo
 
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_global.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_global.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_global.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_global.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_global.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_global.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -12832,7 +12745,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_global.cpp.o: ../
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_global.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_global.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_global.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_global.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_global.cpp.o: ../src/Operation/Functions/BundleByClass.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_global.cpp.o: ../src/Operation/Optimization/Polyfit.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_global.cpp.o: ../src/Operation/Plotting.h
@@ -13079,7 +12991,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_global.cpp.o: /us
 
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_local.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_local.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_local.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_local.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_local.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_local.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -13111,7 +13022,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_local.cpp.o: ../e
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_local.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_local.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_local.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_local.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_local.cpp.o: ../src/Operation/Functions/BundleByClass.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_local.cpp.o: ../src/Operation/Optimization/SpeudoInverse.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_local.cpp.o: ../src/Operation/Plotting.h
@@ -13357,7 +13267,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Separation_local.cpp.o: /usr
 
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_globalPiecewise.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_globalPiecewise.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_globalPiecewise.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_globalPiecewise.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_globalPiecewise.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_globalPiecewise.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -13389,7 +13298,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_globalPiecewise.cpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_globalPiecewise.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_globalPiecewise.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_globalPiecewise.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_globalPiecewise.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_globalPiecewise.cpp.o: ../src/Operation/Functions/BundleByClass.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_globalPiecewise.cpp.o: ../src/Operation/Plotting.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_globalPiecewise.cpp.o: ../src/Parameters.h
@@ -13634,7 +13542,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_globalPiecewise.cpp
 
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_local.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_local.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_local.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_local.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_local.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_local.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -13666,7 +13573,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_local.cpp.o: ../ext
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_local.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_local.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_local.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_local.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_local.cpp.o: ../src/Operation/Functions/BundleByClass.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_local.cpp.o: ../src/Operation/Optimization/SpeudoInverse.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_local.cpp.o: ../src/Operation/Plotting.h
@@ -13912,7 +13818,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_local.cpp.o: /usr/l
 
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_segmented.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_segmented.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_segmented.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_segmented.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_segmented.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_segmented.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -13944,7 +13849,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_segmented.cpp.o: ..
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_segmented.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_segmented.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_segmented.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_segmented.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_segmented.cpp.o: ../src/Operation/Functions/BundleByClass.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_segmented.cpp.o: ../src/Operation/Optimization/SpeudoInverse.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_segmented.cpp.o: ../src/Operation/Plotting.h
@@ -14205,7 +14109,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_segmented.cpp.o: /u
 
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_simplified.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_simplified.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_simplified.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_simplified.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_simplified.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_simplified.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -14237,7 +14140,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_simplified.cpp.o: .
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_simplified.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_simplified.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_simplified.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_simplified.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_simplified.cpp.o: ../src/Operation/Functions/BundleByClass.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_simplified.cpp.o: ../src/Operation/Optimization/Polyfit.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_simplified.cpp.o: ../src/Operation/Plotting.h
@@ -14483,7 +14385,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_simplified.cpp.o: /
 
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_targeted.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_targeted.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_targeted.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_targeted.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_targeted.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_targeted.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -14515,7 +14416,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_targeted.cpp.o: ../
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_targeted.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_targeted.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_targeted.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_targeted.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_targeted.cpp.o: ../src/Operation/Functions/BundleByClass.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_targeted.cpp.o: ../src/Operation/Optimization/SpeudoInverse.h
 CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_targeted.cpp.o: ../src/Operation/Plotting.h
@@ -14761,7 +14661,6 @@ CMakeFiles/executable.dir/src/Radiometry/Correction/Surfacic_targeted.cpp.o: /us
 
 CMakeFiles/executable.dir/src/Radiometry/Linearization.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Radiometry/Linearization.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Radiometry/Linearization.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Radiometry/Linearization.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Radiometry/Linearization.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Radiometry/Linearization.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -14793,7 +14692,6 @@ CMakeFiles/executable.dir/src/Radiometry/Linearization.cpp.o: ../extern/imgui/im
 CMakeFiles/executable.dir/src/Radiometry/Linearization.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Radiometry/Linearization.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Radiometry/Linearization.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Radiometry/Linearization.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Radiometry/Linearization.cpp.o: ../src/Engine/Scene.h
 CMakeFiles/executable.dir/src/Radiometry/Linearization.cpp.o: ../src/Load/Format/file_PCD.h
 CMakeFiles/executable.dir/src/Radiometry/Linearization.cpp.o: ../src/Load/Format/file_PLY.h
@@ -15046,7 +14944,6 @@ CMakeFiles/executable.dir/src/Radiometry/Linearization.cpp.o: /usr/local/include
 
 CMakeFiles/executable.dir/src/Radiometry/Radiometry.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Radiometry/Radiometry.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Radiometry/Radiometry.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Radiometry/Radiometry.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Radiometry/Radiometry.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Radiometry/Radiometry.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -15078,7 +14975,6 @@ CMakeFiles/executable.dir/src/Radiometry/Radiometry.cpp.o: ../extern/imgui/imcon
 CMakeFiles/executable.dir/src/Radiometry/Radiometry.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Radiometry/Radiometry.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Radiometry/Radiometry.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Radiometry/Radiometry.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Radiometry/Radiometry.cpp.o: ../src/Engine/Scene.h
 CMakeFiles/executable.dir/src/Radiometry/Radiometry.cpp.o: ../src/Load/Format/file_PCD.h
 CMakeFiles/executable.dir/src/Radiometry/Radiometry.cpp.o: ../src/Load/Format/file_PLY.h
@@ -15340,7 +15236,6 @@ CMakeFiles/executable.dir/src/Radiometry/Radiometry.cpp.o: /usr/local/include/pc
 
 CMakeFiles/executable.dir/src/Radiometry/Radiometry_plotting.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Radiometry/Radiometry_plotting.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Radiometry/Radiometry_plotting.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Radiometry/Radiometry_plotting.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Radiometry/Radiometry_plotting.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Radiometry/Radiometry_plotting.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -15372,7 +15267,6 @@ CMakeFiles/executable.dir/src/Radiometry/Radiometry_plotting.cpp.o: ../extern/im
 CMakeFiles/executable.dir/src/Radiometry/Radiometry_plotting.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Radiometry/Radiometry_plotting.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Radiometry/Radiometry_plotting.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Radiometry/Radiometry_plotting.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Radiometry/Radiometry_plotting.cpp.o: ../src/Engine/Scene.h
 CMakeFiles/executable.dir/src/Radiometry/Radiometry_plotting.cpp.o: ../src/Load/Format/file_PCD.h
 CMakeFiles/executable.dir/src/Radiometry/Radiometry_plotting.cpp.o: ../src/Load/Format/file_PLY.h
@@ -15631,7 +15525,6 @@ CMakeFiles/executable.dir/src/Radiometry/Radiometry_plotting.cpp.o: /usr/local/i
 
 CMakeFiles/executable.dir/src/Radiometry/Target/Ref_Operation.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Radiometry/Target/Ref_Operation.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Radiometry/Target/Ref_Operation.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Radiometry/Target/Ref_Operation.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Radiometry/Target/Ref_Operation.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Radiometry/Target/Ref_Operation.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -15663,7 +15556,6 @@ CMakeFiles/executable.dir/src/Radiometry/Target/Ref_Operation.cpp.o: ../extern/i
 CMakeFiles/executable.dir/src/Radiometry/Target/Ref_Operation.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Radiometry/Target/Ref_Operation.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Radiometry/Target/Ref_Operation.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Radiometry/Target/Ref_Operation.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Radiometry/Target/Ref_Operation.cpp.o: ../src/Operation/Functions/BundleByClass.h
 CMakeFiles/executable.dir/src/Radiometry/Target/Ref_Operation.cpp.o: ../src/Operation/Optimization/Polyfit.h
 CMakeFiles/executable.dir/src/Radiometry/Target/Ref_Operation.cpp.o: ../src/Parameters.h
@@ -15908,7 +15800,6 @@ CMakeFiles/executable.dir/src/Radiometry/Target/Ref_Operation.cpp.o: /usr/local/
 
 CMakeFiles/executable.dir/src/Radiometry/Target/Reference.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Radiometry/Target/Reference.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Radiometry/Target/Reference.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Radiometry/Target/Reference.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Radiometry/Target/Reference.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Radiometry/Target/Reference.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -15940,7 +15831,6 @@ CMakeFiles/executable.dir/src/Radiometry/Target/Reference.cpp.o: ../extern/imgui
 CMakeFiles/executable.dir/src/Radiometry/Target/Reference.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Radiometry/Target/Reference.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Radiometry/Target/Reference.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Radiometry/Target/Reference.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Radiometry/Target/Reference.cpp.o: ../src/Load/Format/file_PCD.h
 CMakeFiles/executable.dir/src/Radiometry/Target/Reference.cpp.o: ../src/Load/Format/file_PLY.h
 CMakeFiles/executable.dir/src/Radiometry/Target/Reference.cpp.o: ../src/Load/Format/file_PTS.h
@@ -16189,7 +16079,6 @@ CMakeFiles/executable.dir/src/Radiometry/Target/Reference.cpp.o: /usr/local/incl
 
 CMakeFiles/executable.dir/src/Registration/Algo_PCL.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Registration/Algo_PCL.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Registration/Algo_PCL.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Registration/Algo_PCL.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Registration/Algo_PCL.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Registration/Algo_PCL.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -16221,7 +16110,6 @@ CMakeFiles/executable.dir/src/Registration/Algo_PCL.cpp.o: ../extern/imgui/imcon
 CMakeFiles/executable.dir/src/Registration/Algo_PCL.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Registration/Algo_PCL.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Registration/Algo_PCL.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Registration/Algo_PCL.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Registration/Algo_PCL.cpp.o: ../src/Parameters.h
 CMakeFiles/executable.dir/src/Registration/Algo_PCL.cpp.o: ../src/Registration/Algo_PCL.cpp
 CMakeFiles/executable.dir/src/Registration/Algo_PCL.cpp.o: ../src/Registration/Algo_PCL.h
@@ -16572,7 +16460,6 @@ CMakeFiles/executable.dir/src/Registration/Algo_PCL.cpp.o: /usr/local/include/pc
 
 CMakeFiles/executable.dir/src/Registration/MutualInformation.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Registration/MutualInformation.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Registration/MutualInformation.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Registration/MutualInformation.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Registration/MutualInformation.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Registration/MutualInformation.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -16604,7 +16491,6 @@ CMakeFiles/executable.dir/src/Registration/MutualInformation.cpp.o: ../extern/im
 CMakeFiles/executable.dir/src/Registration/MutualInformation.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Registration/MutualInformation.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Registration/MutualInformation.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Registration/MutualInformation.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Registration/MutualInformation.cpp.o: ../src/Parameters.h
 CMakeFiles/executable.dir/src/Registration/MutualInformation.cpp.o: ../src/Registration/MutualInformation.cpp
 CMakeFiles/executable.dir/src/Registration/MutualInformation.cpp.o: ../src/Registration/MutualInformation.h
@@ -16846,7 +16732,6 @@ CMakeFiles/executable.dir/src/Registration/MutualInformation.cpp.o: /usr/local/i
 
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Registration/Pipeline/ICP.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -16878,7 +16763,6 @@ CMakeFiles/executable.dir/src/Registration/Pipeline/ICP.cpp.o: ../extern/imgui/i
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Registration/Pipeline/ICP.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP.cpp.o: ../src/Engine/Glyphs.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP.cpp.o: ../src/Operation/Optimization/SpeudoInverse.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP.cpp.o: ../src/Operation/Transforms.h
@@ -17128,7 +17012,6 @@ CMakeFiles/executable.dir/src/Registration/Pipeline/ICP.cpp.o: /usr/local/includ
 
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Matching.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Matching.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Matching.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Matching.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Matching.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Matching.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -17160,7 +17043,6 @@ CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Matching.cpp.o: ../exter
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Matching.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Matching.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Matching.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Matching.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Matching.cpp.o: ../src/Parameters.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Matching.cpp.o: ../src/Registration/Pipeline/ICP_Matching.cpp
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Matching.cpp.o: ../src/Registration/Pipeline/ICP_Matching.h
@@ -17438,7 +17320,6 @@ CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Matching.cpp.o: /usr/loc
 
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Optimization.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Optimization.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Optimization.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Optimization.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Optimization.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Optimization.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -17470,7 +17351,6 @@ CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Optimization.cpp.o: ../e
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Optimization.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Optimization.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Optimization.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Optimization.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Optimization.cpp.o: ../src/Operation/Optimization/SpeudoInverse.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Optimization.cpp.o: ../src/Parameters.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Optimization.cpp.o: ../src/Registration/Pipeline/ICP_Optimization.cpp
@@ -17713,7 +17593,6 @@ CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Optimization.cpp.o: /usr
 
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Rejection.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Rejection.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Rejection.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Rejection.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Rejection.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Rejection.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -17745,7 +17624,6 @@ CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Rejection.cpp.o: ../exte
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Rejection.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Rejection.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Rejection.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Rejection.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Rejection.cpp.o: ../src/Parameters.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Rejection.cpp.o: ../src/Registration/Pipeline/ICP_Rejection.cpp
 CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Rejection.cpp.o: ../src/Registration/Pipeline/ICP_Rejection.h
@@ -17987,7 +17865,6 @@ CMakeFiles/executable.dir/src/Registration/Pipeline/ICP_Rejection.cpp.o: /usr/lo
 
 CMakeFiles/executable.dir/src/Registration/Pipeline/Keypoint.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/Keypoint.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Registration/Pipeline/Keypoint.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/Keypoint.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Registration/Pipeline/Keypoint.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Registration/Pipeline/Keypoint.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -18019,7 +17896,6 @@ CMakeFiles/executable.dir/src/Registration/Pipeline/Keypoint.cpp.o: ../extern/im
 CMakeFiles/executable.dir/src/Registration/Pipeline/Keypoint.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/Keypoint.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/Keypoint.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Registration/Pipeline/Keypoint.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Registration/Pipeline/Keypoint.cpp.o: ../src/Engine/Glyphs.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/Keypoint.cpp.o: ../src/Parameters.h
 CMakeFiles/executable.dir/src/Registration/Pipeline/Keypoint.cpp.o: ../src/Registration/Pipeline/Keypoint.cpp
@@ -18429,7 +18305,6 @@ CMakeFiles/executable.dir/src/Registration/Pipeline/Keypoint.cpp.o: /usr/local/i
 
 CMakeFiles/executable.dir/src/Registration/Registration.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/Registration/Registration.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/Registration/Registration.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/Registration/Registration.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/Registration/Registration.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/Registration/Registration.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -18461,7 +18336,6 @@ CMakeFiles/executable.dir/src/Registration/Registration.cpp.o: ../extern/imgui/i
 CMakeFiles/executable.dir/src/Registration/Registration.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/Registration/Registration.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/Registration/Registration.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/Registration/Registration.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/Registration/Registration.cpp.o: ../src/Engine/Glyphs.h
 CMakeFiles/executable.dir/src/Registration/Registration.cpp.o: ../src/Engine/Scene.h
 CMakeFiles/executable.dir/src/Registration/Registration.cpp.o: ../src/Load/Format/file_PCD.h
@@ -18719,7 +18593,6 @@ CMakeFiles/executable.dir/src/Registration/Registration.cpp.o: /usr/local/includ
 
 CMakeFiles/executable.dir/src/main.cpp.o: ../extern/IconsFontAwesome5.h
 CMakeFiles/executable.dir/src/main.cpp.o: ../extern/NormalHough/Normals.h
-CMakeFiles/executable.dir/src/main.cpp.o: ../extern/NormalHough/nanoflann.h
 CMakeFiles/executable.dir/src/main.cpp.o: ../extern/OptimLib/constrained/sumt.hpp
 CMakeFiles/executable.dir/src/main.cpp.o: ../extern/OptimLib/line_search/more_thuente.hpp
 CMakeFiles/executable.dir/src/main.cpp.o: ../extern/OptimLib/misc/determine_bounds_type.hpp
@@ -18751,7 +18624,6 @@ CMakeFiles/executable.dir/src/main.cpp.o: ../extern/imgui/imconfig.h
 CMakeFiles/executable.dir/src/main.cpp.o: ../extern/imgui/imgui.h
 CMakeFiles/executable.dir/src/main.cpp.o: ../extern/imgui/imgui_impl_glfw.h
 CMakeFiles/executable.dir/src/main.cpp.o: ../extern/imgui/imgui_impl_opengl3.h
-CMakeFiles/executable.dir/src/main.cpp.o: ../extern/nanoflann.hpp
 CMakeFiles/executable.dir/src/main.cpp.o: ../src/Engine/OpenGL/CoreGLengine.h
 CMakeFiles/executable.dir/src/main.cpp.o: ../src/Parameters.h
 CMakeFiles/executable.dir/src/main.cpp.o: ../src/Specific/Color.h
