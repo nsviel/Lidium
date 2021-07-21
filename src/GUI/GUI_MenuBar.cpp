@@ -170,7 +170,7 @@ void GUI_menuBar::MenuBar_fastScene(){
     opeManager->fastScene(1);
   }
   //A Spectralon point cloud to test radiometric correction
-  if(ImGui::Button("Spectralon 5m", ImVec2(100,0))){
+  if(ImGui::Button("Cloud", ImVec2(100,0))){
     opeManager->fastScene(2);
   }
 

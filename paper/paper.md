@@ -24,9 +24,9 @@ LiDAR (Light Detection and Ranging) sensors give huge amount of data, which gene
 
 # Statement of need
 
-`Lidium` is designed as a laboratory software to be used by both LiDAR researchers and by geomatic students for the manipulation and algorithm prototyping applied to point cloud data. It provide an advanced and hackable framework to LiDAR data processing, with a focus on the point cloud registration step and the radiometric correction of the intensity information. 
+`Lidium` is designed as a laboratory software to be used by both LiDAR researchers and by geomatic students for the manipulation and algorithm prototyping applied to point cloud data. This software is distinguished of the other open source solutions as CloudCompare (http://www.cloudcompare.org/) or Meshlab (https://www.meshlab.net/) by provinding aa lightweight and hackable framework to LiDAR data visualization and processing, with a focus on the point cloud registration step and the radiometric correction of the intensity information. 
 
-This software is distinguished of CloudCompare (http://www.cloudcompare.org/) by incorporate algorithms to radiometrically correct the intenisty measured by LiDAR scanner. However, the intensity is scanner-dependant and measure are to be taken with the user specific LiDAR with calirbation targets in order to get advantage from the present algorithms. A corrected intensity could be usefull in a large field of application : autonomous car for obstacle detection, clustering/segmentation, material or structure detection and recognition. The algorithms are described in the publication of `@sanchiz_2021`.
+by incorporate reasearch algorithms to radiometric correction the intenisty measured by LiDAR scanner. However, the intensity is scanner-dependant and measure are to be taken with the user specific LiDAR with calirbation targets in order to get advantage from the present algorithms. A corrected intensity could be usefull in a large field of application : autonomous car for obstacle detection, clustering/segmentation, material or structure detection and recognition. The algorithms are described by @sanchiz_2021.
 
 The critical step of the point cloud registration problem is the matching step, wich consist in the identification of correspondences between two point clouds. The corrected intensity, used with keypoint algorithms (SIFT, SHOT, RANSAC) give good results to resolve this problematic stage. An implementation of an ICP based registration pipeline is provided and separated from the matching step. These algorithms are fully adjustable to test parameters and methods. As an alternative solution from proprietary software, we aim to make 3D numerisation a way more accessible.
 
@@ -37,8 +37,6 @@ All of the code is written in C++, for performance purpose. The incorporated ext
 -Eigen: linear algebra
 -Fast Library for Approximate Nearest Neighbors (FLANN) : to improve the nearest neighbor search speed
 -Gnuplot: graphical data visualization
-
-[@Pearson:2017]
 
 
 # Acknowledgements

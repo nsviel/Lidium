@@ -1,3 +1,4 @@
 build/*
 media/data/data/*
 media/data/graphs/*
+media/calibrationTargets/others

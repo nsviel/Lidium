@@ -56,7 +56,7 @@ void Operation::fastScene(int mode){
     }
     case 2:{//Spectralon
       sceneManager->removeCloud_all();
-      sceneManager->loadCloud("../media/fastScene/Spectr_5m.pts");
+      sceneManager->loadCloud("../media/fastScene/cloud.pts");
       break;
     }
 
