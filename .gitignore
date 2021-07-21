@@ -2,3 +2,6 @@ build/*
 media/data/data/*
 media/data/graphs/*
 media/calibrationTargets/others
+paper/compile
+paper/submission
+paper/ToDo
