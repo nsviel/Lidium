@@ -44,10 +44,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ns/Desktop/Lidium
+CMAKE_SOURCE_DIR = /home/aither/Desktop/Lidium
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ns/Desktop/Lidium/build
+CMAKE_BINARY_DIR = /home/aither/Desktop/Lidium/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -74,14 +74,14 @@ clean: CMakeFiles/executable.dir/clean
 CMakeFiles/executable.dir/all:
 	$(MAKE) -f CMakeFiles/executable.dir/build.make CMakeFiles/executable.dir/depend
 	$(MAKE) -f CMakeFiles/executable.dir/build.make CMakeFiles/executable.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ns/Desktop/Lidium/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72 "Built target executable"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aither/Desktop/Lidium/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72 "Built target executable"
 .PHONY : CMakeFiles/executable.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/executable.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ns/Desktop/Lidium/build/CMakeFiles 72
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aither/Desktop/Lidium/build/CMakeFiles 72
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/executable.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ns/Desktop/Lidium/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aither/Desktop/Lidium/build/CMakeFiles 0
 .PHONY : CMakeFiles/executable.dir/rule
 
 # Convenience name for target.

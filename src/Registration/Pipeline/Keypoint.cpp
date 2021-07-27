@@ -226,7 +226,7 @@ void Keypoint::algo_keypoints_one(Mesh* mesh){
     }
     case 1:{ //I obj
       if(mesh->intensity.hasData == false){
-        cout<<"No intensity data in "<<mesh->Name<<endl;
+        console.AddLog("[error] No intensity data");
         return;
       }
       mesh->pcl.XYZRGB = glm_XYZIobj_to_pcl_XYZRGB(mesh);
@@ -419,7 +419,7 @@ void Keypoint::downSamp_Segmentation(Mesh* mesh){
   clustering.extract(cluster_indices);
 
   if(cluster_indices.empty()){
-    cout<<"No cluster found"<<endl;
+    console.AddLog("[error] No cluster found");
     return;
   }else{
     cout << cluster_indices.size() << " clusters found" << endl;
@@ -469,7 +469,8 @@ void Keypoint::keypoint_SIFT(Mesh* mesh){
 
   //---------------------------
   float duration = toc();
-  cout<<"SIFT "<<mesh->Name<<": Found "<< keypoints->size()<<" keypoints "<<"in "<< duration<<"ms"<<endl;
+  int size = keypoints->size();
+  console.AddLog("SIFT %s: Found %i keypoints in %.2fms", mesh->Name.c_str(), size, duration);
 }
 void Keypoint::keypoint_HARRIS3D(Mesh* mesh){
   XYZRGBtype& cloud = mesh->pcl.XYZRGB;
@@ -496,8 +497,9 @@ void Keypoint::keypoint_HARRIS3D(Mesh* mesh){
 
   //---------------------------
   mesh->pcl.keypoints = keypoints_xyzrgb;
-  cout << "HARRIS " << mesh->Name <<": Found " << keypoints->size () << " keypoints ";
-  cout << "out of " << cloud->size () << " total points." << endl;
+  int size = keypoints->size();
+  int size_tot = cloud->size();
+  console.AddLog("HARRIS %s: Found %i keypoints out of %i total points.", mesh->Name.c_str(), size, size_tot);
 }
 void Keypoint::keypoint_HARRIS6D(Mesh* mesh){
   /*XYZRGBtype& cloud = mesh->pcl.XYZRGB;
@@ -554,8 +556,9 @@ void Keypoint::keypoint_SUSAN(Mesh* mesh){
 
   //---------------------------
   mesh->pcl.keypoints = keypoints_xyzrgb;
-  cout << "SUSAN " << mesh->Name <<": Found " << keypoints->size() << " keypoints ";
-  cout << "out of " << cloud->size() << " total points." << endl;
+  int size = keypoints->size();
+  int size_tot = cloud->size();
+  console.AddLog("SUSAN %s: Found %i keypoints out of %i total points.", mesh->Name.c_str(), size, size_tot);
 }
 
 //Descriptors
@@ -620,7 +623,8 @@ void Keypoint::descriptor_SHOT(Mesh* mesh, SHOTtype& descriptors){
   //---------------------------
   descriptors = desc_2;
   float duration = toc();
-  cout<<"-> SHOT "<<mesh->Name<<": vectorize "<< desc_2->size() <<" in "<< duration<<"ms"<<endl;
+  int size = desc_2->size();
+  console.AddLog("-> SHOT %s: vectorize %i in %.2fms", mesh->Name.c_str(), size, duration);
 }
 void Keypoint::descriptor_3DSC(Mesh* mesh, SCtype& descriptors){
   pcl::search::KdTree<pcl::PointXYZ>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZ> ());
@@ -646,7 +650,7 @@ void Keypoint::descriptor_3DSC(Mesh* mesh, SCtype& descriptors){
 //Rejection
 void Keypoint::rejection_siftScore(PtWithScale& keypoints){
   if(keypoints->size() == 0) return;
-  cout<<"->rejection SIFT score: "<<keypoints->size()<<flush;
+  int size_old = keypoints->size();
   //---------------------------
 
   //Calcul du score médian
@@ -669,11 +673,12 @@ void Keypoint::rejection_siftScore(PtWithScale& keypoints){
 
   //---------------------------
   keypoints = temp;
-  cout<<"->"<<keypoints->size()<<endl;
+  int size = keypoints->size();
+  console.AddLog("-> rejection SHOT score: %i -> %i", size_old, size);
 }
 void Keypoint::rejection_siftNbBest(PtWithScale& keypoints){
   if(keypoints->size() == 0) return;
-  cout<<"->rejection SIFT nb best: "<<keypoints->size()<<flush;
+  int size_old = keypoints->size();
   //---------------------------
 
   //Vector of keypoint score
@@ -696,12 +701,13 @@ void Keypoint::rejection_siftNbBest(PtWithScale& keypoints){
 
   //---------------------------
   keypoints = key_temp;
-  cout<<"->"<<keypoints->size()<<endl;
+  int size = keypoints->size();
+  console.AddLog("-> rejection SHOT nb best: %i -> %i", size_old, size);
 }
 void Keypoint::rejection_siftNNradius(XYZRGBtype& keypoints){
   vector<vec3> key_glm = pcl_XYZRGB_to_glm_vecXYZ(keypoints);
   vector<vec4> key_col = pcl_XYZRGB_to_glm_vecRGB(keypoints);
-  cout<<"-> rejection SIFT radius: "<<keypoints->size()<<flush;
+  int size_old = keypoints->size();
   //---------------------------
 
   //FLANN nearest neighbor
@@ -748,11 +754,12 @@ void Keypoint::rejection_siftNNradius(XYZRGBtype& keypoints){
 
   //---------------------------
   keypoints = glm_XYZRGB_to_pcl_XYZRGB(key_glm_sampled, key_col_sampled);
-  cout<<"->"<< keypoints->size()<<endl;
+  int size = keypoints->size();
+  console.AddLog("-> rejection SHOT radius: %i -> %i", size_old, size);
 }
 void Keypoint::rejection_correspScore(){
   if(correspondence_scores.size() == 0) return;
-  cout<<"-> rejection correspondence score "<<flush;
+  int size_old = correspondence_scores.size();
   //---------------------------
 
   //Calcul du score médian
@@ -761,7 +768,6 @@ void Keypoint::rejection_correspScore(){
     median_score += correspondence_scores[i];
   }
   median_score /= correspondence_scores.size();
-  cout<<median_score<<": "<<corresp_Q.size()<<flush;
 
   //Supress according to score median
   vector<int> c_P, c_Q;
@@ -775,7 +781,8 @@ void Keypoint::rejection_correspScore(){
   //---------------------------
   corresp_P = c_P;
   corresp_Q = c_Q;
-  cout<<"->"<<corresp_Q.size()<<endl;
+  int size = corresp_Q.size();
+  console.AddLog("-> rejection correspondence score %.2f: %i -> %i", median_score, size_old, size);
 }
 void Keypoint::rejection_correspNbBest(){
   if(correspondence_scores.size() == 0) return;
@@ -803,7 +810,7 @@ void Keypoint::rejection_Ransac(Mesh* mesh_P, Mesh* mesh_Q){
   if(correspondence_scores.size() == 0) return;
   XYZRGBtype& key_P = mesh_P->pcl.keypoints;
   XYZRGBtype& key_Q = mesh_Q->pcl.keypoints;
-  cout<<"-> rejection RANSAC: "<<corresp_Q.size()<<flush;
+  int size_old = corresp_Q.size();
   tic();
   //---------------------------
 
@@ -830,7 +837,8 @@ void Keypoint::rejection_Ransac(Mesh* mesh_P, Mesh* mesh_Q){
 
   //---------------------------
   float duration = toc();
-  cout<<"->"<<corresp_Q.size()<<" in "<< duration<<"ms"<<endl;
+  int size = corresp_Q.size();
+  console.AddLog("-> rejection RANSAC: %i -> %i in %.2fms", size_old, size, duration);
 }
 
 //Correspondances
@@ -894,7 +902,8 @@ void Keypoint::compute_correspondences_SHOT(SHOTtype& descrip_P, SHOTtype& descr
 
   //---------------------------
   float duration = toc();
-  cout<<"-> Correspondances: Found "<< all_correspondences.size() <<" in "<< duration<<"ms"<<endl;
+  int size = all_correspondences.size();
+  console.AddLog("-> Correspondances: Found %i in %.2fms", size, duration);
 }
 void Keypoint::compute_correspondences_FPFH(FPFHtype& descrip_P, FPFHtype& descrip_Q){
   if(descrip_P->size() == 0 || descrip_Q->size() == 0) return;
