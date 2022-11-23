@@ -1,7 +1,10 @@
 #include "file_PTS.h"
 
+#include "../../Specific/fct_system.h"
+
+
 //Constructor / Destructor
-filePTS::filePTS(){
+file_PTS::file_PTS(){
   //---------------------------
 
   this->nbptMax = 40000000;
@@ -13,10 +16,13 @@ filePTS::filePTS(){
 
   //---------------------------
 }
-filePTS::~filePTS(){}
+file_PTS::~file_PTS(){}
 
-//Main functions
-bool filePTS::Loader(string pathFile){
+//Main load functions
+dataFile* file_PTS::Loader(string pathFile){
+  data_out = new dataFile();
+  data_out->name = "";
+  data_out->path = pathFile;
   //---------------------------
 
   //Initialization
@@ -45,159 +51,10 @@ bool filePTS::Loader(string pathFile){
   }
 
   //---------------------------
-  return true;
+  return data_out;
 }
-bool filePTS::Exporter(string path, Mesh* mesh){
-  //---------------------------
-
-  //Create file
-  if(path.substr(path.find_last_of(".") + 1) != "pts") path.append(".pts");
-  ofstream file;
-  file.open(path);
-  if(!file){
-    cout<<"Error in creating file !";
-    return 0;
-  }
-
-  //Data : xyz (R) (rgb) (nxnynz)
-  vector<vec3>& XYZ = mesh->location.OBJ;
-  vector<vec4>& RGB = mesh->color.OBJ;
-  vector<vec3>& Nxyz = mesh->normal.OBJ;
-  vector<float>& Is = mesh->intensity.OBJ;
-
-  //Write in the file
-  int precision = 6;
-  file << XYZ.size() <<endl;
-  for(int i=0; i<XYZ.size(); i++){
-    //Line start
-    file << fixed;
-
-    //Location
-    file << setprecision(precision) << XYZ[i].x <<" "<< XYZ[i].y <<" "<< XYZ[i].z ;
-
-    //Intensity
-    if(mesh->intensity.hasData){
-      if(export_IdataFormat == 0){
-        file << setprecision(precision) <<" "<< Is[i];
-      }
-      else if(export_IdataFormat == 1){
-        file << setprecision(0) <<" "<< int(Is[i]*255);
-      }
-      else if(export_IdataFormat == 2){
-        file << setprecision(0) <<" "<< int((Is[i]*4096)-2048);
-      }
-    }
-
-    //Color
-    if(mesh->color.hasData){
-      file << setprecision(0) <<" "<< RGB[i].x * 255 <<" "<< RGB[i].y * 255 <<" "<< RGB[i].z * 255;
-    }
-
-    //Normal
-    if(mesh->normal.hasData){
-      file << setprecision(precision) <<" "<< Nxyz[i].x <<" "<< Nxyz[i].y <<" "<< Nxyz[i].z;
-    }
-
-    //line end
-    file << endl;
-  }
-
-  //---------------------------
-  file.close();
-  return true;
-}
-
-//Subfunctions
-bool filePTS::Loader_parallel(string pathFile){
-  //---------------------------
-
-  //Initialization
-  this->Loader_init();
-  bool FILE_hasHeader = check_header(pathFile);
-  int FILE_config = check_configuration(pathFile);
-  int FILE_size = check_size(pathFile, FILE_hasHeader);
-
-  vector<vec3> VEC_loc(FILE_size);
-  vector<float> VEC_int;
-  vector<vec3> VEC_nor;
-  vector<vec4> VEC_col;
-  if(hasIntensity) VEC_int.assign(FILE_size, 0.0f);
-  if(hasNormal) VEC_nor.assign(FILE_size, vec3(0.0f, 0.0f, 0.0f));
-  if(hasColor) VEC_col.assign(FILE_size, vec4(0.0f, 0.0f, 0.0f, 0.0f));
-
-  //Read file by blocks
-  #pragma omp parallel
-  #pragma omp for schedule(dynamic, 100)
-  for(int i=0; i<FILE_size; i++){
-    ifstream file_temp(pathFile);
-    string line;
-
-    //Go to desired line position
-    file_temp.seekg(std::ios::beg);
-    for(int j=0; j<i - 1; ++j){
-        file_temp.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-    }
-
-    //Read line
-    std::getline(file_temp, line);
-    std::istringstream iss(line);
-    float x,y,z,r,g,b,I,nx,ny,nz;
-
-    switch(config){
-      case 0: iss >> x >> y >> z; break;
-      case 1: iss >> x >> y >> z >> I; break;
-      case 2: iss >> x >> y >> z >> nx >> ny >> nz; break;
-      case 3: iss >> x >> y >> z >> r >> g >> b; break;
-      case 4: iss >> x >> y >> z >> I >> r >> g >> b; break;
-      case 5: iss >> x >> y >> z >> I >> nx >> ny >> nz; break;
-      case 6: iss >> x >> y >> z >> r >> g >> b >> nx >> ny >> nz; break;
-      case 7: iss >> x >> y >> z >> I >> r >> g >> b >> nx >> ny >> nz; break;
-      case 8: iss >> x >> y >> z >> r >> g >> b >> I; break;
-    }
-
-    //Position data
-    VEC_loc[i] = vec3(x, y, z);
-
-    //Reflectance data
-    if(hasIntensity){
-      if(IdataFormat == 0){// I[0;1]
-        VEC_int[i] = I;
-      }
-      if(IdataFormat == 1){// I[0;255]
-        VEC_int[i] = I/255;
-      }
-      if(IdataFormat == 2){// I[-2048;+2047]
-        VEC_int[i] = (I+2048)/4095;
-      }
-    }
-
-    //Normal data
-    if(hasNormal){
-      VEC_nor[i] = vec3(nx, ny, nz);
-    }
-
-    //Color data
-    if(hasColor){
-      VEC_col[i] = vec4((r/255), (g/255), (b/255), 1.0f);
-
-      //if reflectance value is coded in RGB format
-      if(hasIntensity == false && r == g && g == b){
-          VEC_int[i] = r/255;
-          hasIntensity = true;
-      }
-    }
-  }
-
-  #pragma omp master
-  locationOBJ = VEC_loc;
-  if(hasIntensity) intensityOBJ = VEC_int;
-  if(hasNormal) normalOBJ = VEC_nor;
-  if(hasColor) colorOBJ = VEC_col;
-
-  //---------------------------
-  return true;
-}
-bool filePTS::Loader_subPart(string pathFile, int lmin, int lmax){
+dataFile* file_PTS::Loader(string pathFile, int lmin, int lmax){
+  data_out = new dataFile();
   //---------------------------
 
   //Initialization
@@ -232,16 +89,13 @@ bool filePTS::Loader_subPart(string pathFile, int lmin, int lmax){
   }
 
   //---------------------------
-  return true;
+  data_out->size = cpt;
+  return data_out;
 }
-void filePTS::Loader_init(){
-  //---------------------------
 
-  this->locationOBJ.clear();
-  this->normalOBJ.clear();
-  this->colorOBJ.clear();
-  this->intensityOBJ.clear();
-  this->line_columns.clear();
+//Sub load functions
+void file_PTS::Loader_init(){
+  //---------------------------
 
   this->config = -1;
   this->endHeader = false;
@@ -252,7 +106,7 @@ void filePTS::Loader_init(){
 
   //---------------------------
 }
-void filePTS::Loader_nbColumns(){
+void file_PTS::Loader_nbColumns(){
   //Extraction of each column
   bool endLoop = false;
   string line_loop = line;
@@ -271,7 +125,7 @@ void filePTS::Loader_nbColumns(){
 
   //---------------------------
 }
-void filePTS::Loader_configuration(){
+void file_PTS::Loader_configuration(){
   //---------------------------
 
   switch(line_columns.size()){
@@ -292,7 +146,7 @@ void filePTS::Loader_configuration(){
       break;
     }
     case 6 :{
-      //XYZ - Nxyz
+      //XYZ - N
       if(abs(line_columns[3])<=1 && ((abs(line_columns[4])<=1 && abs(line_columns[5])<=1) || isnan(line_columns[4]))){
         config = 2;
         hasNormal = true;
@@ -319,7 +173,7 @@ void filePTS::Loader_configuration(){
         hasNormal = false;
         break;
       }
-      //XYZ - I - Nxyz
+      //XYZ - I - N
       if(abs(line_columns[4])<=1.1 && ((abs(line_columns[5])<=1.1 && abs(line_columns[6])<=1.1) || isnan(line_columns[5]))){
         config = 5;
         hasNormal = true;
@@ -341,7 +195,7 @@ void filePTS::Loader_configuration(){
       }
       break;
     }
-    case 9 :{//XYZ - RGB - Nxyz
+    case 9 :{//XYZ - RGB - N
       config = 6;
       hasColor = true;
       hasNormal = true;
@@ -350,7 +204,7 @@ void filePTS::Loader_configuration(){
       break;
     }
     case 10 :{
-      //XYZ - RGB - Nxyz - I
+      //XYZ - RGB - N - I
       if(line_columns[3] >= 1 && line_columns[3] <= 255 && abs(line_columns[6]) >= 0 && abs(line_columns[6]) <= 1 ){
         config = 9;
         hasColor = true;
@@ -361,7 +215,7 @@ void filePTS::Loader_configuration(){
         break;
       }
 
-      //XYZ - I - RGB - Nxyz
+      //XYZ - I - RGB - N
       else{
         config = 7;
         hasColor = true;
@@ -375,6 +229,12 @@ void filePTS::Loader_configuration(){
       }
       break;
     }
+    default :{//XYZ - RGB
+      config = 3;
+      hasColor = true;
+      hasNormal = false;
+      hasIntensity = false;
+    }
   }
 
   //----------------------------
@@ -387,7 +247,7 @@ void filePTS::Loader_configuration(){
   //---------------------------
   endParameters = true;
 }
-void filePTS::Loader_data(int FILE_config){
+void file_PTS::Loader_data(int FILE_config){
   std::istringstream iss(line);
   float x,y,z,r,g,b,I,nx,ny,nz;
   //---------------------------
@@ -406,51 +266,165 @@ void filePTS::Loader_data(int FILE_config){
   }
 
   //Position data
-  locationOBJ.push_back(vec3(x, y, z));
+  data_out->location.push_back(vec3(x, y, z));
 
   //Reflectance data
   if(hasIntensity){
     if(IdataFormat == 0){
-      intensityOBJ.push_back(I);
+      data_out->intensity.push_back(I);
     }else
     if(IdataFormat == 1){
-      intensityOBJ.push_back(I/255);
+      data_out->intensity.push_back(I/255);
     }else
     if(IdataFormat == 2){
-      intensityOBJ.push_back((I+2048)/4096);
+      data_out->intensity.push_back((I+2048)/4096);
     }
   }
 
   //Normal data
   if(hasNormal){
-    normalOBJ.push_back(vec3(nx, ny, nz));
+    data_out->normal.push_back(vec3(nx, ny, nz));
   }
 
   //Color data
   if(hasColor){
-    colorOBJ.push_back(vec4((r/255), (g/255), (b/255), 1.0f));
+    data_out->color.push_back(vec4((r/255), (g/255), (b/255), 1.0f));
     //if reflectance value is coded in RGB format
     if(hasIntensity == false && r == g && g == b){
-        intensityOBJ.push_back(r/255);
+        data_out->intensity.push_back(r/255);
         hasIntensity = true;
     }
   }
 
   //---------------------------
 }
-void filePTS::Loader_clearData(){
+
+//Main exporter functions
+bool file_PTS::Exporter(string path, Cloud* cloud){
   //---------------------------
 
-  vector<vec3>().swap(locationOBJ);
-  vector<vec3>().swap(normalOBJ);
-  vector<vec4>().swap(colorOBJ);
-  vector<float>().swap(intensityOBJ);
+  //Create file
+  if(path.substr(path.find_last_of(".") + 1) != "pts") path.append(".pts");
+  ofstream file;
+  file.open(path);
+  if(!file){
+    cout<<"Error in creating file !";
+    return 0;
+  }
+
+  //Set data representation format
+  int precision = 6;
+  file << fixed;
+
+  //Data : xyz (R) (rgb) (nxnynz)
+  for(int i=0; i<cloud->nb_subset; i++){
+    Subset* subset = *next(cloud->subset.begin(), i);
+    vector<vec3>& XYZ = subset->xyz;
+    vector<vec4>& RGB = subset->RGB;
+    vector<vec3>& N = subset->N;
+    vector<float>& Is = subset->I;
+
+    //Write in the file
+    for(int i=0; i<XYZ.size(); i++){
+      //Location
+      file << setprecision(precision) << XYZ[i].x <<" "<< XYZ[i].y <<" "<< XYZ[i].z ;
+
+      //Intensity
+      if(subset->I.size() != 0){
+        if(export_IdataFormat == 0){
+          file << setprecision(precision) <<" "<< Is[i];
+        }
+        else if(export_IdataFormat == 1){
+          file << setprecision(0) <<" "<< int(Is[i]*255);
+        }
+        else if(export_IdataFormat == 2){
+          file << setprecision(0) <<" "<< int((Is[i]*4096)-2048);
+        }
+      }
+
+      //Color
+      if(subset->has_color){
+        file << setprecision(0) <<" "<< RGB[i].x * 255 <<" "<< RGB[i].y * 255 <<" "<< RGB[i].z * 255;
+      }
+
+      //Normal
+      if(subset->N.size() != 0){
+        file << setprecision(precision) <<" "<< N[i].x <<" "<< N[i].y <<" "<< N[i].z;
+      }
+
+      //line end
+      file << endl;
+    }
+  }
+
+  //Close file
+  file.close();
 
   //---------------------------
+  return true;
+}
+bool file_PTS::Exporter(string path, Subset* subset){
+  //---------------------------
+
+  //Create file
+  if(path.substr(path.find_last_of(".") + 1) != "pts") path.append(".pts");
+  ofstream file;
+  file.open(path);
+  if(!file){
+    cout<<"Error in creating file !";
+    return 0;
+  }
+
+  //Data : xyz (R) (rgb) (nxnynz)
+  vector<vec3>& XYZ = subset->xyz;
+  vector<vec4>& RGB = subset->RGB;
+  vector<vec3>& N = subset->N;
+  vector<float>& Is = subset->I;
+
+  //Write in the file
+  int precision = 6;
+  file << XYZ.size() <<endl;
+  for(int i=0; i<XYZ.size(); i++){
+    //Line start
+    file << fixed;
+
+    //Location
+    file << setprecision(precision) << XYZ[i].x <<" "<< XYZ[i].y <<" "<< XYZ[i].z ;
+
+    //Intensity
+    if(subset->I.size() != 0){
+      if(export_IdataFormat == 0){
+        file << setprecision(precision) <<" "<< Is[i];
+      }
+      else if(export_IdataFormat == 1){
+        file << setprecision(0) <<" "<< int(Is[i]*255);
+      }
+      else if(export_IdataFormat == 2){
+        file << setprecision(0) <<" "<< int((Is[i]*4096)-2048);
+      }
+    }
+
+    //Color
+    if(subset->has_color){
+      file << setprecision(0) <<" "<< RGB[i].x * 255 <<" "<< RGB[i].y * 255 <<" "<< RGB[i].z * 255;
+    }
+
+    //Normal
+    if(subset->N.size() != 0){
+      file << setprecision(precision) <<" "<< N[i].x <<" "<< N[i].y <<" "<< N[i].z;
+    }
+
+    //line end
+    file << endl;
+  }
+
+  //---------------------------
+  file.close();
+  return true;
 }
 
 //Checking functions
-bool filePTS::check_header(string pathFile){
+bool file_PTS::check_header(string pathFile){
   string line;
   ifstream FILE(pathFile);
   getline(FILE, line);
@@ -475,7 +449,7 @@ bool filePTS::check_header(string pathFile){
   }
   return false;
 }
-int filePTS::check_configuration(string pathFile){
+int file_PTS::check_configuration(string pathFile){
   string line_loop;
   ifstream FILE(pathFile);
   //---------------------------
@@ -520,7 +494,7 @@ int filePTS::check_configuration(string pathFile){
       float G =line_columns[4];
       float B =line_columns[5];
 
-      //XYZ - Nxyz
+      //XYZ - N
       bool color = abs(R) <= 1 && abs(G) <= 1 && abs(B) <= 1;
       bool nan = isnan(R) && isnan(G) && isnan(B);
       if(color || nan){
@@ -557,7 +531,7 @@ int filePTS::check_configuration(string pathFile){
         break;
       }
 
-      //XYZ - I - Nxyz
+      //XYZ - I - N
       bool normal = abs(R) <= 1.1f && abs(G) <= 1.1 && abs(B) <= 1.1;
       bool nan = isnan(R) && isnan(G) && isnan(B);
       if(normal || nan){
@@ -598,7 +572,7 @@ int filePTS::check_configuration(string pathFile){
       break;
     }
     case 9 :{
-      //XYZ - RGB - Nxyz
+      //XYZ - RGB - N
       config = 6;
       hasColor = true;
       hasNormal = true;
@@ -606,7 +580,7 @@ int filePTS::check_configuration(string pathFile){
       break;
     }
     case 10 :{
-      //XYZ - RGB - Nxyz - I[0;1]
+      //XYZ - RGB - N - I[0;1]
       if(line_columns[3] >= 1 && line_columns[3] <= 255 && abs(line_columns[6]) >= 0 && abs(line_columns[6]) <= 1 ){
         config = 9;
         hasColor = true;
@@ -616,7 +590,7 @@ int filePTS::check_configuration(string pathFile){
 
         break;
       }
-      //XYZ - RGB - Nxyz - I[-2048;+2047]
+      //XYZ - RGB - N - I[-2048;+2047]
       else if(line_columns[3] >= 1 && line_columns[3] <= 255 && abs(line_columns[6]) > 1 && abs(line_columns[6]) <= 2048 ){
         config = 9;
         hasColor = true;
@@ -626,7 +600,7 @@ int filePTS::check_configuration(string pathFile){
 
         break;
       }
-      else{//XYZ - I - RGB - Nxyz
+      else{//XYZ - I - RGB - N
         config = 7;
         hasColor = true;
         hasIntensity = true;
@@ -640,6 +614,12 @@ int filePTS::check_configuration(string pathFile){
       }
       break;
     }
+    default :{//XYZ - RGB
+      config = 3;
+      hasColor = true;
+      hasNormal = false;
+      hasIntensity = false;
+    }
   }
 
   //---------------------------
@@ -649,7 +629,7 @@ int filePTS::check_configuration(string pathFile){
   }
   return config;
 }
-int filePTS::check_size(string pathFile, bool FILE_hasHeader){
+int file_PTS::check_size(string pathFile, bool FILE_hasHeader){
   //---------------------------
 
   int FILE_size = get_fileSize(pathFile);

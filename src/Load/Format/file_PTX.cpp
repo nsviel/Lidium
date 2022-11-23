@@ -1,7 +1,7 @@
 #include "file_PTX.h"
 
 //Constructor / Destructor
-filePTX::filePTX(){
+file_PTX::file_PTX(){
   //---------------------------
 
   this->option_separateCloud = false;
@@ -14,22 +14,22 @@ filePTX::filePTX(){
 
   //---------------------------
 }
-filePTX::~filePTX(){}
+file_PTX::~file_PTX(){}
 
 //Main functions
-bool filePTX::Loader(string pathFile){
-  this->locationOBJ.clear();
-  this->colorOBJ.clear();
-  this->intensityOBJ.clear();
-
-  std::ifstream infile(pathFile);
-  std::string line;
+dataFile* file_PTX::Loader(string pathFile){
   list_ptxCloud = new list<PTXCloud*>;
-  PTXCloud* mesh = new PTXCloud;
-  PC_line = 0;
+  PTXCloud* cloud = new PTXCloud;
+  data_out = new dataFile();
+  data_out->path = pathFile;
   //---------------------------
 
+  //Open file
+  std::ifstream infile(pathFile);
+
   //Data loop
+  PC_line = 0;
+  std::string line;
   while (std::getline(infile, line)){
     std::istringstream iss(line);
     x = 0; y = 0; z = 0; I = 0; r = 0; g = 0; b = 0;
@@ -41,17 +41,17 @@ bool filePTX::Loader(string pathFile){
         break;
       }
       cout<<"New cloud - nb of lines : "<<PC_line<<endl;
-      list_ptxCloud->push_back(mesh);
-      mesh = new PTXCloud;
+      list_ptxCloud->push_back(cloud);
+      cloud = new PTXCloud;
       PC_line = 0;
     }
 
-    this->Loader_header(mesh);
-    this->Loader_data(mesh);
+    this->Loader_header(cloud);
+    this->Loader_data(cloud);
 
     PC_line++;
   }
-  list_ptxCloud->push_back(mesh);
+  list_ptxCloud->push_back(cloud);
 
   //Scanner at origin
   if(option_scannerAtOrigin){
@@ -67,9 +67,10 @@ bool filePTX::Loader(string pathFile){
   this->Loader_assembling();
 
   //---------------------------
-  return true;
+  data_out->size = data_out->location.size();
+  return data_out;
 }
-bool filePTX::Exporter(string path){
+bool file_PTX::Exporter(string path){
   //---------------------------
 
   //Create file
@@ -82,31 +83,31 @@ bool filePTX::Exporter(string path){
     return 0;
   }
   /*
-  for(int i=0; i<list_Mesh->size(); i++)
+  for(int i=0; i<list_cloud->size(); i++)
   {
     //Select clouds one by one
-    Mesh* mesh = &*next(list_Mesh->begin(),i);
+    Cloud* cloud = &*next(list_cloud->begin(),i);
 
     //----->HEADER
     //***********************************
     int nbRows = 3;
-    if(mesh->intensity.hasData) nbRows++;
-    if(mesh->color.hasData) nbRows++;
-    if(mesh->normal.hasData) nbRows++;
+    if(cloud->subset[0].I.size() != 0) nbRows++;
+    if(cloud->subset[0].has_color) nbRows++;
+    if(cloud->subset[0].N.size() != 0) nbRows++;
     //number of columns
-    file << mesh->NbPoints << endl;
+    file << cloud->subset[0].nb_point << endl;
     //number of rows
     file << nbRows << endl;
     //scanner registered position
-    vec3& ScanPos = mesh->scanner.Position;
+    vec3& ScanPos = cloud->scanner.Position;
     file << ScanPos.x << " " << ScanPos.y << " " << ScanPos.z << endl;
     //scanner orientation
     file << 1 << " " << 0 << " " << 0 << endl;
     file << 0 << " " << 1 << " " << 0 << endl;
     file << 0 << " " << 0 << " " << 1 << endl;
     //transformation matrix
-    mat4& transMat = mesh->transformation.Translation;
-    mat4& rotMat = mesh->transformation.Rotation;
+    mat4& transMat = cloud->subset[0].trans;
+    mat4& rotMat = cloud->subset[0].rotat;
     mat4 finalMat = transpose(transMat * rotMat);
     file << setprecision(6) << finalMat[0][0] << " " << finalMat[0][1] << " " << finalMat[0][2] << " " << finalMat[0][3] << endl;
     file << setprecision(6) << finalMat[1][0] << " " << finalMat[1][1] << " " << finalMat[1][2] << " " << finalMat[1][3] << endl;
@@ -116,10 +117,7 @@ bool filePTX::Exporter(string path){
 
     //----->DATA
     //-> Data : xyz (R) (rgb) (nxnynz)
-    vector<vec3>& pos = mesh->location.Buffer;
-    vector<vec4>& col = mesh->color.Buffer;
-    vector<vec3>& nor = mesh->normal.Buffer;
-    vector<float>& ref = mesh->intensity.Buffer;
+
     int precision = 6;
 
     //Write in the file
@@ -131,16 +129,16 @@ bool filePTX::Exporter(string path){
       file << setprecision(precision) << pos[i].x <<" "<< pos[i].y <<" "<< pos[i].z ;
 
       //---> R
-      if(mesh->intensity.hasData)
+      if(cloud->subset[0].I.size() != 0)
         file << setprecision(0) <<" "<< ref[i];
 
       //---> rgb
       //Color only
-      if(mesh->color.hasData)
+      if(cloud->subset[0].has_color)
         file << setprecision(0) <<" "<< col[i].x * 255 <<" "<< col[i].y * 255 <<" "<< col[i].z * 255;
 
       //---> nx ny nz
-      if(mesh->normal.hasData)
+      if(cloud->subset[0].N.size() != 0)
         file << setprecision(precision) <<" "<< nor[i].x <<" "<< nor[i].y <<" "<< nor[i].z;
 
       //We end the line
@@ -155,84 +153,84 @@ bool filePTX::Exporter(string path){
 }
 
 //Subfunctions
-void filePTX::Loader_header(PTXCloud* mesh){
+void file_PTX::Loader_header(PTXCloud* cloud){
   //---------------------------
 
   //Scanner registered position
   if(PC_line == 2){
-    mesh->rootTrans.x = x;
-    mesh->rootTrans.y = y;
-    mesh->rootTrans.z = z;
+    cloud->rootTrans.x = x;
+    cloud->rootTrans.y = y;
+    cloud->rootTrans.z = z;
   }
   //Scanner registered axis
   if(PC_line >= 3 && PC_line <= 5){
-    mesh->rootRotat[PC_line-3].x = x;
-    mesh->rootRotat[PC_line-3].y = y;
-    mesh->rootRotat[PC_line-3].z = z;
+    cloud->rootRotat[PC_line-3].x = x;
+    cloud->rootRotat[PC_line-3].y = y;
+    cloud->rootRotat[PC_line-3].z = z;
   }
   //Transformation matrix
   if(PC_line >= 6 && PC_line <= 9){
-    mesh->transfMat[PC_line-6].x = x;
-    mesh->transfMat[PC_line-6].y = y;
-    mesh->transfMat[PC_line-6].z = z;
-    mesh->transfMat[PC_line-6].w = I;
+    cloud->transfMat[PC_line-6].x = x;
+    cloud->transfMat[PC_line-6].y = y;
+    cloud->transfMat[PC_line-6].z = z;
+    cloud->transfMat[PC_line-6].w = I;
   }
 
   //---------------------------
 }
-void filePTX::Loader_data(PTXCloud* mesh){
+void file_PTX::Loader_data(PTXCloud* cloud){
   //---------------------------
 
   if(PC_line > 9){
     if(abs(r) >= 0.0001){
       //Location
-      mesh->location.push_back(vec3(x, y, z));
+      cloud->location.push_back(vec3(x, y, z));
 
       //Intensity
       if(retrieve_I){
         if(IdataFormat == 0){
-          mesh->intensity.push_back(I);
+          cloud->intensity.push_back(I);
         }else
         if(IdataFormat == 1){
-          mesh->intensity.push_back(I/255);
+          cloud->intensity.push_back(I/255);
         }else
         if(IdataFormat == 2){
-          mesh->intensity.push_back((I+2048)/4096);
+          cloud->intensity.push_back((I+2048)/4096);
         }
       }
 
       //Color
       if(retrieve_RGB){
-        mesh->color.push_back(glm::vec4(r/255, g/255, b/255, 1.0f));
+        cloud->color.push_back(glm::vec4(r/255, g/255, b/255, 1.0f));
       }
     }
   }
 
   //---------------------------
 }
-void filePTX::Loader_assembling(){
+void file_PTX::Loader_assembling(){
   //Assemble into an unique cloud
   //---------------------------
 
   for(int i=0; i<list_ptxCloud->size(); i++){
-    PTXCloud* mesh = *next(list_ptxCloud->begin(),i);
+    PTXCloud* cloud = *next(list_ptxCloud->begin(),i);
 
-    for(int j=0; j<mesh->location.size(); j++){
-      locationOBJ.push_back(mesh->location[j]);
-      intensityOBJ.push_back(mesh->intensity[j]);
-      colorOBJ.push_back(mesh->color[j]);
+    for(int j=0; j<cloud->location.size(); j++){
+      data_out->location.push_back(cloud->location[j]);
+      data_out->intensity.push_back(cloud->intensity[j]);
+      data_out->color.push_back(cloud->color[j]);
     }
   }
   //---------------------------
 }
-void filePTX::Loader_cloudTransformation(){
+void file_PTX::Loader_cloudTransformation(){
   cout<<"---> Apply ptx cloud transformation"<<endl;
   //---------------------------
 
   for(int i=0; i<list_ptxCloud->size(); i++){
-    PTXCloud* mesh = *next(list_ptxCloud->begin(),i);
-    vector<vec3>& XYZ = mesh->location;
-    mat4& MatT = mesh->transfMat;
+    PTXCloud* cloud = *next(list_ptxCloud->begin(),i);
+    vector<vec3>& XYZ = cloud->location;
+    mat4& MatT = cloud->transfMat;
 
     if(option_notUseZValue){
       MatT[3][2] = 0;
@@ -246,16 +244,16 @@ void filePTX::Loader_cloudTransformation(){
 
   //---------------------------
 }
-void filePTX::Loader_scannerAtOrigin(){
+void file_PTX::Loader_scannerAtOrigin(){
   cout<<"---> Set cloud origin at scanner position"<<endl;
   //---------------------------
 
   for(int i=0; i<list_ptxCloud->size(); i++){
-    PTXCloud* mesh = *next(list_ptxCloud->begin(),i);
+    PTXCloud* cloud = *next(list_ptxCloud->begin(),i);
 
-    vector<vec3>& XYZ = mesh->location;
-    vec3& scanTranslation = mesh->rootTrans;
-    mat3& scanRotation = mesh->rootRotat;
+    vector<vec3>& XYZ = cloud->location;
+    vec3& scanTranslation = cloud->rootTrans;
+    mat3& scanRotation = cloud->rootRotat;
 
     if(option_notUseZValue){
       scanTranslation.z = 0;

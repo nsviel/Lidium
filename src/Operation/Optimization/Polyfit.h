@@ -1,11 +1,15 @@
-#ifndef _POLYNOMIAL_REGRESSION_H
-#define _POLYNOMIAL_REGRESSION_H  __POLYNOMIAL_REGRESSION_H
+#ifndef POLYFIT_H
+#define POLYFIT_H
 
-#include <cmath>
-#include <stdexcept>
-#include "Eigen/Dense"
+#include "OptimLib/optim.hpp"
+
 #include <boost/numeric/ublas/matrix.hpp>
 #include <boost/numeric/ublas/lu.hpp>
+#include <Eigen/Dense>
+#include <stdexcept>
+#include <cmath>
+
+using namespace Eigen;
 
 /**
  * PURPOSE:
@@ -273,18 +277,14 @@ vector<TYPE> polyfit_homemade(const vector<TYPE>& vec_x, const vector<TYPE>& vec
     b(i) = vec_y[i];
   }
 
-  say("-------lin:");
   MatrixXf Jinv = J.completeOrthogonalDecomposition().pseudoInverse();
   VectorXf coe = Jinv*b;
   coe = J.completeOrthogonalDecomposition().solve(b);
-  say(coe);
 
-  say("-------solver:");
+  //-------solver:
   coe = J.colPivHouseholderQr().solve(b);
   coe = (J.transpose() * J).ldlt().solve(J.transpose() * b);
-
   coe = J.bdcSvd(ComputeThinU | ComputeThinV).solve(b);
-  say(coe);
   //------------------
 
   //Convert into std vector
@@ -323,19 +323,7 @@ std::vector<T> polyfit_Eigen(
   }
 
   VectorXf coefficients;
-  /*coefficients = mat_X.jacobiSvd(ComputeThinU | ComputeThinV).solve(mat_Y);
-  say(coefficients);*/
-  /*coefficients = mat_X.fullPivLu().solve(mat_Y);
-  say(coefficients);
-  coefficients = mat_X.colPivHouseholderQr().solve(mat_Y);
-  say(coefficients);
-  coefficients = mat_X.fullPivHouseholderQr().solve(mat_Y);
-  say(coefficients);*/
   coefficients = mat_X.bdcSvd(ComputeThinU | ComputeThinV).solve(mat_Y);
-  //say(coefficients);
-  /*coefficients = mat_X.completeOrthogonalDecomposition().solve(mat_Y);
-  say(coefficients);*/
-
 
   //------------------------
   vector<T> coeffs(coefficients.data(), coefficients.data() + (n+1));

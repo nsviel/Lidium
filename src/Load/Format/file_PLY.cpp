@@ -1,279 +1,495 @@
 #include "file_PLY.h"
 
-//Constructor / Destructor
-filePLY::filePLY(){}
-filePLY::~filePLY(){}
+#include "../../Specific/fct_maths.h"
 
-//Main functions
-bool filePLY::Loader(string pathFile){
+#include <iomanip>
+#include <sys/file.h>
+
+
+//Constructor / Destructor
+file_PLY::file_PLY(){}
+file_PLY::~file_PLY(){}
+
+//Main loader functions
+dataFile* file_PLY::Loader(string path_file){
+  data_out = new dataFile();
+  string nameFormat = path_file.substr(path_file.find_last_of("/\\") + 1);
+  data_out->name = nameFormat.substr(0, nameFormat.find_last_of("."));
+  data_out->path = path_file;
   //---------------------------
 
-  //Initialization
-  this->Loader_init();
+  //Get format type
+  std::ifstream file(path_file);
+  this->Loader_header(file);
+
+  //Open data
+  if (format == "ascii"){
+
+    //Open file
+    std::ifstream file(path_file);
+
+    //Read header
+    this->Loader_header(file);
+
+    //Read data
+    this->Loader_data_ascii(file);
+
+    file.close();
+
+  }
+  else if (format == "binary_little_endian"){
+    //Open file
+    std::ifstream file(path_file, ios::binary);
+
+    //Read header
+    this->Loader_header(file);
+
+    //Read data
+    this->Loader_data_binary(file);
+
+    //Close file
+    file.close();
+  }
+  else if (format == "binary_big_endian"){
+    cout << "WARNING: function not implemented for binary big endian file" << endl;
+  }
+
+  //---------------------------
+  return data_out;
+}
+
+//Loader subfunctions
+void file_PLY::Loader_header(std::ifstream& file){
+  this->property_name.clear();
+  this->property_type.clear();
+  this->property_size.clear();
+  this->property_number = 0;
+  this->is_intensity = false;
+  this->is_timestamp = false;
+  //---------------------------
+
+  // Separate the header
+  string line, h1, h2, h3, h4;
+  do{
+    getline(file, line);
+    std::istringstream iss(line);
+    iss >> h1 >> h2 >> h3 >> h4;
+
+    //Retrieve format
+    if(h1 == "format") format = h2;
+
+    //Retrieve number of point
+    if(h1 + h2 == "elementvertex"){
+      point_number = std::stoi(h3);
+    }
+
+    //Retrieve property
+    if(h1 == "property"){
+      if (h2 == "float32" | h2 == "float"){
+        property_type.push_back("float32");
+        property_size.push_back(4);
+      }
+      else if (h2 == "float64" | h2 == "double"){
+        property_type.push_back("float64");
+        property_size.push_back(8);
+      }
+      else if (h2 == "int"){
+        property_type.push_back("int32");
+        property_size.push_back(4);
+      }
+      else if (h2 == "uchar"){
+        property_type.push_back("uchar");
+        property_size.push_back(1);
+      }
+      else{ // Default
+        property_type.push_back("unknown");
+        property_size.push_back(4);
+      }
+
+      if(h3 == "timestamp"){
+        is_timestamp = true;
+      }
+      if(h3 == "scalar_Scalar_field" || h3 == "intensity"){
+        is_intensity = true;
+      }
+
+      property_name.push_back(h3);
+      property_number++;
+    }
+  }while (line.find("end_header") != 0);
+
+  //---------------------------
+}
+void file_PLY::Loader_data_ascii(std::ifstream& file){
+  //---------------------------
 
   //Retrieve data
-  std::ifstream infile(pathFile);
-  while (std::getline(infile, line))
-  {
-    cpt++;
+  string line;
+  int cpt = 1;
+  while (std::getline(file, line)){
+    std::istringstream iss(line);
 
-    if(!endHeader){
-      this->Loader_header();
+    //Stocke all line values
+    float d0, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10;
+    iss >> d0 >> d1 >> d2 >> d3 >> d4 >> d5 >> d6 >> d7 >> d8 >> d9 >> d10;
+
+    //Location
+    data_out->location.push_back(vec3(d0, d1, d2));
+
+    //Normal
+    data_out->normal.push_back(vec3(d3, d4, d5));
+
+    //Check for data end
+    if(cpt >= point_number){
+      break;
     }
-    else if(!endCheckProperties){
-      this->Loader_property();
-    }
-    else if(!endData){
-      this->Loader_data();
+    cpt++;
+  }
+
+  //---------------------------
+  data_out->size = data_out->location.size();
+}
+void file_PLY::Loader_data_binary(std::ifstream& file){
+  //---------------------------
+
+  //Read data
+  int buffer_size = property_number * point_number * sizeof(float);
+  char* data = new char[buffer_size];
+  file.read(data, buffer_size);
+
+  //Convert raw data into decimal data
+  int offset = 0;
+  vector<vector<float>> data_columns;
+  data_columns.resize(property_number, vector<float>(point_number));
+  for (int i=0; i<point_number; i++){
+    //Get data for each property
+    for (int j=0; j<property_number; j++){
+      float value =  *((float *) (data + offset));
+      offset += sizeof(float);
+      data_columns[j][i] = value;
     }
   }
 
-  if(blenderFile){
-    this->Loader_DoubledPts();
+  //Insert data in the adequate vector
+  data_out->location.resize(point_number, vec3(0,0,0));
+  if(is_timestamp) data_out->timestamp.resize(point_number, 0);
+  if(is_intensity) data_out->intensity.resize(point_number, 0);
+  data_out->size = point_number;
+
+  #pragma omp parallel for
+  for (int i=0; i<point_number; i++){
+    for (int j=0; j<property_number; j++){
+      //Location
+      if(property_name[j] == "x"){
+        vec3 point = vec3(data_columns[j][i], data_columns[j+1][i], data_columns[j+2][i]);
+        data_out->location[i] = point;
+      }
+
+      //Intensity
+      if(property_name[j] == "scalar_Scalar_field" || property_name[j] == "intensity"){
+        float Is = data_columns[j][i];
+        data_out->intensity[i] = Is;
+      }
+
+      //Timestamp
+      if(property_name[j] == "timestamp"){
+        float ts = data_columns[j][i];
+        data_out->timestamp[i] = ts;
+      }
+    }
+  }
+
+  //---------------------------
+}
+void file_PLY::reorder_by_timestamp(){
+  vector<vec3> pos;
+  vector<float> ts;
+  vector<float> Is;
+  //---------------------------
+
+  if(data_out->timestamp.size() != 0){
+    //Check for non void and reorder by index
+    for (auto i: fct_sortByIndexes(data_out->timestamp)){
+      if(data_out->location[i] != vec3(0, 0, 0)){
+        //Location adn timestamp
+        ts.push_back(data_out->timestamp[i]);
+        pos.push_back(data_out->location[i]);
+
+        //Intensity
+        if(data_out->intensity.size() != 0){
+          Is.push_back(data_out->intensity[i]);
+        }
+      }
+    }
+
+    //Set new vectors
+    data_out->location = pos;
+    data_out->timestamp = ts;
+    data_out->intensity = Is;
+  }
+
+  //---------------------------
+}
+
+//Main exporter functions
+bool file_PLY::Exporter_cloud(string path_file, string ply_format, Cloud* cloud){
+  //---------------------------
+
+  //Check for file format ending
+  if(path_file.substr(path_file.find_last_of(".") + 1) != "ply"){
+    path_file.append(".ply");
+  }
+
+  if (ply_format == "ascii"){
+    for(int i=0; i<cloud->nb_subset; i++){
+      Subset* subset = *next(cloud->subset.begin(), i);
+
+      //Open file
+      std::ofstream file(path_file);
+
+      //Save header
+      this->Exporter_header(file, ply_format, subset);
+
+      //Save data
+      this->Exporter_data_ascii(file, subset);
+
+      file.close();
+    }
+  }
+  else if (format == "binary" || format == "binary_little_endian"){
+    for(int i=0; i<cloud->nb_subset; i++){
+      Subset* subset = *next(cloud->subset.begin(), i);
+      format = "binary_little_endian";
+
+      //Locak file
+      int fd = open(path_file.c_str(), O_RDWR | O_CREAT, 0666);
+      flock(fd, LOCK_EX | LOCK_NB);
+
+      //Open file
+      std::ofstream file(path_file, ios::binary);
+
+      //Save header
+      this->Exporter_header(file, ply_format, subset);
+
+      //Save data
+      this->Exporter_data_binary(file, subset);
+
+      file.close();
+    }
+  }
+  else{
+    cout << "WARNING: format not recognized" << endl;
+    return false;
   }
 
   //---------------------------
   return true;
 }
-bool filePLY::Exporter(string path, Mesh* mesh){
+bool file_PLY::Exporter_subset(string path_dir, string ply_format, Subset* subset){
+  string filePath = path_dir + subset->name + ".tmp";
+  string filePath_end = path_dir + subset->name + ".ply";
   //---------------------------
 
-  //Create file
-  if(path.substr(path.find_last_of(".") + 1) != "ply") path.append(".ply");
-  ofstream file;
-  file.open(path);
-  if(!file)
-  {
-    cout<<"Error in creating file !"<<endl;
-    return 0;
+  //Check for file format ending
+  if (ply_format == "ascii"){
+
+    //Open file
+    std::ofstream file(filePath);
+
+    //Save header
+    this->Exporter_header(file, ply_format, subset);
+
+    //Save data
+    this->Exporter_data_ascii(file, subset);
+
+    file.close();
+  }
+  else if (ply_format == "binary" || ply_format == "binary_little_endian"){
+    ply_format = "binary_little_endian";
+
+    //Locak file
+    //int fd = open(filePath.c_str(), O_RDWR | O_CREAT, 0666);
+    //flock(fd, LOCK_EX | LOCK_NB);
+
+    //Open file
+    std::ofstream file(filePath, ios::binary);
+
+    //Save header
+    this->Exporter_header(file, ply_format, subset);
+
+    //Save data
+    this->Exporter_data_binary(file, subset);
+
+    file.close();
+
+  }
+  else{
+    cout << "WARNING: format not recognized" << endl;
+    return false;
   }
 
-  //-> Data : xyz (R) (rgb) (nxnynz)
-  vector<vec3>& pos = mesh->location.Buffer;
-  vector<vec4>& col = mesh->color.Buffer;
-  vector<vec3>& nor = mesh->normal.Buffer;
-  vector<float>& ref = mesh->intensity.Buffer;
-  int precision = 6;
+  //Rename file in proper format when complete
+  rename(filePath.c_str(), filePath_end.c_str());
 
-  //Write in the file
-  //====== Header ========
-  file << "ply" <<endl;
-  file << "format ascii 1.0" <<endl;
-  file << "element vertex " << pos.size() << endl;
+  //---------------------------
+  return true;
+}
+bool file_PLY::Exporter_subset(string path_dir, string ply_format, Subset* subset, string fileName){
+  string filePath = path_dir + fileName + ".ply";
+  //---------------------------
+
+  //Check for file format ending
+  if (ply_format == "ascii"){
+
+    //Open file
+    std::ofstream file(filePath);
+
+    //Save header
+    this->Exporter_header(file, ply_format, subset);
+
+    //Save data
+    this->Exporter_data_ascii(file, subset);
+
+    file.close();
+  }
+  else if (ply_format == "binary" || ply_format == "binary_little_endian"){
+    ply_format = "binary_little_endian";
+
+    //Locak file
+    int fd = open(filePath.c_str(), O_RDWR | O_CREAT, 0666);
+    flock(fd, LOCK_EX | LOCK_NB);
+
+    //Open file
+    std::ofstream file(filePath, ios::binary);
+
+    //Save header
+    this->Exporter_header(file, ply_format, subset);
+
+    //Save data
+    this->Exporter_data_binary(file, subset);
+
+    file.close();
+
+  }
+  else{
+    cout << "WARNING: format not recognized" << endl;
+    return false;
+  }
+
+  //---------------------------
+  return true;
+}
+
+//Exporter subfunctions
+void file_PLY::Exporter_header(std::ofstream& file, string format, Subset* subset){
+  this->point_number = subset->xyz.size();
+  this->property_number = 3;
+  this->property_name.clear();
+  //---------------------------
+
+  //Write header
+  file << "ply" << endl;
+  file << "ID " << subset->ID << endl;
+  file << "format " + format + " 1.0" << endl;
+  file << "element vertex " << point_number << endl;
   file << "property float x" << endl;
   file << "property float y" << endl;
   file << "property float z" << endl;
-  if(mesh->color.hasData)
-  {
-      file << "property uchar red" << endl;
-      file << "property uchar green" << endl;
-      file << "property uchar blue" << endl;
+  if(subset->has_color){
+    file << "property uchar red" << endl;
+    file << "property uchar green" << endl;
+    file << "property uchar blue" << endl;
+
+    property_number += 3;
   }
-  if(mesh->normal.hasData)
-  {
-      file << "property float nx" << endl;
-      file << "property float ny" << endl;
-      file << "property float nz" << endl;
+  if(subset->N.size() != 0){
+    file << "property float nx" << endl;
+    file << "property float ny" << endl;
+    file << "property float nz" << endl;
+
+    property_number += 3;
   }
-  if(mesh->intensity.hasData)
-  {
-      file << "property float scalar_Scalar_field" << endl;
+  if(subset->I.size() != 0){
+    file << "property float scalar_Scalar_field" << endl;
+
+    property_number++;
   }
-  file << "element face 0" << endl;
-  file << "property list uchar int vertex_indices" << endl;
+  if(subset->ts.size() != 0){
+    file << "property float timestamp" << endl;
+
+    property_number++;
+  }
   file << "end_header" <<endl;
 
-  //====== Body ========
-  for(int i=0; i<pos.size(); i++)
-  {
+  //---------------------------
+}
+void file_PLY::Exporter_data_ascii(std::ofstream& file, Subset* subset){
+  vector<vec3>& XYZ = subset->xyz;
+  vector<vec4>& RGB = subset->RGB;
+  vector<vec3>& N = subset->N;
+  vector<float>& Is = subset->I;
+  int precision = 6;
+  //---------------------------
+
+  //Write data in the file
+  for(int i=0; i<XYZ.size(); i++){
     file << fixed;
-    //---> xyz
-    file << setprecision(precision) << pos[i].x <<" "<< pos[i].y <<" "<< pos[i].z ;
 
-    //---> rgb
-    //Color only
-    if(mesh->color.hasData)
-      file << setprecision(0) <<" "<< col[i].x * 255 <<" "<< col[i].y * 255 <<" "<< col[i].z * 255;
+    //Location
+    file << setprecision(precision) << XYZ[i].x <<" "<< XYZ[i].y <<" "<< XYZ[i].z <<" ";
 
-    //---> nx ny nz
-    if(mesh->normal.hasData)
-      file << setprecision(precision) <<" "<< nor[i].x <<" "<< nor[i].y <<" "<< nor[i].z;
+    //Color
+    if(subset->has_color){
+      file << setprecision(0) << RGB[i].x * 255 <<" "<< RGB[i].y * 255 <<" "<< RGB[i].z * 255 <<" ";
+    }
 
-    //---> R
-    if(mesh->intensity.hasData)
-      file << setprecision(0) <<" "<< (ref[i]*4096)-2048;
+    //Normal
+    if(subset->N.size() != 0){
+      file << setprecision(precision) << N[i].x <<" "<< N[i].y <<" "<< N[i].z <<" ";
+    }
 
-    //We end the line
+    //Intensity
+    if(subset->I.size() != 0){
+      float Is_scaled = (Is[i]*4096)-2048;
+      file << setprecision(0) << Is_scaled << " ";
+    }
+
     file << endl;
   }
 
   //---------------------------
-  file.close();
-  return true;
 }
-
-//Subfunctions
-void filePLY::Loader_init(){
+void file_PLY::Exporter_data_binary(std::ofstream& file, Subset* subset){
   //---------------------------
 
-  this->locationOBJ.clear();
-  this->normalOBJ.clear();
-  this->colorOBJ.clear();
-  this->intensityOBJ.clear();
+  //Prepare data writing by blocks
+  int buffer_size = property_number * point_number * sizeof(float);
+  char* data = new char[buffer_size];
 
-  this->endHeader = false;
-  this->endData = false;
-  this->endProperties = false;
-  this->endCheckProperties = false;
-  this->RGBAlpha = false;
-  this->blenderFile = false;
-
-  this->config = 0;
-  this->cpt = 0;
-  this->colorColum = 0;
-  this->normalColumn = 0;
-  this->reflectanceColumn = 0;
-  this->intensityColum = 0;
-  this->positionColumn = 0;
-  this->nbVertex = 0;
-
-  //---------------------------
-}
-void filePLY::Loader_header(){
-  string h1, h2, h3, h4;
-  std::istringstream iss(line);
-  //---------------------------
-
-  iss >> h1 >> h2 >> h3 >> h4;
-
-  if(h1 == "property" && h3 == "x") positionColumn = cpt;
-  if(h1 == "property" && h3 == "red") colorColum = cpt;
-  if(h1 == "property" && h3 == "nx") normalColumn = cpt;
-  if(h1 == "property" && h3 == "intensity") intensityColum = cpt;
-  if(h1 == "property" && h3 == "scalar_Scalar_field") reflectanceColumn = cpt;
-  if(h1 == "property" && h3 == "alpha") RGBAlpha = true;
-  if(h1 == "element" && h2 == "vertex") nbVertex = stoi(h3);
-  if(h4 == "Blender") blenderFile = true;
-  if(h1 == "end_header") endHeader = true;
-
-  //---------------------------
-}
-void filePLY::Loader_property(){
-  string dataFormat;
-  //---------------------------
-
-  //IF Colors + Normals + Reflectances
-  if(colorColum !=0 && normalColumn !=0 && reflectanceColumn !=0){
-    if(normalColumn < colorColum && normalColumn < reflectanceColumn && colorColum < reflectanceColumn){
-      config = 1;
-      dataFormat = "XYZ - Nxyz - RGB - I";
+  //Convert decimal data into binary data
+  int offset = 0;
+  for (int i=0; i<point_number; i++){
+    //Location
+    for(int j=0; j<3; j++){
+      memcpy(data + offset, &subset->xyz[i][j], sizeof(float));
+      offset += sizeof(float);
     }
-    if(colorColum < normalColumn && normalColumn < reflectanceColumn && colorColum < reflectanceColumn){
-      config = 2;
-      dataFormat = "XYZ - RGB - Nxyz - I";
+
+    //Intensity
+    if(subset->I.size() != 0){
+      memcpy(data + offset, &subset->I[i], sizeof(float));
+      offset += sizeof(float);
+    }
+
+    //Timestamp
+    if(subset->ts.size() != 0){
+      memcpy(data + offset, &subset->ts[i], sizeof(float));
+      offset += sizeof(float);
     }
   }
-  //IF Colors + Normals
-  if(colorColum !=0 && normalColumn !=0 && reflectanceColumn ==0){
-    if(normalColumn < colorColum && RGBAlpha){
-      config = 3;
-      dataFormat = "XYZ - Nxyz - RGBA";
-    }
-    if(normalColumn > colorColum && !RGBAlpha){
-      config = 8;
-      dataFormat = "XYZ - RGB - Nxyz";
-    }
-  }
-  //IF Normals only
-  if(colorColum ==0 && normalColumn !=0 && reflectanceColumn ==0){
-      config = 4;
-      dataFormat = "XYZ - Nxyz";
-  }
-  //IF Colors only
-  if(colorColum !=0 && normalColumn ==0 && reflectanceColumn ==0){
-      config = 5;
-      dataFormat = "XYZ - RGBA";
-  }
-  //IF Colors & reflectances
-  if(colorColum !=0 && normalColumn ==0 && reflectanceColumn !=0){
-      config = 6;
-      dataFormat = "XYZ - RGB - I";
-  }
-  //IF nothing but anything else
-  if(colorColum ==0 && normalColumn ==0 && reflectanceColumn ==0 && intensityColum !=0)
-  {
-      config = 7;
-      dataFormat = "XYZ - I";
-  }
 
-  //---------------------------
-  endCheckProperties = true;
-}
-void filePLY::Loader_data(){
-  float x,y,z,r,g,b,nx,ny,nz,R,A,I;
-  std::istringstream iss(line);
-  //---------------------------
-
-  switch(config){
-    case 1: iss >> x>>y>>z >> nx>>ny>>nz>> r>>g>>b >> R; break;
-    case 2: iss >> x>>y>>z >> r>>g>>b >> nx>>ny>>nz >> R; break;
-    case 3: iss >> x>>y>>z >> nx>>ny>>nz>> r>>g>>b >> A; break;
-    case 4: iss >> x>>y>>z >> nx>>ny>>nz; break;
-    case 5: iss >> x>>y>>z >> r>>g>>b>>A; break;
-    case 6: iss >> x>>y>>z >> r>>g>>b>>R; break;
-    case 7: iss >> x>>y>>z >> I; break;
-    case 8: iss >> x>>y>>z >> r>>g>>b >> nx>>ny>>nz; break;
-    default : iss >> x>>y>>z; break;
-  }
-
-  //End of vertex data
-  //cout<<"cpt : "<<cpt<<" nbvertex : "<<nbVertex-20<<endl;
-  if((x == 4 || x == 3 || abs(x) < 0.00001) && cpt > nbVertex-20){
-    endData = true;
-    return;
-  }
-
-  //-------- Extract data --------
-  //Position
-  locationOBJ.push_back(vec3(x, y, z));
-
-  //Normals
-  if(normalColumn !=0)
-    normalOBJ.push_back(vec3(nx, ny, nz));
-
-  //Reflectances
-  if(reflectanceColumn !=0)
-    intensityOBJ.push_back((R+2048)/4096);
-
-  //Intensity
-  if(intensityColum !=0)
-    intensityOBJ.push_back(I);
-
-  //Colors
-  if(colorColum !=0){
-    colorOBJ.push_back(vec4( r/255, g/255, b/255, 1.0f));
-  }
-  else if(colorColum !=0 && RGBAlpha){
-    colorOBJ.push_back(vec4( r/255, g/255, b/255, A/255));
-  }
-
-  //---------------------------
-}
-void filePLY::Loader_DoubledPts(){
-  //---------------------------
-
-  for(int i=0; i<locationOBJ.size(); i++){
-    for(int j=0; j<locationOBJ.size(); j++){
-      if(locationOBJ[i].x == locationOBJ[j].x &&
-        locationOBJ[i].y  == locationOBJ[j].y &&
-        locationOBJ[i].z == locationOBJ[i].z)
-      {
-        locationOBJ.erase(locationOBJ.begin() + j);
-        if(colorOBJ.size() != 0) colorOBJ.erase(colorOBJ.begin() + j);
-        if(normalOBJ.size() != 0) normalOBJ.erase(normalOBJ.begin() + j);
-      }
-    }
-  }
+  //Read all data blocks & read the last data block
+  file.write(data, buffer_size);
 
   //---------------------------
 }

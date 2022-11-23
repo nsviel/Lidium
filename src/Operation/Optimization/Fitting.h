@@ -1,32 +1,31 @@
-#ifndef Fitting_H
-#define Fitting_H
+#ifndef FITTING_H
+#define FITTING_H
 
+class Node_operation;
 class Scene;
 class Glyphs;
-class Attribut;
 
-#include "../../Parameters.h"
+#include "../../common.h"
+
 
 class Fitting
 {
 public:
-  Fitting(Scene* scene);
+  Fitting(Node_operation* node_ope);
   ~Fitting();
 
 public:
   //Sphere fitting
-  void Sphere_MeshToCenter_all();
-  void Sphere_MeshToCenter(Mesh* mesh);
-  vec3 Sphere_FindCenter(Mesh* mesh);
+  void Sphere_cloudToCenter_all();
+  void Sphere_cloudToCenter(Subset* subset);
+  vec3 Sphere_FindCenter(Subset* subset);
 
   //Plane fitting
-  void Plane_Mesh_all();
-  void Plane_Mesh(Mesh* mesh);
+  void Plane_cloud_all();
 
 private:
   Scene* sceneManager;
   Glyphs* glyphManager;
-  Attribut* attribManager;
 
   float Radius;
 };

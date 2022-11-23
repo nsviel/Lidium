@@ -1,167 +1,268 @@
 #include "CoreGLengine.h"
 
-#include "Shader.h"
-#include "Camera.h"
-#include "../Dimension.h"
-#include "../../GUI/GUI.h"
-#include "../Engine.h"
-#include "../Configuration.h"
+#include "Dimension.h"
+
+#include "Camera/Camera.h"
+#include "Camera/Viewport.h"
+#include "Camera/Renderer.h"
+#include "Shader/Shader.h"
+#include "Shader/ShaderObject.h"
+
+#include "../Node_engine.h"
+#include "../Scene/Configuration.h"
+
+#include "../../GUI/Node_gui.h"
+#include "../../GUI/Control/GUI.h"
 
 #define GLM_ENABLE_EXPERIMENTAL
 #define GL_GLEXT_PROTOTYPES
+
+#include <chrono>
+
+using std::chrono::high_resolution_clock;
+using std::chrono::milliseconds;
+using std::chrono::duration_cast;
+
 
 //Constructor / Destructor
 CoreGLengine::CoreGLengine(){
   //---------------------------
 
-  this->configManager = new Configuration();
-
-  float backgColor = configuration.WINDOW_BckgColor;
-  this->backgColor = vec3(backgColor, backgColor, backgColor);
+  this->openglRunning = true;
+  this->window = nullptr;
 
   //---------------------------
 }
 CoreGLengine::~CoreGLengine(){
   //---------------------------
 
-  glDeleteProgram(shaderID);
   glfwDestroyWindow(window);
   glfwTerminate();
 
   //---------------------------
 }
 
-//Main loop
-bool CoreGLengine::init(){
-  this->configManager->make_configuration();
+//Argument processing
+void CoreGLengine::arg(int argc, char* argv[]){
+  this->configManager = new Configuration();
+  //---------------------------
+
+  //Command line processing
+  if(argc > 1){
+    string arg_1 = argv[1];
+
+    if(arg_1 == "capture"){
+      configManager->make_preconfig(1);
+    }
+    else if(arg_1 == "ai"){
+      configManager->make_preconfig(2);
+    }
+    else if(arg_1 == "server"){
+      configManager->make_preconfig(3);
+    }
+  }
+  //Else make default configuration
+  else{
+    configManager->make_preconfig(0);
+  }
+
+  //---------------------------
+}
+
+//Init opengl stuff
+void CoreGLengine::init(){
   //---------------------------
 
   this->init_OGL();
-  this->init_shader();
   this->init_object();
+  this->init_rendering();
 
   //---------------------------
-  return true;
+  console.AddLog("ok" ,"Program initialized...");
 }
-bool CoreGLengine::init_OGL(){
-  int gl_width = configuration.WINDOW_InitResWidth - configuration.GUI_LeftPanel_width;
-  int gl_height = configuration.WINDOW_InitResHeight - configuration.GUI_TopPanel_height;
+void CoreGLengine::init_OGL(){
   //---------------------------
+
+  //Parametrization
+  int resolution_width = configManager->parse_json_i("window", "resolution_width");
+  int resolution_height = configManager->parse_json_i("window", "resolution_height");
+  bool forceVersion = configManager->parse_json_b("window", "forceVersion");
+  string win_title = configManager->parse_json_s("window", "title");
 
   //GLFW
   glfwInit();
-  if(configuration.GL_ForceVersion){
+  if(forceVersion){
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR,4);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR,6);
   }
-  glfwWindowHint(GLFW_SAMPLES, configuration.WINDOW_MultiSample);
+  glfwWindowHint(GLFW_SAMPLES, 16);
   glfwWindowHint(GLFW_OPENGL_CORE_PROFILE, GLFW_OPENGL_CORE_PROFILE);
   glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
 
-  window = glfwCreateWindow(gl_width,gl_height,"window",NULL,NULL);
+  window = glfwCreateWindow(resolution_width, resolution_height, "window", NULL, NULL);
   if(window == NULL){
     std::cout << "Failed to create GLFW window" << std::endl;
     glfwTerminate();
-    return false;
-  }else if(configuration.VERBOSE_coreGL){;
-    std::cout << "GLFW window created" << std::endl;
   }
 
   glfwMakeContextCurrent(window);
-  glfwSetInputMode(window,GLFW_STICKY_KEYS,GL_TRUE);
-  glfwSetWindowTitle(window, configuration.WINDOW_Title);
+  glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
+  glfwSetWindowTitle(window, win_title.c_str());
 
-  //GL
-  glViewport(0, 0, gl_width, gl_height/2);
-  glPointSize(1);
-  glLineWidth(1);
-  glEnable(GL_MULTISAMPLE);
+  //Enable OpenGL alpha channel for RGB
   glEnable(GL_BLEND);
-  glEnable(GL_DEPTH_TEST);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-  glDepthFunc(GL_LESS);
 
   //GLEW
   glewInit();
-  if(configuration.VERBOSE_coreGL){
-    std::cout << "GLEW initiated" << std::endl;
-  }
 
   //---------------------------
-  return true;
 }
-bool CoreGLengine::init_shader(){
-  this->shaderManager = new Shader();
+void CoreGLengine::init_object(){
   //---------------------------
 
-  shaderManager->shaderManagment("../src/Engine/shaders/");
-  shaderID = shaderManager->get_programID();
-  mvpID = shaderManager->get_mvpID();
-  glUseProgram(shaderID);
-  if(configuration.VERBOSE_coreGL){
-    std::cout << "Shaders created" << std::endl;
-  }
+  this->node_engine = new Node_engine(this);
+  this->node_gui = node_engine->get_node_gui();
+  this->dimManager = node_engine->get_dimManager();
+  this->shaderManager = node_engine->get_shaderManager();
+  this->cameraManager = node_engine->get_cameraManager();
+  this->renderManager = node_engine->get_renderManager();
 
   //---------------------------
-  return true;
 }
-bool CoreGLengine::init_object(){
+void CoreGLengine::init_rendering(){
   //---------------------------
 
-  this->dimManager = new Dimension(window);
-  this->cameraManager = new Camera(dimManager);
-  this->engineManager = new Engine(dimManager, shaderManager, cameraManager);
-  this->guiManager = new GUI(engineManager);
-  guiManager->Gui_bkgColor(&backgColor);
+  renderManager->init_rendering_fbo_1();
+  renderManager->init_rendering_fbo_2();
+  renderManager->init_rendering_quad();
+  shaderManager->init();
 
   //---------------------------
-  return true;
 }
 
-//GL loop
 void CoreGLengine::loop(){
   //---------------------------
 
   do{
-    this->loop_begin();
+    auto t1 = high_resolution_clock::now();
 
-    //Viewport
-    dimManager->update_window_dim();
-    vec2 glDim = dimManager->get_glDim();
-    vec2 glPos = dimManager->get_glPos();
-    cameraManager->viewport(glPos, glDim);
-    cameraManager->input_cameraMouseCommands();
-    cameraManager->input_cameraKeyCommands();
+    //First pass
+    //---------------------------
+    this->loop_pass_1();
+    this->loop_drawScene();
+    this->loop_selection();
 
-    //Shader
-    mat4 mvp = cameraManager->compute_mvpMatrix();
-    glUniformMatrix4fv(mvpID, 1, GL_FALSE, &mvp[0][0]);
+    //Second pass
+    //---------------------------
+    this->loop_pass_2();
+    this->loop_drawScreen();
 
-    //Engine
-    engineManager->loop();
-    guiManager->Gui_loop();
-
+    //GUI and end
+    //---------------------------
+    this->loop_gui();
     this->loop_end();
+
+    //Time loop
+    auto t2 = high_resolution_clock::now();
+    this->time_loop = duration_cast<milliseconds>(t2 - t1).count();
   }
-  while(!glfwWindowShouldClose(window));
+  while(openglRunning);
 
   //---------------------------
-  configManager->save_configuration();
 }
-void CoreGLengine::loop_begin(){
+void CoreGLengine::loop_gui(){
   //---------------------------
 
-  glfwPollEvents();
-  glClearColor(backgColor.x, backgColor.y, backgColor.z, 1.0f);
-  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+  dimManager->set_is_resized(false);
+
+  //Draw GUI on fbo 0
+  glBindFramebuffer(GL_FRAMEBUFFER, 0);
+  node_gui->loop();
+
+  //---------------------------
+}
+void CoreGLengine::loop_selection(){
+  //---------------------------
+
+  node_gui->loop_selection();
+
+  //---------------------------
+}
+void CoreGLengine::loop_pass_1(){
+  dimManager->update();
+  //---------------------------
+
+  //Update things
+  this->flag_resized = dimManager->get_is_resized();
+  if(flag_resized){
+    renderManager->update_texture();
+    shaderManager->update();
+  }
+
+  //Set FBO
+  renderManager->render_fbo_1();
+
+  //Set active shader
+  shaderManager->use("scene");
+  mat4 mvp = cameraManager->compute_cam_mvp();
+  ShaderObject* shader_scene = shaderManager->get_shader_scene();
+  shader_scene->setMat4("MVP", mvp);
+
+  //---------------------------
+}
+void CoreGLengine::loop_pass_2(){
+  //---------------------------
+
+  //Framebuffer pass 2
+  renderManager->render_fbo_2();
+
+  //Set active shader
+  shaderManager->use("screen");
+
+  //---------------------------
+}
+void CoreGLengine::loop_drawScene(){
+  //---------------------------
+
+  cameraManager->viewport_update(0);
+  cameraManager->input_cam_mouse();
+  node_engine->runtime();
+
+  //---------------------------
+}
+void CoreGLengine::loop_drawScreen(){
+  //---------------------------
+
+  //Viewport
+  vec2 win_dim = dimManager->get_win_dim();
+  glViewport(0, 0, win_dim[0], win_dim[1]);
+
+  //Update OpenGL quad window
+  if(flag_resized){
+    renderManager->update_quad();
+  }
+  //Draw screen quad
+  else{
+    renderManager->render_quad();
+  }
 
   //---------------------------
 }
 void CoreGLengine::loop_end(){
   //---------------------------
 
+  //End, if needed, by a screenshot
+  renderManager->render_screenshot_online();
+
+  //Window display stuff
   glfwSwapBuffers(window);
-  if(configuration.GL_WaitForEvent) glfwWaitEvents();
+  glfwPollEvents();
+
+  //Check for window termination
+  if(glfwWindowShouldClose(window)){
+    openglRunning = false;
+  }
 
   //---------------------------
 }

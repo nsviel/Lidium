@@ -1,112 +1,101 @@
 #include "Engine.h"
 
-#include "Scene.h"
-#include "Glyphs.h"
-#include "Dimension.h"
-#include "Configuration.h"
+#include "Node_engine.h"
+#include "Scene/Glyphs.h"
+#include "Scene/Object.h"
+#include "Scene/Scene.h"
+#include "Scene/Configuration.h"
 
-#include "OpenGL/CoreGLengine.h"
-#include "OpenGL/Shader.h"
-#include "OpenGL/Textures.h"
-#include "OpenGL/Camera.h"
+#include "../GUI/Node_gui.h"
+#include "../GUI/Control/GUI.h"
 
-#include "../Registration/Registration.h"
-#include "../Radiometry/Radiometry.h"
-
-#include "../Operation/Attribut.h"
-#include "../Operation/Operation.h"
-#include "../Operation/Functions/Heatmap.h"
-#include "../Operation/Functions/Extraction.h"
-#include "../Operation/Functions/CoordTransform.h"
-#include "../Operation/Functions/Selection.h"
-#include "../Operation/Functions/RegionGrowing.h"
-#include "../Operation/Filter.h"
 
 //Constructor / Destructor
-Engine::Engine(Dimension* dim, Shader* shader, Camera* control){
-  this->dimManager = dim;
-  this->shaderManager = shader;
-  this->cameraManager = control;
+Engine::Engine(Node_engine* engine){
+  this->node_engine = engine;
   //---------------------------
 
-  this->glyphManager = new Glyphs();
-  this->sceneManager = new Scene(glyphManager);
-  this->coordTransManager = new CoordTransform(cameraManager, dimManager);
-  this->selectionManager = new Selection(dimManager, sceneManager, glyphManager, cameraManager);
-  this->attribManager = new Attribut(sceneManager);
-  this->opeManager = new Operation(sceneManager,glyphManager);
-  this->heatmapManager = new HeatMap(sceneManager);
-  this->extractionManager = new Extraction(sceneManager);
-  this->filterManager = new Filter(sceneManager);
-  this->radioManager = new Radiometry(sceneManager);
-  this->regisManager = new Registration(sceneManager, glyphManager);
-  this->growingManager = new RegionGrowing(sceneManager);
-  this->texManager = new Textures();
-  //this->guiManager = new GUI(this, cameraManager);
+  Configuration* configManager = node_engine->get_configManager();
+  Node_gui* node_gui = node_engine->get_node_gui();
 
+  this->sceneManager = node_engine->get_sceneManager();
+  this->glyphManager = node_engine->get_glyphManager();
+  this->guiManager = node_gui->get_guiManager();
+  this->objectManager = node_engine->get_objectManager();
 
-  float backgColor = configuration.WINDOW_BckgColor;
-  this->backgColor = vec3(backgColor, backgColor, backgColor);
-  this->pointSize = 1;
+  this->is_visualization = configManager->parse_json_b("window", "visualization");
 
   //---------------------------
 }
-Engine::~Engine(){
-  //---------------------------
-
-  delete sceneManager;
-  delete attribManager;
-  delete heatmapManager;
-  delete extractionManager;
-  delete filterManager;
-  delete radioManager;
-  delete glyphManager;
-  delete regisManager;
-  delete coordTransManager;
-
-  //---------------------------
-}
+Engine::~Engine(){}
 
 //Program functions
-void Engine::loop(){
-  Configuration configManager;
+void Engine::runtime_scene(){
   //---------------------------
 
-  this->draw_things();
-  this->draw_clouds();
+  //Runtime cloud
+  this->runtime_draw_cloud();
 
-  //---------------------------
-}
-void Engine::Exit(){
-  GLFWwindow* window = dimManager->get_window();
-  glfwSetWindowShouldClose(window, true);
-}
-
-//Subfunctions
-void Engine::draw_things(){
-  //---------------------------
-
-  vec3 camPos = cameraManager->get_camPos();
-  glyphManager->drawing();
-  selectionManager->update();
+  //Runtime glyph
+  this->runtime_draw_glyph();
 
   //---------------------------
 }
-void Engine::draw_clouds(){
-  list<Mesh*>* list_Mesh = sceneManager->get_listMesh();
+void Engine::runtime_draw_cloud(){
+  list<Cloud*>* list_cloud = sceneManager->get_list_cloud();
   //---------------------------
 
-  glPointSize(pointSize);
-  for(int i=0;i<list_Mesh->size();i++){
-    Mesh* mesh = *next(list_Mesh->begin(),i);
+  //By cloud
+  for(int i=0; i<list_cloud->size(); i++){
+    Cloud* cloud = *next(list_cloud->begin(),i);
 
-    //Vertices
-    glBindVertexArray(mesh->VAO);
-    glDrawArrays(GL_POINTS, 0, mesh->location.OBJ.size());
-    glBindVertexArray(0);
+    glPointSize(cloud->point_size);
+
+    //By subset
+    if(cloud->visibility){
+      for(int j=0; j<cloud->subset.size(); j++){
+        Subset* subset = *next(cloud->subset.begin(), j);
+
+        //Display for all visible subsets
+        if(subset->visibility){
+          glBindVertexArray(subset->VAO);
+          glDrawArrays(GL_POINTS, 0, subset->xyz.size()); // Error here during capture via pywardium
+        }
+      }
+    }
+
   }
 
   //---------------------------
+  glBindVertexArray(0);
   glDisableVertexAttribArray(0);
-  glDisableVertexAttribArray(3);
+  glDisableVertexAttribArray(1);
+}
+void Engine::runtime_draw_glyph(){
+  list<Cloud*>* list_cloud = sceneManager->get_list_cloud();
+  //---------------------------
+
+  //Draw glyph scene
+  objectManager->runtime_glyph_scene();
+
+  //Draw glyph subset
+  for(int i=0; i<list_cloud->size(); i++){
+    Cloud* cloud = *next(list_cloud->begin(),i);
+
+    if(cloud->visibility){
+      //All subset
+      objectManager->runtime_glyph_subset_all(cloud);
+
+      //Selected susbet
+      Subset* subset_sele = sceneManager->get_subset_byID(cloud, cloud->ID_selected);
+      objectManager->runtime_glyph_subset_selected(subset_sele);
+
+      //OOBB
+      Subset* subset_pred = sceneManager->get_subset_byID(cloud, cloud->ID_selected - 2);
+      objectManager->runtime_glyph_pred(subset_pred);
+    }
+
+  }
+
+  //---------------------------
 }

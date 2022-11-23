@@ -22,13 +22,18 @@ void Newton::init(vector<vec3>& XYZ, vector<bool>& DOF){
     this->X = VectorXf::Zero(nP);
   }
 }
-vector<float> Newton::algo_Newton(Mesh* mesh_P, Mesh* mesh_Q, vector<bool>& DOF, vector<Uplet> idx){
-  vector<vec3>& XYZ_P_obj = mesh_P->location.OBJ;
-  vector<vec3>& XYZ_Q_obj = mesh_Q->location.OBJ;
-  vector<vec3>& XYZ_P_buf = mesh_P->location.Buffer;
-  vector<vec3>& XYZ_Q_buf = mesh_Q->location.Buffer;
-  this->init(XYZ_P_buf, DOF);
+vector<float> Newton::algo_Newton(Cloud* cloud_P, Cloud* cloud_Q, vector<bool>& DOF, vector<Uplet> idx){
+  Subset* subset_P = *next(cloud_P->subset.begin(), 0);
+  Subset* subset_Q = *next(cloud_Q->subset.begin(), 0);
+  Subset* subset_P_buf = *next(cloud_P->subset_buffer.begin(), 0);
+  Subset* subset_Q_buf = *next(cloud_Q->subset_buffer.begin(), 0);
   //---------------------
+
+  vector<vec3>& XYZ_P_obj = subset_P->xyz;
+  vector<vec3>& XYZ_Q_obj = subset_Q->xyz;
+  vector<vec3>& XYZ_P_buf = subset_P_buf->xyz;
+  vector<vec3>& XYZ_Q_buf = subset_Q_buf->xyz;
+  this->init(XYZ_P_buf, DOF);
 
   //Compute Jacobian & Speudo-inverse
   MatrixXf J = compute_Jacobian(XYZ_P_buf, DOF);

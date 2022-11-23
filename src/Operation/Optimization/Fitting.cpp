@@ -1,41 +1,50 @@
 #include "Fitting.h"
 
-#include "../../Engine/Scene.h"
-#include "../../Engine/Glyphs.h"
-#include "../Attribut.h"
+#include "../Node_operation.h"
 
-#include <pcl/ModelCoefficients.h>
-#include <pcl/segmentation/sac_segmentation.h>
+#include "../../Engine/Node_engine.h"
+#include "../../Engine/Scene/Scene.h"
+#include "../../Engine/Scene/Glyphs.h"
+
+#include "../../Specific/fct_maths.h"
+#include "../../Specific/fct_transtypage.h"
+
 
 //Constructor / Destructor
-Fitting::Fitting(Scene* scene){
-  this->sceneManager = scene;
-  this->glyphManager = sceneManager->get_glyphManager();
-  this->attribManager = new Attribut(sceneManager);
+Fitting::Fitting(Node_operation* node_ope){
+  //--------------------------
+
+  Node_engine* node_engine = node_ope->get_node_engine();
+
+  this->sceneManager = node_engine->get_sceneManager();
+  this->glyphManager = node_engine->get_glyphManager();
+
+  //--------------------------
 }
 Fitting::~Fitting(){}
 
 //Sphere fitting
-void Fitting::Sphere_MeshToCenter_all(){
-  list<Mesh*>* list_Mesh = sceneManager->get_listMesh();
+void Fitting::Sphere_cloudToCenter_all(){
+  list<Cloud*>* list_cloud = sceneManager->get_list_cloud();
   //--------------------------
 
-  for(int i=0; i<list_Mesh->size(); i++){
-    Mesh* mesh = *next(list_Mesh->begin(),i);
-    this->Sphere_MeshToCenter(mesh);
+  for(int i=0; i<list_cloud->size(); i++){
+    Cloud* cloud = *next(list_cloud->begin(),i);
+    Subset* subset = cloud->subset_selected;
+    this->Sphere_cloudToCenter(subset);
   }
+
+  //--------------------------
 }
-void Fitting::Sphere_MeshToCenter(Mesh* mesh){
-  vector<vec3>& XYZ = mesh->location.OBJ;
-  vector<float>& dist = mesh->attribut.dist;
-  if(dist.size() == 0){
-    attribManager->compute_Distances(mesh);
-  }
-  float dist_min = Min(dist);
+void Fitting::Sphere_cloudToCenter(Subset* subset){
+  vector<vec3>& XYZ = subset->xyz;
+  vector<float>& dist = subset->R;
+  //---------------------------
+
+  float dist_min = fct_min(dist);
   int size = XYZ.size();
   float r = 0.0695;
   vec3 Center;
-  //---------------------------
 
   //Search for nearest point
   float distm, Xm, Ym, Zm;
@@ -50,24 +59,23 @@ void Fitting::Sphere_MeshToCenter(Mesh* mesh){
 
   //Determine the center of the sphere
   Center = vec3(Xm + r * (Xm / distm), Ym + r * (Ym / distm), Zm + r * (Zm / distm));
-  Center = Sphere_FindCenter(mesh);
+  Center = Sphere_FindCenter(subset);
 
-  //Add a ptMark mesh to the selected point
-  int ID = glyphManager->loadGlyph("../media/engine/Marks/sphere_FARO.pts", Center, "point", false, 3);
-  glyphManager->changeColor(ID, vec3(1.0f, 0.0f, 0.0f));
+  //Add a ptMark cloud to the selected point
+  //int ID = glyphManager->loadGlyph("../media/engine/Marks/sphere_FARO.pts", Center, "point", false, 3);
+  //glyphManager->update_glyph_color(ID, vec3(1.0f, 0.0f, 0.0f));
 
   //---------------------------
 }
-vec3 Fitting::Sphere_FindCenter(Mesh* mesh){
+vec3 Fitting::Sphere_FindCenter(Subset* subset){
   /* The return value is 'true' when the linear system of the algorithm
    is solvable, 'false' otherwise. If 'false' is returned, the sphere
    center and radius are set to zero values.*/
-
-  vector<vec3>& XYZ = mesh->location.OBJ;
-  vec3 COM = mesh->location.COM;
-  vec3 Center;
-  int numPoints = XYZ.size();
-  //------------------------
+   vector<vec3>& XYZ = subset->xyz;
+   vec3 COM = subset->COM;
+   vec3 Center;
+   int numPoints = XYZ.size();
+   //------------------------
 
   // Compute the covariance matrix M of the Y[i] = X[i]-A and the
   // right-hand side R of the linear system M*(C-A) = R.
@@ -107,7 +115,7 @@ vec3 Fitting::Sphere_FindCenter(Mesh* mesh){
      float rsqr = 0.0f;
      for (int i=0; i<numPoints; i++){
          vec3 delta = XYZ[i] - Center;
-         rsqr += dotProduct(delta, delta);
+         rsqr += fct_dotProduct(delta, delta);
      }
      rsqr *= (1/XYZ.size());
      Radius = std::sqrt(rsqr);
@@ -122,42 +130,19 @@ vec3 Fitting::Sphere_FindCenter(Mesh* mesh){
 }
 
 //Plane fitting
-void Fitting::Plane_Mesh_all(){
-  list<Mesh*>* list_Mesh = sceneManager->get_listMesh();
+void Fitting::Plane_cloud_all(){
+  list<Cloud*>* list_cloud = sceneManager->get_list_cloud();
   //--------------------------
 
-  for(int i=0; i<list_Mesh->size(); i++){
-    Mesh* mesh = *next(list_Mesh->begin(),i);
-    this->Plane_Mesh(mesh);
+  /*#ifdef PCL_FUNCTIONS_H
+  pcl_functions pclManager;
+  for(int i=0; i<list_cloud->size(); i++){
+    Cloud* cloud = *next(list_cloud->begin(),i);
+    Subset* subset = cloud->subset_selected;
+    pclManager.Plane_cloud(subset);
+    sceneManager->update_subset_color(subset);
   }
-}
-void Fitting::Plane_Mesh(Mesh* mesh){
-  pcl::PointCloud<pcl::PointXYZ>::Ptr cloud = glm_to_pcl_XYZ(mesh);
-  vector<vec3>& XYZ = mesh->location.OBJ;
-  vector<vec4>& RGB = mesh->color.OBJ;
-  int size = mesh->NbPoints;
-  //---------------------------
+  #endif*/
 
-  pcl::ModelCoefficients::Ptr coefficients (new pcl::ModelCoefficients);
-  pcl::PointIndices::Ptr inliers (new pcl::PointIndices);
-  pcl::SACSegmentation<pcl::PointXYZ> seg;
-  seg.setOptimizeCoefficients(true);
-  seg.setModelType(pcl::SACMODEL_PLANE);
-  seg.setMethodType(pcl::SAC_RANSAC);
-  seg.setDistanceThreshold(0.01);
-
-  seg.setInputCloud(cloud);
-  seg.segment(*inliers, *coefficients);
-
-  vector<int> id;
-  for(const auto& idx: inliers->indices){
-      id.push_back(idx);
-  }
-
-  for(int i=0; i<id.size(); i++){
-    RGB[id[i]] = vec4(1.0f, 0.0f, 0.0f, 0.0f);
-  }
-
-  //---------------------------
-  sceneManager->update_CloudColor(mesh);
+  //--------------------------
 }

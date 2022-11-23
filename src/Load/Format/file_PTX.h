@@ -1,31 +1,32 @@
 #ifndef FILE_PTX_H
 #define FILE_PTX_H
 
-#include "../../Parameters.h"
+#include "../../Engine/Data/struct_dataFile.h"
+#include "../../Engine/Data/struct_generic.h"
+#include "../../common.h"
 
-class filePTX
+#include <iomanip>
+#include <fstream>
+
+
+class file_PTX
 {
 public:
   //Constructor / Destructor
-  filePTX();
-  ~filePTX();
+  file_PTX();
+  ~file_PTX();
 
 public:
   //Main functions
-  bool Loader(string pathFile);
+  dataFile* Loader(string pathFile);
   bool Exporter(string pathFile);
 
   //Subfunctions
-  void Loader_header(PTXCloud* mesh);
-  void Loader_data(PTXCloud* mesh);
+  void Loader_header(PTXCloud* cloud);
+  void Loader_data(PTXCloud* cloud);
   void Loader_assembling();
   void Loader_cloudTransformation();
   void Loader_scannerAtOrigin();
-
-  inline vector<vec3> get_locationOBJ(){return locationOBJ;}
-  inline vector<float> get_intensityOBJ(){return intensityOBJ;}
-  inline vector<vec3> get_normalOBJ(){return normalOBJ;}
-  inline vector<vec4> get_colorOBJ(){return colorOBJ;}
 
   inline void set_scannerAtOrigin(bool value){this->option_scannerAtOrigin = value;}
   inline void set_applyCloudTransfo(bool value){this->option_applyCloudTransfo = value;}
@@ -38,10 +39,7 @@ public:
 
 private:
   //Datatypes
-  vector<vec3> locationOBJ;
-  vector<vec3> normalOBJ;
-  vector<vec4> colorOBJ;
-  vector<float> intensityOBJ;
+  dataFile* data_out;
 
   list<PTXCloud*>* list_ptxCloud;
   float x, y, z, I, r, g ,b;

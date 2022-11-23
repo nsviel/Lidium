@@ -1,7 +1,9 @@
 #ifndef TEXTURE_H
 #define TEXTURE_H
 
-#include "../../Parameters.h"
+#include "../Data/struct_generic.h"
+
+#include "../../common.h"
 
 class Textures
 {

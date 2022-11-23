@@ -1,5 +1,5 @@
 #include "SpeudoInverse.h"
-#include <armadillo>
+
 
 //Constructor / Destructor
 SpeudoInverse::SpeudoInverse(){}
@@ -48,26 +48,4 @@ MatrixXf SpeudoInverse::SpeudoInverse_LUDecomp(MatrixXf J){
 
   //---------------------------
   return Ji;
-}
-MatrixXf SpeudoInverse::SpeudoInverse_armadillo(MatrixXf J){
-  arma::mat A(J.rows(), J.cols());
-  //---------------------------
-
-  for(int i=0; i<J.rows(); i++){
-    for(int j=0; j<J.cols(); j++){
-      A(i,j) = J(i,j);
-    }
-  }
-
-  arma::mat Ji = arma::pinv(A);
-
-  MatrixXf Jinv(Ji.n_rows, Ji.n_cols);
-  for(int i=0; i<Ji.n_rows; i++){
-    for(int j=0; j<Ji.n_cols; j++){
-      Jinv(i,j) = Ji(i,j);
-    }
-  }
-
-  //---------------------------
-  return Jinv;
 }

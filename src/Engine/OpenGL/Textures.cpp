@@ -1,7 +1,5 @@
 #include "Textures.h"
 
-#define STB_IMAGE_IMPLEMENTATION
-#include "../../../extern/std_image.h"
 
 //Constructor / Destructor
 Textures::Textures(){
@@ -15,7 +13,7 @@ Textures::~Textures(){}
 
 //Texture management
 bool Textures::load_texture(string filePath, string name){
-  int width = 0;
+  /*int width = 0;
   int height = 0;
   //---------------------------
 
@@ -50,7 +48,7 @@ bool Textures::load_texture(string filePath, string name){
   texture_new->ID = glID;
   list_Texture->push_back(texture_new);
 
-  //---------------------------
+  //---------------------------*/
   return true;
 }
 Texture* Textures::get_TextureByName(string name){
@@ -134,7 +132,7 @@ void Textures::init_skybox(){
   glyph->VAO = VAO;
   glyph->VBO_location = locationVBO;
   glyph->location = XYZ;
-  glyph->Name = "skybox";
+  glyph->name = "skybox";
   glyph->draw_type = "point";
   glyph->draw_width = 1;
   glyph->permanent = true;
@@ -164,7 +162,7 @@ void Textures::skybox(vec3 camPos){
 unsigned int Textures::loadCubemap(vector<string> faces){
   unsigned int textureID;
   //---------------------------
-
+/*
   glGenTextures(1, &textureID);
   glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
 
@@ -189,7 +187,7 @@ unsigned int Textures::loadCubemap(vector<string> faces){
   glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
   glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
   glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
-
+*/
   //---------------------------
   return textureID;
 }

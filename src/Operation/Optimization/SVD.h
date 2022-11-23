@@ -1,7 +1,7 @@
 #ifndef SVD_h
 #define SVD_h
 
-#include "../../Parameters.h"
+#include "../../common.h"
 
 class SVD
 {

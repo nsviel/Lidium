@@ -1,43 +1,44 @@
 #ifndef FILE_PTS_H
 #define FILE_PTS_H
 
-#include "../../Parameters.h"
+#include "../../Engine/Data/struct_dataFile.h"
+#include "../../common.h"
 
-class filePTS
+#include <iomanip>
+#include <fstream>
+
+
+class file_PTS
 {
 public:
   //Constructor / Destructor
-  filePTS();
-  ~filePTS();
+  file_PTS();
+  ~file_PTS();
 
 public:
   //Main functions
-  bool Loader(string pathFile);
-  bool Exporter(string pathFile, Mesh* mesh);
+  dataFile* Loader(string pathFile);
+  dataFile* Loader(string pathFile, int lmin, int lmax);
 
-  //Subfunctions
-  bool Loader_parallel(string pathFile);
-  bool Loader_subPart(string pathFile, int lmin, int lmax);
-  void Loader_init();
-  void Loader_nbColumns();
-  void Loader_configuration();
-  void Loader_data(int FILE_config);
-  void Loader_clearData();
-
-  //Loader sub-functions
-  bool check_header(string pathFile);
-  int check_configuration(string pathFile);
-  int check_size(string pathFile, bool FILE_hasHeader);
-
-  inline vector<vec3> get_locationOBJ(){return locationOBJ;}
-  inline vector<float> get_intensityOBJ(){return intensityOBJ;}
-  inline vector<vec3> get_normalOBJ(){return normalOBJ;}
-  inline vector<vec4> get_colorOBJ(){return colorOBJ;}
+  bool Exporter(string pathFile, Cloud* cloud);
+  bool Exporter(string pathFile, Subset* subset);
 
   inline void set_IdataFormat(int value){this->IdataFormat = value;}
   inline void set_retrievingIntensity(bool value){this->retrieve_I = value;}
   inline void set_retrievingColor(bool value){this->retrieve_RGB = value;}
   inline void set_retrievingNormal(bool value){this->retrieve_N = value;}
+
+private:
+  //Subfunctions
+  void Loader_init();
+  void Loader_nbColumns();
+  void Loader_configuration();
+  void Loader_data(int FILE_config);
+
+  //Loader sub-functions
+  bool check_header(string pathFile);
+  int check_configuration(string pathFile);
+  int check_size(string pathFile, bool FILE_hasHeader);
 
 private:
   //Variables
@@ -58,10 +59,7 @@ private:
   bool retrieve_I, retrieve_RGB, retrieve_N;
 
   //Datatypes
-  vector<vec3> locationOBJ;
-  vector<vec3> normalOBJ;
-  vector<vec4> colorOBJ;
-  vector<float> intensityOBJ;
+  dataFile* data_out;
 };
 
 #endif
